@@ -1,0 +1,8 @@
+{
+  "name": "squares-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/squares-e2e/src",
+  "implicitDependencies": ["squares"],
+  "// targets": "to see all targets run: nx show project squares-e2e --web",
+  "targets": {}
+}
