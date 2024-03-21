@@ -1,0 +1,12 @@
+{
+    "extends": "@squares/configs/tsconfig/index.json",
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@components/*": ["components/*"],
+            "@styles/*": ["styles/*"],
+            "@utils/*": ["utils/*"],
+            "@/*": ["*"]
+        }
+    }
+}

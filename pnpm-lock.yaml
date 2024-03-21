@@ -60,6 +60,12 @@ importers:
 
   packages/configs: {}
 
+  packages/icons:
+    devDependencies:
+      '@squares/configs':
+        specifier: workspaces
+        version: link:../configs
+
   packages/ui:
     dependencies:
       vite:
