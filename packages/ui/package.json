@@ -9,7 +9,7 @@
         "build": "tsup ./src --dts",
         "dev": "pnpm build:fast --watch",
         "clean": "rimraf dist .turbo",
-        "typecheck": "tsc --noEmit",
+        "type-check": "tsc --noEmit",
         "build:fast": "tsup ./src"
     },
     "keywords": [],

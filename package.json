@@ -5,6 +5,7 @@
         "build": "NODE_ENV=production dotenv -- turbo run build",
         "dev": "NODE_ENV=development dotenv --  turbo run dev",
         "start": "NODE_ENV=production dotenv -- turbo run start",
+        "type-check": "tsc --noEmit",
         "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .prettierignore",
         "dev:test": "pnpm run dev   --filter=@squares/ui --filter=test",
         "dev:ui": "pnpm run dev --filter=@squares/ui",
@@ -12,8 +13,10 @@
     },
     "devDependencies": {
         "@squares/configs": "workspace:*",
+        "@types/node": "^20.11.30",
         "prettier": "^3.2.5",
-        "turbo": "latest"
+        "turbo": "latest",
+        "typescript": "^5.4.3"
     },
     "workspaces": [
         "apps/*",
