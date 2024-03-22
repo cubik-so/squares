@@ -2,13 +2,27 @@
     "name": "@squares/ui",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "lib/index.js",
+    "module": "lib/index.mjs",
+    "types": "lib/index.d.ts",
     "scripts": {
-        "build": "vite build"
+        "build": "tsup ./src --dts",
+        "dev": "pnpm build:fast --watch",
+        "clean": "rimraf dist .turbo",
+        "typecheck": "tsc --noEmit",
+        "build:fast": "tsup ./src"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "exports": {
+        ".": {
+            "import": "./lib/index.mjs",
+            "require": "./lib/index.js",
+            "types": "./lib/index.d.ts"
+        },
+        "./styles.css": "./lib/styles/index.css"
+    },
     "devDependencies": {
         "@squares/configs": "workspace:*",
         "@types/node": "^20.11.29",
@@ -24,6 +38,6 @@
         "typescript": "^5.2.2"
     },
     "dependencies": {
-        "vite": "^5.1.6"
+        "tsup": "^8.0.2"
     }
 }

@@ -2,18 +2,28 @@
     "name": "squares",
     "private": true,
     "scripts": {
-        "build": "turbo build",
-        "dev": "turbo dev",
-        "lint": "turbo lint",
-        "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+        "build": "NODE_ENV=production dotenv -- turbo run build",
+        "dev": "NODE_ENV=development dotenv --  turbo run dev",
+        "start": "NODE_ENV=production dotenv -- turbo run start",
+        "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .prettierignore",
+        "dev:test": "pnpm run dev   --filter=@squares/ui --filter=test",
+        "dev:ui": "pnpm run dev --filter=@squares/ui"
     },
     "devDependencies": {
+        "@squares/configs": "workspace:*",
         "prettier": "^3.2.5",
-        "turbo": "latest",
-        "@squares/configs": "workspace:*"
+        "turbo": "latest"
     },
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
     "packageManager": "pnpm@8.9.0",
     "engines": {
         "node": ">=18"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "dotenv-cli": "^7.4.1"
     }
 }

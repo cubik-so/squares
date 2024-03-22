@@ -17,6 +17,7 @@
         "noUncheckedIndexedAccess": true,
         "noUnusedLocals": false,
         "noUnusedParameters": true,
+        "resolveJsonModule": true,
         "skipLibCheck": true,
         "strict": true,
         "target": "ES2020"
