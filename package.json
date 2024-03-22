@@ -7,7 +7,8 @@
         "start": "NODE_ENV=production dotenv -- turbo run start",
         "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .prettierignore",
         "dev:test": "pnpm run dev   --filter=@squares/ui --filter=test",
-        "dev:ui": "pnpm run dev --filter=@squares/ui"
+        "dev:ui": "pnpm run dev --filter=@squares/ui",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@squares/configs": "workspace:*",
@@ -23,7 +24,11 @@
         "node": ">=18"
     },
     "dependencies": {
+        "@commitlint/cli": "^19.2.1",
+        "@commitlint/config-conventional": "^19.1.0",
+        "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
         "dotenv": "^16.4.5",
-        "dotenv-cli": "^7.4.1"
+        "dotenv-cli": "^7.4.1",
+        "husky": "^9.0.11"
     }
 }
