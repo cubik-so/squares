@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup'
 
 const isProduction = process.env.NODE_ENV === 'production'
 export default defineConfig({
-    entryPoints: ['src/index.ts'], // Entry point of your library
+    entryPoints: ['src/**/*'], // Entry point of your library
     format: ['cjs', 'esm'], // Output formats for CommonJS and ESM modules
     minify: false, // Whether to minify output
     splitting: true, // Enable code splitting for better tree shaking

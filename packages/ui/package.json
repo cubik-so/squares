@@ -38,6 +38,9 @@
         "typescript": "^5.2.2"
     },
     "dependencies": {
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "framer-motion": "^11.0.20",
         "tsup": "^8.0.2"
     }
 }
