@@ -1,6 +1,8 @@
 import { cva } from 'class-variance-authority'
-import { ClassValue } from 'clsx'
 import React from 'react'
+import { motion } from 'framer-motion'
+import type { ForwardRefComponent, HTMLMotionProps} from 'framer-motion';
+import type { ClassValue } from 'clsx'
 
 type ButtonVariantType =
     | 'primary'
@@ -13,6 +15,7 @@ type ButtonVariantType =
     | 'unStyled'
 
 type ButtonSizeType = '2xl' | 'xl' | 'lg' | 'md' | 'sm'
+
 /*
  * Button component variants
  */
@@ -20,7 +23,7 @@ const buttonVariants: {
     [key in ButtonVariantType]: ClassValue
 } = {
     primary:
-        'bg-[var(--button-primary-surface-default)] hover:bg-[var(--button-primary-surface-hovered)] !text-[var(--button-primary-text-default)] hover:!text-[var(--button-primary-text-hovered)] !stroke-[var(--button-primary-text-default)] hover:!stroke-[var(--button-primary-text-hovered)]  focus:!text-[var(--button-primary-text-focused)] disabled:bg-[var(--button-primary-surface-disabled)] disabled:!text-[var(--button-primary-text-disabled)] disabled:!stroke-[var(--button-primary-text-disabled)] disabled:cursor-not-allowed  focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none l2-heavy',
+        'bg-[var(--button-primary-surface-default)]  hover:bg-[var(--button-primary-surface-hovered)] !text-[var(--button-primary-text-default)] hover:!text-[var(--button-primary-text-hovered)] !stroke-[var(--button-primary-text-default)] hover:!stroke-[var(--button-primary-text-hovered)]  focus:!text-[var(--button-primary-text-focused)] disabled:bg-[var(--button-primary-surface-disabled)] disabled:!text-[var(--button-primary-text-disabled)] disabled:!stroke-[var(--button-primary-text-disabled)] disabled:cursor-not-allowed  focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none l2-heavy',
     secondary:
         'bg-[var(--button-secondary-surface-default)] hover:bg-[var(--button-secondary-surface-hovered)] !text-[var(--button-secondary-text-default)] hover:!text-[var(--button-secondary-text-hovered)] !stroke-[var(--button-secondary-text-default)] hover:!stroke-[var(--button-secondary-text-hovered)] focus:border-2 focus:border-[var(--button-secondary-border-focused)] focus:!text-[var(--button-secondary-text-focused)] disabled:cursor-not-allowed focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none stroke-[var(--button-secondary-text-default)]',
     outline:
@@ -37,7 +40,7 @@ const buttonVariants: {
         'bg-[var(--button-success-surface-default)] hover:bg-[var(--button-success-surface-hovered)] !text-[var(--button-success-text-default)] hover:!text-[var(--button-success-text-hovered)] !stroke-[var(--button-success-text-default)] hover:!stroke-[var(--button-success-text-hovered)] focus:border-2 focus:border-[var(--button-success-border-focused)] focus:!text-[var(--button-success-text-focused)] disabled:bg-[var(--button-success-surface-disabled)] disabled:!text-[var(--button-success-text-disabled)] disabled:!stroke-[var(--button-success-text-disabled)] disabled:cursor-not-allowed focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none stroke-[var(--button-success-text-default)] !text-[var(--button-success-text-default)]',
 
     unStyled:
-        'focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none',
+        'focus-visible:ring-4  focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none',
 }
 
 /*
@@ -105,6 +108,18 @@ const textCva = cva('', {
     },
 })
 
-export const Button = () => {
-    return <div>Button</div>
+interface ButtonProps extends ForwardRefComponent<HTMLButtonElement, HTMLMotionProps<'button'>> {
+    variant?: ButtonVariantType
+    size?: ButtonSizeType
+    loading?: boolean
+}
+
+// todo - missing loading state, children, and other conditions
+export const Button = ({ variant, size, loading, ...props }: ButtonProps) => {
+    const isDisabled = loading || props.defaultProps?.disabled
+    return (
+        <motion.button {...props} disabled={isDisabled}>
+            Button
+        </motion.button>
+    )
 }
