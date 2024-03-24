@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 import React from 'react'
 import { motion } from 'framer-motion'
-import type { ForwardRefComponent, HTMLMotionProps} from 'framer-motion';
+import type { ForwardRefComponent, HTMLMotionProps } from 'framer-motion'
 import type { ClassValue } from 'clsx'
 
 type ButtonVariantType =
@@ -118,8 +118,10 @@ interface ButtonProps extends ForwardRefComponent<HTMLButtonElement, HTMLMotionP
 export const Button = ({ variant, size, loading, ...props }: ButtonProps) => {
     const isDisabled = loading || props.defaultProps?.disabled
     return (
-        <motion.button {...props} disabled={isDisabled}>
-            Button
-        </motion.button>
+        <div className="">
+            <motion.button className="" {...props} disabled={isDisabled}>
+                Button
+            </motion.button>
+        </div>
     )
 }

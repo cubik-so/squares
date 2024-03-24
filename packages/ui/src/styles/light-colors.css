@@ -4,7 +4,6 @@ html[class='light'],
     --gradient-green: var(--color-green-500-60);
     --gradient-blue: var(--color-blue-500-60);
     --gradient-red: var(--color-red-500-60);
-    --color: var(--color-white);
     --color-surface-primary-inverse: var(--color-black-900);
     --color-interaction-muted: var(--color-neutral-75);
     --color-interaction-tertiary: var(--color-yellow-600);

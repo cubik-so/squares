@@ -5,6 +5,7 @@
         "baseUrl": "./src",
         "paths": {
             "@components/*": ["components/*"],
+            "@config/*": ["config/*"],
             "@styles/*": ["styles/*"],
             "@utils/*": ["utils/*"],
             "@/*": ["*"]
