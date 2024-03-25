@@ -3,8 +3,8 @@ import React, { forwardRef } from 'react'
 interface IconOptions extends React.SVGProps<SVGSVGElement> {
     name: string
     displayName: string
-    paths: { d: string; opacity?: number; fill: string; stroke: string }[]
-    gpaths?: { d: string; opacity?: number; fill: string; stroke: string }[]
+    paths: { d: string; opacity?: number; fill: boolean; stroke: boolean }[]
+    gpaths?: { d: string; opacity?: number; fill: boolean; stroke: boolean }[]
     viewBox: string
 }
 
