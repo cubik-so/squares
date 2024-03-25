@@ -6,11 +6,11 @@
     "module": "lib/index.mjs",
     "types": "lib/index.d.ts",
     "scripts": {
-        "build": "tsx src/scripts/create-theme.ts && tsup ./src --dts",
+        "build": "tsup ./src --dts",
         "dev": "pnpm build:fast --watch",
         "clean": "rimraf dist .turbo",
         "type-check": "tsc --noEmit",
-        "build:fast": "tsup ./src"
+        "build:fast": "tsx src/scripts/create-theme.ts && tsup ./src"
     },
     "keywords": [],
     "author": "",

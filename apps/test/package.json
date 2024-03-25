@@ -11,7 +11,8 @@
     "dependencies": {
         "react": "^18",
         "react-dom": "^18",
-        "next": "14.1.4"
+        "next": "14.1.4",
+        "@squares/ui": "workspace:*"
     },
     "devDependencies": {
         "typescript": "^5",
@@ -22,7 +23,6 @@
         "postcss": "^8",
         "tailwindcss": "^3.3.0",
         "eslint": "^8",
-        "eslint-config-next": "14.1.4",
-        "@squares/ui": "workspace:*"
+        "eslint-config-next": "14.1.4"
     }
 }
