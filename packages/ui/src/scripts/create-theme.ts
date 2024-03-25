@@ -22,9 +22,8 @@ const parseCss = (filePath: string): Record<string, string> => {
                 continue
             }
             const name = variable.trim().replace('--', '')
-            colors[name] = `var(variable)`
+            colors[name] = `var(${variable})`
         }
-        console.log(colors, 'colors')
         return colors
     } catch (error) {
         const e = error as Error
