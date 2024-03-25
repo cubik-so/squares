@@ -9,6 +9,9 @@
         "dev:test": {
             "dependsOn": ["^dev:ui"]
         },
+        "generate:icons": {
+            "cache": false
+        },
         "lint": {
             "dependsOn": ["^lint"]
         },

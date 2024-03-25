@@ -1,4 +1,4 @@
-interface Icon {
+export interface Icon {
     name: string
     displayName: string
     paths: { d: string; opacity?: number; fill: boolean; stroke: boolean }[]

@@ -84,6 +84,9 @@ importers:
 
     apps/test:
         dependencies:
+            '@squares/ui':
+                specifier: workspace:*
+                version: link:../../packages/ui
             next:
                 specifier: 14.1.4
                 version: 14.1.4(@babel/core@7.24.1)(react-dom@18.2.0)(react@18.2.0)
@@ -94,9 +97,6 @@ importers:
                 specifier: ^18
                 version: 18.2.0(react@18.2.0)
         devDependencies:
-            '@squares/ui':
-                specifier: workspace:*
-                version: link:../../packages/ui
             '@types/node':
                 specifier: ^20
                 version: 20.11.29
@@ -198,6 +198,10 @@ importers:
                 version: 5.4.3
 
     packages/icons:
+        dependencies:
+            tsx:
+                specifier: ^4.7.1
+                version: 4.7.1
         devDependencies:
             '@squares/configs':
                 specifier: workspaces
@@ -4489,7 +4493,6 @@ packages:
             }
         dependencies:
             resolve-pkg-maps: 1.0.0
-        dev: true
 
     /git-raw-commits@4.0.0:
         resolution:
@@ -6270,7 +6273,6 @@ packages:
             {
                 integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==,
             }
-        dev: true
 
     /resolve@1.22.8:
         resolution:
@@ -6976,7 +6978,6 @@ packages:
             get-tsconfig: 4.7.3
         optionalDependencies:
             fsevents: 2.3.3
-        dev: true
 
     /turbo-darwin-64@1.12.5:
         resolution:
