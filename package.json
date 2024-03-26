@@ -9,7 +9,7 @@
         "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .prettierignore",
         "dev:test": "pnpm run dev   --filter=@squares/ui --filter=test",
         "dev:ui": "pnpm run dev --filter=@squares/ui",
-        "generate:icons": "turbo run generate:icons --filter=@squares/icons",
+        "generate:icons": "turbo run generate:icons --filter=@squares/icons && pnpm run format",
         "prepare": "husky"
     },
     "devDependencies": {

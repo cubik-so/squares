@@ -1,7 +1,7 @@
 export interface Icon {
     name: string
     displayName: string
-    paths: { d: string; opacity?: number; fill: boolean; stroke: boolean }[]
+    paths: Array<{ d: string; opacity?: number; fill: boolean; stroke: boolean }>
     gpaths?: { d: string; opacity?: number; fill: boolean; stroke: boolean }[]
     viewBox: string
 }
