@@ -82,18 +82,23 @@ const buttonTextVariants: {
     [key in ButtonSizeType]: string
 } = { '2xl': 'b1 md:l1', xl: 'b2 md:l2', lg: 'b3 md:l2', md: 'l1 md:l2', sm: 'l2 md:l3' }
 
-interface ButtonProps extends ForwardRefComponent<HTMLButtonElement, HTMLMotionProps<'button'>> {
+interface ButtonProps
+    extends React.DetailedHTMLProps<
+        React.ButtonHTMLAttributes<HTMLButtonElement>,
+        HTMLButtonElement
+    > {
     variant?: ButtonVariantType
     size?: ButtonSizeType
     loading?: boolean
 }
 
 // todo - missing loading state, children, and other conditions
-export const Button = ({ variant, size, loading, ...props }: ButtonProps) => {
-    const isDisabled = loading || props.defaultProps?.disabled
+export const Button = ({ variant, size, loading, ...props }: ButtonProps): React.ReactNode => {
+    const isDisabled = loading || props.disabled
+
     return (
-        <motion.button {...props} disabled={isDisabled}>
-            Button
-        </motion.button>
+        <button {...props} disabled={isDisabled}>
+            {props.children}
+        </button>
     )
 }

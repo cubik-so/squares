@@ -1,5 +1,4 @@
 import { Button } from '@squares/ui'
-import { NewButton } from '@squares/ui'
 import Image from 'next/image'
 
 export default function Home() {
@@ -27,10 +26,9 @@ export default function Home() {
                             priority
                         /> */}
                     </a>
-                    <Button>astr</Button>
-                    {/* <NewButton>
-                        <p>askdfj</p>
-                    </NewButton> */}
+                    <Button variant={'link'} size={'2xl'} loading={false}>
+                        asdfadf
+                    </Button>
                 </div>
             </div>
 
