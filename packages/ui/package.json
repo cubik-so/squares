@@ -10,16 +10,23 @@
         "dev": "pnpm build:fast --watch",
         "clean": "rimraf dist .turbo",
         "type-check": "tsc --noEmit",
-        "build:fast": "tsx src/scripts/create-theme.ts && tsup ./src"
+        "create:theme": "tsx src/scripts/create-theme.ts",
+        "build:fast": "tsup ./src --dts"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "exports": {
         ".": {
-            "import": "./lib/index.mjs",
-            "require": "./lib/index.js",
-            "types": "./lib/index.d.ts"
+            "source": "./src/index.ts",
+            "import": {
+                "types": "./lib/index.d.ts",
+                "default": "./lib/index.mjs"
+            },
+            "require": {
+                "types": "./lib/index.d.ts",
+                "default": "./lib/index.js"
+            }
         },
         "./styles.css": "./lib/styles/index.css",
         "./theme": {

@@ -6,7 +6,7 @@ export default defineConfig({
     format: ['cjs', 'esm'], // Output formats for CommonJS and ESM modules
     minify: false, // Whether to minify output
     splitting: true, // Enable code splitting for better tree shaking
-    sourcemap: true, // Generate sourcemaps
+    sourcemap: false, // Generate sourcemaps
     clean: true, // Clean the output directory before building
     outDir: 'lib', // Output directory
     dts: true, // Generate .d.ts file

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import type { ForwardRefComponent, HTMLMotionProps } from 'framer-motion'
+import { cn } from '@utils/cn'
+import { Text } from '@components/text/text'
 import type { ClassValue } from 'clsx'
 
 type ButtonVariantType =
@@ -16,7 +17,7 @@ type ButtonVariantType =
 type ButtonSizeType = '2xl' | 'xl' | 'lg' | 'md' | 'sm'
 
 const baseClass =
-    'focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none'
+    'rounded-lg transform active:scale-95 transition-all whitespace-nowrap flex items-center justify-center  pointer-events-auto w-[fit-content]  gap-[6px] focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none'
 
 /*
  * Button component variants
@@ -90,15 +91,83 @@ interface ButtonProps
     variant?: ButtonVariantType
     size?: ButtonSizeType
     loading?: boolean
+    loadingText?: string
 }
 
 // todo - missing loading state, children, and other conditions
-export const Button = ({ variant, size, loading, ...props }: ButtonProps): React.ReactNode => {
+export const Button = ({
+    variant = 'primary',
+    size = 'md',
+    loading = false,
+    loadingText = undefined,
+    className = '',
+    ...props
+}: ButtonProps): React.ReactNode => {
     const isDisabled = loading || props.disabled
 
+    const innerButton = () => {
+        if (!loading) {
+            return (
+                <Text color="inherit" variant="b1-heavy">
+                    {props.children}
+                </Text>
+            )
+        }
+
+        return (
+            <div className="flex flex-row gap-2">
+                <div className="flex items-center justify-center">
+                    <motion.div
+                        animate={{ rotate: 360, scale: 1 }}
+                        transition={{
+                            repeat: Infinity,
+                            ease: 'linear',
+                            duration: 1,
+                        }}
+                    >
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle
+                                cx="9"
+                                cy="9"
+                                r="7"
+                                stroke="currentColor"
+                                strokeOpacity="0.1"
+                                strokeWidth="2.5"
+                            />
+                            <path
+                                d="M16 9C16 5.13401 12.866 2 9 2"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                            />
+                        </svg>
+                    </motion.div>
+                </div>
+                <Text variant="b2" color="inherit">
+                    {loadingText ? loadingText : props.children}
+                </Text>
+            </div>
+        )
+    }
+
     return (
-        <button {...props} disabled={isDisabled}>
-            {props.children}
+        <button
+            className={cn(
+                baseClass,
+                buttonVariants[variant || 'primary'],
+                buttonSizeVariants[size || 'md'],
+                className,
+            )}
+            disabled={isDisabled}
+            {...props}
+        >
+            {innerButton()}
         </button>
     )
 }

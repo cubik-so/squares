@@ -12,6 +12,9 @@
         "generate:icons": {
             "cache": false
         },
+        "create:theme": {
+            "cache": false
+        },
         "lint": {
             "dependsOn": ["^lint"]
         },
