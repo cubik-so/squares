@@ -27,8 +27,8 @@ export default function Home() {
                             priority
                         /> */}
                     </a>
-                    <Button variant={'link'} size={'2xl'} loading={true}>
-                        asdfadf
+                    <Button variant={'link'} size={'2xl'} loading={true} loadingText="something">
+                        something
                     </Button>
                 </div>
             </div>
