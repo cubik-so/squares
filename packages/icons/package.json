@@ -10,12 +10,6 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "exports": {
-        ".": {
-            "import": "./src/index.ts",
-            "require": "./src/index.js"
-        }
-    },
     "devDependencies": {
         "@squares/configs": "workspaces"
     },
