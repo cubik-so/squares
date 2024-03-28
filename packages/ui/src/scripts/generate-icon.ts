@@ -1,8 +1,8 @@
 import * as fs from 'fs'
-import { iconLibrary } from '../iconLibrary'
+import { iconLibrary } from '../utils/iconLibrary'
 
 const createIconFolder = () => {
-    const iconFolderPath = __dirname + '/../icon'
+    const iconFolderPath = __dirname + '/../icons/icon'
     if (!fs.existsSync(iconFolderPath)) {
         fs.mkdirSync(iconFolderPath)
     }
@@ -13,7 +13,7 @@ const addIconExport = () => {
         return `export * from './${icon.name}'`
     })
 
-    fs.writeFileSync(__dirname + '/../icon/index.ts', iconExports.join('\n'), 'utf-8')
+    fs.writeFileSync(__dirname + '/../icons/icon/index.ts', iconExports.join('\n'), 'utf-8')
 }
 
 const main = () => {
@@ -22,7 +22,7 @@ const main = () => {
         console.log(typeof icon.paths)
         const pathsString = icon.paths.map((path) => JSON.stringify(path)).join(',\n')
         const component = `
-     import { CreateIcon } from '../components/create-icon'
+     import { CreateIcon } from '../../utils/create-icon'
       import type React from 'react'
 
         interface Props extends React.SVGProps<SVGSVGElement> {
@@ -39,7 +39,7 @@ const main = () => {
                 ...props,
             })
         `
-        fs.writeFileSync(__dirname + `/../icon/${icon.name}.tsx`, component, 'utf-8')
+        fs.writeFileSync(__dirname + `/../icons/icon/${icon.name}.tsx`, component, 'utf-8')
     })
 
     addIconExport()

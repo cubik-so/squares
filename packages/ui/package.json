@@ -11,6 +11,7 @@
         "clean": "rimraf dist .turbo",
         "type-check": "tsc --noEmit",
         "create:theme": "tsx src/scripts/create-theme.ts",
+        "generate:icons": "tsx ./src/scripts/generate-icon.ts",
         "build:fast": "tsup ./src --dts"
     },
     "keywords": [],
@@ -34,7 +35,7 @@
             "require": "./lib/config/theme.js",
             "types": "./lib/config/theme.d.ts"
         },
-        "./icon": {
+        "./icons": {
             "import": "./lib/icons.mjs",
             "require": "./lib/icons.js",
             "types": "./lib/icons.d.ts"
@@ -56,7 +57,6 @@
         "typescript": "^5.2.2"
     },
     "dependencies": {
-        "@squares/icons": "workspace:*",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
         "framer-motion": "^11.0.20",

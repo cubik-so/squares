@@ -1,12 +1,12 @@
 import React from 'react'
-import { CreateIcon } from './components/create-icon'
-import { iconLibrary } from './iconLibrary'
+import { iconLibrary } from '../utils/iconLibrary'
+import { CreateIcon } from '../utils/create-icon'
 
 interface Props extends React.SVGProps<SVGSVGElement> {
     name: string
     color?: string
 }
-export const Icon = ({ name, color, ...props }: Props) => {
+const Icon = ({ name, color, ...props }: Props) => {
     const icon = iconLibrary.find((i) => i.name === name)
     if (!icon) {
         return <></>
@@ -19,3 +19,13 @@ export const Icon = ({ name, color, ...props }: Props) => {
         ...props,
     })
 }
+
+/*
+ * Generic icon component that renders an icon based on the name prop.
+ */
+export default Icon
+
+/*
+ * Export all icons for easy import.
+ */
+export * from './icon'

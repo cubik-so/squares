@@ -30,6 +30,7 @@ export default function Home() {
                     <Button variant={'link'} size={'2xl'} loading={true} loadingText="something">
                         something
                     </Button>
+                    <Icon />
                 </div>
             </div>
 

@@ -1,4 +1,4 @@
-import { CreateIcon } from '../components/create-icon'
+import { CreateIcon } from '../../utils/create-icon'
 import type React from 'react'
 
 interface Props extends React.SVGProps<SVGSVGElement> {
