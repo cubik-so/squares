@@ -28,9 +28,8 @@ export default function Home() {
                         /> */}
                     </a>
                     <Button variant={'link'} size={'2xl'} loading={true} loadingText="something">
-                        something
+                        somethingss
                     </Button>
-                    <Icon />
                 </div>
             </div>
 

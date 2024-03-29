@@ -108,7 +108,7 @@ export const Button = ({
     const innerButton = () => {
         if (!loading) {
             return (
-                <Text color="inherit" variant="b1-heavy">
+                <Text color="inherit" variant={buttonTextVariants[size]}>
                     {props.children}
                 </Text>
             )
@@ -149,7 +149,7 @@ export const Button = ({
                         </svg>
                     </motion.div>
                 </div>
-                <Text variant="b2" color="inherit">
+                <Text variant={buttonTextVariants[size]} color="inherit">
                     {loadingText ? loadingText : props.children}
                 </Text>
             </div>
