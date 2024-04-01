@@ -31,6 +31,33 @@ const parseCss = (filePath: string): Record<string, string> => {
         process.exit(1) // Exit with error
     }
 }
+const parsePrimitiveCss = (filePath: string): Record<string, string> => {
+    try {
+        const cssContent = fs.readFileSync(filePath, 'utf-8').split(':root ')[1]
+        if (!cssContent) {
+            throw new Error('No CSS content found')
+        }
+        // console.log(cssContent, 'cssContent')
+
+        const matches = Array.from(cssContent.matchAll(/--[\w-]+:\s*#[a-fA-F\d]+;/g))
+
+        const colors: Record<string, string> = {}
+        for (const match of matches) {
+            const [declaration] = match
+            const [variable, value] = declaration.split(': ')
+            if (!variable) {
+                continue
+            }
+            const name = variable.replace('--color-', '')
+            colors[name] = value
+        }
+        return colors
+    } catch (error) {
+        const e = error as Error
+        console.error(`Error reading CSS file ${filePath}: ${e.message}`)
+        process.exit(1) // Exit with error
+    }
+}
 
 const generateThemeExtension = (colors: Record<string, string>): string => {
     let themeExtension = `import type { CustomThemeConfig } from "tailwindcss/types/config"
@@ -49,9 +76,10 @@ export const theme: Partial<CustomThemeConfig & { extend: Partial<CustomThemeCon
 }
 
 const main = () => {
+    const primitiveColors = parsePrimitiveCss(__dirname + '/../styles/primitives.css')
     const lightColors = parseCss(__dirname + '/../styles/light-colors.css')
     const componentColors = parseCss(__dirname + '/../styles/component-colors.css')
-    const allColors = { ...lightColors, ...componentColors }
+    const allColors = { ...primitiveColors, ...lightColors, ...componentColors }
     const themeContent = generateThemeExtension(allColors)
 
     fs.writeFileSync(__dirname + '/../config/theme.ts', themeContent, 'utf-8')
