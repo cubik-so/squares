@@ -57,9 +57,11 @@
         "typescript": "^5.2.2"
     },
     "dependencies": {
+        "@radix-ui/react-dialog": "^1.0.5",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
         "framer-motion": "^11.0.20",
+        "ts-node": "^10.9.2",
         "tsup": "^8.0.2"
     }
 }

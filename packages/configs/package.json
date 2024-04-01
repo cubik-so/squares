@@ -36,5 +36,8 @@
         "prettier-plugin-tailwindcss": "^0.5.12",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.4.3"
+    },
+    "dependencies": {
+        "eslint-import-resolver-typescript": "^3.6.1"
     }
 }

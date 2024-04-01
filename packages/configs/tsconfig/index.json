@@ -1,25 +1,23 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
+        "outDir": "./dist",
+        "baseUrl": ".",
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "checkJs": true,
-        "declaration": true,
         "esModuleInterop": true,
+        "declaration": true,
+        "sourceMap": true,
+        "target": "ES5",
+        "lib": ["DOM", "DOM.Iterable", "ES2022"],
         "forceConsistentCasingInFileNames": true,
         "isolatedModules": true,
-        "lib": ["DOM", "DOM.Iterable", "ES2022"],
-        "module": "NodeNext",
-        "noEmit": true,
-        "noImplicitReturns": true,
-        "noUncheckedIndexedAccess": true,
-        "noUnusedLocals": false,
-        "noUnusedParameters": true,
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
+        "noEmit": false,
         "strict": true,
-        "target": "ES2020"
-    }
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "module": "CommonJS",
+        "moduleResolution": "node"
+    },
+    "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

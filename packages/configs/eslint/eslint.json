@@ -68,6 +68,12 @@
         "sort-imports": ["error", { "ignoreDeclarationSort": true }]
     },
     "settings": {
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": ["./apps/*/tsconfig.json", "./packages/*/tsconfig.json"]
+            }
+        },
         "import/parsers": {
             "@typescript-eslint/parser": [".ts", ".tsx"]
         },
