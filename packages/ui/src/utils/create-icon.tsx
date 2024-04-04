@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 interface IconOptions extends React.SVGProps<SVGSVGElement> {
     displayName: string
@@ -11,23 +11,35 @@ interface IconOptions extends React.SVGProps<SVGSVGElement> {
 export function CreateIcon(options: IconOptions) {
     const { viewBox, paths, displayName, color } = options
 
+    console.log('color', color)
+
     const renderedPaths = paths.map((value, index) => (
         <path
             key={index}
-            // fillRule="evenodd"
-            // clipRule="evenodd"
             d={value.d}
-            fill={value.fill ? color : 'none'} // default to 'none' if fill is not true
-            stroke={value.stroke ? color : 'none'} // default to 'none' if stroke is not true
+            fill={value.fill ? color : 'none'}
+            stroke={value.stroke ? color : 'none'}
             opacity={value.opacity || 1}
         />
     ))
 
-    const Comp = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, ref) => (
-        <svg ref={ref} width="24" height="24" viewBox={viewBox} fill="none" {...props}>
+    const Comp = (props: any) => (
+        <svg
+            width="24"
+            height="24"
+            viewBox={viewBox}
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            clipRule="evenodd"
+            fillRule="evenodd"
+            {...props}
+        >
             {renderedPaths}
         </svg>
-    ))
+    )
 
     Comp.displayName = displayName
 

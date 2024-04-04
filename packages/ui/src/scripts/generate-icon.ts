@@ -43,12 +43,13 @@ const main = () => {
                     ${pathsString}
                 ],
                 viewBox: '${icon.viewBox}',
+                color,
                 ...props,
             })
 
     // If you need to pass a ref to the CreateIcon result, you must handle it inside CreateIcon.
     // This example assumes CreateIcon does not use the ref.
-    return <>{IconElement}</>
+    return <IconElement/>
 }
 
 export const ${icon.displayName} = forwardRef(IconComponent)

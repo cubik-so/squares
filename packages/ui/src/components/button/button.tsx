@@ -5,6 +5,7 @@ import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Text } from '@components/text/text'
 import { cn } from '@utils/cn'
+import Icon from '@/icons'
 import type { VariantProps } from 'class-variance-authority'
 
 interface ButtonProps
@@ -86,6 +87,7 @@ export const Button = ({
     size = 'md',
     ...props
 }: ButtonProps) => {
+    console.log('leftIconName', leftIconName)
     return (
         <button
             className={cn(
@@ -93,19 +95,22 @@ export const Button = ({
                 buttonVariants({ variant, size }),
                 `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
+            {...props}
         >
-            {/* {leftIconName && (
+            {/* <Plus color="#000" /> */}
+            {leftIconName && (
                 <Icon
-                    color={
-                        props.disabled
-                            ? 'var(--button-outline-text-disabled)'
-                            : iconColorVariants({ variant })
-                    }
+                    color="#000"
+                    // color={
+                    //     props.disabled
+                    //         ? 'var(--button-outline-text-disabled)'
+                    //         : iconColorVariants({ variant })
+                    // }
                     name={leftIconName}
                     // {...getIconSize(size)}
                     //  className={'lr-1'}
                 />
-            )} */}
+            )}
             <Text className={buttonVariants({ size })} color="inherit">
                 <AnimatePresence initial={true} mode={'wait'}>
                     <motion.div

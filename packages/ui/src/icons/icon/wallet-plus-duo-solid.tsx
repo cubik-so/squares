@@ -22,12 +22,13 @@ const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
             { d: 'M19 22V19M19 19V16M19 19H16M19 19H22', fill: false, stroke: true },
         ],
         viewBox: '0 0 24 24',
+        color,
         ...props,
     })
 
     // If you need to pass a ref to the CreateIcon result, you must handle it inside CreateIcon.
     // This example assumes CreateIcon does not use the ref.
-    return <>{IconElement}</>
+    return <IconElement />
 }
 
 export const WalletPlusDuoSolid = forwardRef(IconComponent)

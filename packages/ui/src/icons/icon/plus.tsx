@@ -14,12 +14,13 @@ const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
         displayName: 'Plus',
         paths: [{ d: 'M12 19v-7m0 0V5m0 7H5m7 0h7', fill: false, stroke: true }],
         viewBox: '0 0 24 24',
+        color,
         ...props,
     })
 
     // If you need to pass a ref to the CreateIcon result, you must handle it inside CreateIcon.
     // This example assumes CreateIcon does not use the ref.
-    return <>{IconElement}</>
+    return <IconElement />
 }
 
 export const Plus = forwardRef(IconComponent)
