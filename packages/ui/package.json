@@ -36,9 +36,15 @@
             "types": "./lib/config/theme.d.ts"
         },
         "./icons": {
-            "import": "./lib/icons.mjs",
-            "require": "./lib/icons.js",
-            "types": "./lib/icons.d.ts"
+            "source": "./src/icons/index.tsx",
+            "import": {
+                "types": "./lib/icons/index.d.ts",
+                "default": "./lib/icons/index.mjs"
+            },
+            "require": {
+                "types": "./lib/icons/index.d.ts",
+                "default": "./lib/icons/index.js"
+            }
         }
     },
     "devDependencies": {

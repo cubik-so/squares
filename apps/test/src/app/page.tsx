@@ -1,8 +1,6 @@
 'use client'
 import { Button } from '@squares/ui'
-import { Button } from '@squares/ui/'
-
-import Image from 'next/image'
+import Icon from '@squares/ui/icons'
 
 export default function Home() {
     return (

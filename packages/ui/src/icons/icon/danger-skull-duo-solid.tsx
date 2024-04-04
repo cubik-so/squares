@@ -1,12 +1,16 @@
+import React, { forwardRef } from 'react'
 import { CreateIcon } from '../../utils/create-icon'
-import type React from 'react'
 
 interface Props extends React.SVGProps<SVGSVGElement> {
     color?: string
 }
 
-export const DangerSkullDuoSolid = (props: Props) =>
-    CreateIcon({
+const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
+    { color, ...props },
+    ref,
+) => {
+    // Assuming CreateIcon returns a ReactElement
+    const IconElement = CreateIcon({
         displayName: 'DangerSkullDuoSolid',
         paths: [
             {
@@ -29,3 +33,10 @@ export const DangerSkullDuoSolid = (props: Props) =>
         viewBox: '0 0 45 45',
         ...props,
     })
+
+    // If you need to pass a ref to the CreateIcon result, you must handle it inside CreateIcon.
+    // This example assumes CreateIcon does not use the ref.
+    return <>{IconElement}</>
+}
+
+export const DangerSkullDuoSolid = forwardRef(IconComponent)

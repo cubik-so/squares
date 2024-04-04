@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Text } from '@components/text/text'
 import { cn } from '@utils/cn'
 import type { VariantProps } from 'class-variance-authority'
-import { Icon } from '@/icons'
 
 interface ButtonProps
     extends React.DetailedHTMLProps<
