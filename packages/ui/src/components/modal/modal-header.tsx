@@ -40,7 +40,7 @@ export const ModalHeader = ({ size, className, background, heading, children, on
                 background ? 'bg-modal-header-surface' : background,
             )}
         >
-            <Text variant="">{heading ? heading : ''}</Text>
+            {/* <Text variant="">{heading ? heading : ''}</Text> */}
             {children}
             <motion.button
                 whileHover={{ scale: 1.2 }}

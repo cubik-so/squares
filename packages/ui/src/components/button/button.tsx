@@ -1,173 +1,125 @@
+'use client'
+
+import { cva } from 'class-variance-authority'
 import React from 'react'
-import { motion } from 'framer-motion'
-import { cn } from '@utils/cn'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Text } from '@components/text/text'
-import type { ClassValue } from 'clsx'
-
-type ButtonVariantType =
-    | 'primary'
-    | 'secondary'
-    | 'outline'
-    | 'link'
-    | 'tertiary'
-    | 'danger'
-    | 'success'
-    | 'unStyled'
-
-type ButtonSizeType = '2xl' | 'xl' | 'lg' | 'md' | 'sm'
-
-const baseClass =
-    'rounded-lg transform active:scale-95 transition-all whitespace-nowrap flex items-center justify-center  pointer-events-auto w-[fit-content]  gap-[6px] focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none'
-
-/*
- * Button component variants
- */
-const buttonVariants: {
-    [key in ButtonVariantType]: ClassValue
-} = {
-    primary:
-        'bg-button-primary-surface-default hover:bg-button-primary-surface-hovered !text-button-primary-text-default hover:!text-button-primary-text-hovered !stroke-button-primary-text-default hover:!stroke-button-primary-text-hovered  focus:!text-button-primary-text-focused disabled:bg-button-primary-surface-disabled disabled:!text-button-primary-text-disabled disabled:!stroke-button-primary-text-disabled disabled:cursor-not-allowed  l2-heavy',
-
-    secondary:
-        'bg-button-secondary-surface-default hover:bg-button-secondary-surface-hovered !text-button-secondary-text-default hover:!text-button-secondary-text-hovered !stroke-button-secondary-text-default hover:!stroke-button-secondary-text-hovered focus:border-2 focus:border-button-secondary-border-focused focus:!text-button-secondary-text-focused disabled:cursor-not-allowed  stroke-button-secondary-text-default',
-
-    outline:
-        'bg-button-secondary-outline-default border border-button-outline-border-default hover:bg-button-outline-surface-hovered !text-button-outline-text-default hover:!text-button-outline-text-hovered !stroke-button-outline-text-default hover:!stroke-button-outline-text-hovered focus-visible:border focus-visible:border-button-outline-border-default focus:!text-button-outline-text-focused disabled:bg-button-outline-surface-disabled disabled:!text-button-outline-text-disabled disabled:!stroke-button-outline-text-disabled disabled:cursor-not-allowed  !text-button-outline-text-default',
-
-    link: 'bg-transparent hover:bg-transparent underline underline-offset-4 decoration-button-link-text-default !text-button-link-text-default hover:!text-button-link-text-hovered !stroke-button-link-text-default hover:!stroke-button-link-text-hovered disabled:bg-button-link-surface-disabled disabled:!text-button-link-text-disabled disabled:!stroke-button-link-text-disabled disabled:cursor-not-allowed ',
-
-    tertiary:
-        'bg-transparent hover:bg-transparent !text-color-fg-primary-subdued hover:!text-button-link-text-hovered !stroke-button-link-text-default hover:!stroke-button-link-text-hovered focus:!text-button-link-text-focused disabled:bg-button-link-surface-disabled disabled:!text-button-link-text-disabled disabled:!stroke-button-link-text-disabled disabled:cursor-not-allowed ',
-
-    danger: 'bg-button-danger-surface-default hover:bg-button-danger-surface-hovered !text-button-danger-text-default hover:!text-button-danger-text-hovered !stroke-button-danger-text-default hover:!stroke-button-danger-text-hovered focus:border-2 focus:border-button-danger-border-focused focus:!text-button-danger-text-focused disabled:bg-button-danger-surface-disabled disabled:!text-button-danger-text-disabled disabled:!stroke-button-danger-text-disabled disabled:cursor-not-allowed !text-button-danger-text-default',
-
-    success:
-        'bg-button-success-surface-default hover:bg-button-success-surface-hovered !text-button-success-text-default hover:!text-button-success-text-hovered !stroke-button-success-text-default hover:!stroke-button-success-text-hovered focus:border-2 focus:border-button-success-border-focused focus:!text-button-success-text-focused disabled:bg-button-success-surface-disabled disabled:!text-button-success-text-disabled disabled:!stroke-button-success-text-disabled disabled:cursor-not-allowed !text-button-success-text-default',
-
-    unStyled: '',
-}
-
-/*
- * Button component size variants
- */
-const buttonSizeVariants: {
-    [key in ButtonSizeType]: string
-} = {
-    '2xl': 'h-11 md:h-12',
-    xl: 'h-[38px] md:h-12',
-    lg: 'h-9 md:h-11',
-    md: 'h-8 md:h-10',
-    sm: 'h-7 md:h-9',
-}
-
-/*
- * Button icon color variants
- */
-const buttonIconColorVariants: {
-    [key in ButtonVariantType]: string
-} = {
-    primary: 'var(--button-primary-text-default)',
-    secondary: 'var(--button-secondary-text-default)',
-    outline: 'var(--button-outline-text-default)',
-    link: 'var(--button-link-text-default)',
-    tertiary: 'var(--button-link-text-default)',
-    danger: 'var(--button-danger-text-default)',
-    success: 'var(--button-success-text-default)',
-    unStyled: 'inherit',
-}
-
-/*
- * Button text color variants
- */
-const buttonTextVariants: {
-    [key in ButtonSizeType]: string
-} = { '2xl': 'b1 md:l1', xl: 'b2 md:l2', lg: 'b3 md:l2', md: 'l1 md:l2', sm: 'l2 md:l3' }
+import { cn } from '@utils/cn'
+import type { VariantProps } from 'class-variance-authority'
+import { Icon } from '@/icons'
 
 interface ButtonProps
     extends React.DetailedHTMLProps<
-        React.ButtonHTMLAttributes<HTMLButtonElement>,
-        HTMLButtonElement
-    > {
-    variant?: ButtonVariantType
-    size?: ButtonSizeType
-    loading?: boolean
-    loadingText?: string
+            React.ButtonHTMLAttributes<HTMLButtonElement>,
+            HTMLButtonElement
+        >,
+        VariantProps<typeof buttonVariants> {
+    isLoading?: boolean
+    LoadingText?: string
+    children?: React.ReactNode
+    leftIconName?: string
+    rightIconName?: string
 }
 
-// todo - missing loading state, children, and other conditions
+const buttonVariants = cva('flex items-center justify-center', {
+    variants: {
+        variant: {
+            primary:
+                'bg-button-primary-surface-default text-button-primary-text-default hover:bg-button-primary-surface-hovered hover:!text-button-primary-text-hovered disabled:bg-button-primary-surface-disabled disabled:!text-button-primary-text-disabled',
+            secondary:
+                'bg-button-secondary-surface-default text-button-secondary-text-default hover:bg-button-secondary-surface-hovered hover:!text-button-secondary-text-hovered disabled:bg-button-secondary-surface-disabled disabled:!text-button-secondary-text-disabled',
+            outline:
+                'bg-button-outline-surface-default text-button-outline-text-default border border-button-outline-border-default hover:bg-button-outline-surface-hovered hover:!text-button-outline-text-hovered disabled:bg-button-outline-surface-disabled disabled:!text-button-outline-text-disabled',
+            link: 'bg-button-link-surface-default text-button-link-text-default underline underline-offset-4 decoration-button-link-text-default hover:bg-button-link-surface-hovered hover:!text-button-link-text-hovered hover:decoration-button-link-text-hovered disabled:bg-button-link-surface-disabled disabled:!text-button-link-text-disabled',
+            tertiary:
+                'bg-button-tertiary-surface-default text-button-tertiary-text-default hover:bg-button-tertiary-surface-hovered hover:!text-button-tertiary-text-hovered disabled:bg-button-tertiary-surface-disabled disabled:!text-button-tertiary-text-disabled',
+            danger: 'bg-button-danger-surface-default text-button-danger-text-default hover:bg-button-danger-surface-hovered hover:!text-button-danger-text-hovered disabled:bg-button-danger-surface-disabled disabled:!text-button-danger-text-disabled',
+            success:
+                'bg-button-success-surface-default text-button-success-text-default hover:bg-button-success-surface-hovered hover:!text-button-success-text-hovered disabled:bg-button-success-surface-disabled disabled:!text-button-success-text-disabled',
+        },
+        size: {
+            '2xl': 'b1 md:l1 h-11 md:h-12',
+            xl: 'b2 md:l2 h-[38px] md:h-12',
+            lg: 'b3 md:l2 h-9 md:h-11',
+            md: 'l1 md:l2 h-8 md:h-10',
+            sm: 'l2 md:l3 h-7 md:h-9',
+        },
+    },
+})
+const iconColorVariants = cva('', {
+    variants: {
+        variant: {
+            primary: 'button-primary-text-default',
+            secondary: 'button-secondary-text-default',
+            outline: 'button-outline-text-default',
+            link: 'button-link-text-default',
+            tertiary: 'button-link-text-default',
+            danger: 'button-danger-text-default',
+            success: 'button-success-text-default',
+            unStyled: 'inherit',
+        },
+    },
+})
+
+const getIconSize = (size: string | null | undefined) => {
+    switch (size) {
+        case '2xl':
+            return { height: 20, width: 20, strokeWidth: 2.5 }
+        case 'xl':
+            return { height: 20, width: 20, strokeWidth: 2.3 }
+        case 'lg':
+            return { height: 18, width: 18, strokeWidth: 2.2 }
+        case 'md':
+            return { height: 16, width: 16, strokeWidth: 2 }
+        case 'sm':
+            return { height: 14, width: 14, strokeWidth: 1.8 }
+        default:
+            return { height: 16, width: 16, strokeWidth: 2 } // Default size
+    }
+}
+
 export const Button = ({
     variant = 'primary',
+    isLoading,
+    LoadingText,
+    children,
+    leftIconName,
     size = 'md',
-    loading = false,
-    loadingText = undefined,
-    className = '',
     ...props
-}: ButtonProps): React.ReactNode => {
-    const isDisabled = loading || props.disabled
-
-    const innerButton = () => {
-        if (!loading) {
-            return (
-                <Text color="inherit" variant={buttonTextVariants[size]}>
-                    {props.children}
-                </Text>
-            )
-        }
-
-        return (
-            <div className="flex flex-row gap-2">
-                <div className="flex items-center justify-center">
-                    <motion.div
-                        animate={{ rotate: 360, scale: 1 }}
-                        transition={{
-                            repeat: Infinity,
-                            ease: 'linear',
-                            duration: 1,
-                        }}
-                    >
-                        <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <circle
-                                cx="9"
-                                cy="9"
-                                r="7"
-                                stroke="currentColor"
-                                strokeOpacity="0.1"
-                                strokeWidth="2.5"
-                            />
-                            <path
-                                d="M16 9C16 5.13401 12.866 2 9 2"
-                                stroke="currentColor"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </motion.div>
-                </div>
-                <Text variant={buttonTextVariants[size]} color="inherit">
-                    {loadingText ? loadingText : props.children}
-                </Text>
-            </div>
-        )
-    }
-
+}: ButtonProps) => {
     return (
         <button
             className={cn(
-                baseClass,
-                buttonVariants[variant || 'primary'],
-                buttonSizeVariants[size || 'md'],
-                className,
+                'btn-basic',
+                buttonVariants({ variant, size }),
+                `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
-            disabled={isDisabled}
-            {...props}
         >
-            {innerButton()}
+            {/* {leftIconName && (
+                <Icon
+                    color={
+                        props.disabled
+                            ? 'var(--button-outline-text-disabled)'
+                            : iconColorVariants({ variant })
+                    }
+                    name={leftIconName}
+                    // {...getIconSize(size)}
+                    //  className={'lr-1'}
+                />
+            )} */}
+            <Text className={buttonVariants({ size })} color="inherit">
+                <AnimatePresence initial={true} mode={'wait'}>
+                    <motion.div
+                        key={LoadingText?.toString()}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="flex items-center justify-center"
+                    >
+                        {isLoading ? LoadingText : children}
+                    </motion.div>
+                </AnimatePresence>
+            </Text>
         </button>
     )
 }
