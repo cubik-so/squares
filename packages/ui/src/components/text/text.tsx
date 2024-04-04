@@ -1,6 +1,43 @@
 import React from 'react'
-import { cn } from '../../utils/cn' // todo - Fix the import resolve issue
+import { cva } from 'class-variance-authority'
+import { cn } from '../../utils/cn'
+import type { VariantProps } from 'class-variance-authority'
 import type { ClassValue } from 'clsx'
+
+const headingVariant = cva('antialiased', {
+    variants: {
+        color: {
+            primary: 'text-[var(--color-fg-primary-depth)]',
+            secondary: 'text-[var(--color-fg-primary-base)]',
+            tertiary: 'text-[var(--color-fg-primary-subdued)]',
+            positive: 'text-[var(--color-fg-positive-emphasis)]',
+            negative: 'text-[var(--color-fg-negative-base)]',
+            info: 'text-[var(--color-fg-info-base)]',
+            caution: 'text-[var(--color-fg-caution-emphasis)]',
+            alert: 'text-[var(--color-fg-alert-base)]',
+            innovative: 'text-[var(--color-fg-innovative-base)]',
+            inherit: '',
+            inverse: 'text-[var(--color-fg-primary-inverse)]',
+            placeholder: 'text-[var(--form-input-placeholder-default)]',
+        },
+    },
+    defaultVariants: {
+        color: 'inherit',
+    },
+})
+
+interface TextProps extends VariantProps<typeof headingVariant> {
+    children: React.ReactNode
+    className?: ClassValue
+}
+
+export const Text = ({ children, color, className }: TextProps) => {
+    return <p className={cn(className, headingVariant({ color }))}>{children}</p>
+}
+
+// import React from 'react'
+// import { cn } from '../../utils/cn' // todo - Fix the import resolve issue
+// import type { ClassValue } from 'clsx'
 
 // /*
 //  * Text component size variants type h
@@ -64,46 +101,46 @@ import type { ClassValue } from 'clsx'
 /*
  * Text component color variants
  */
-type TextColorVariants =
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'positive'
-    | 'negative'
-    | 'info'
-    | 'caution'
-    | 'alert'
-    | 'innovative'
-    | 'placeholder'
-    | 'inverse'
-    | 'inherit'
+// type TextColorVariants =
+//     | 'primary'
+//     | 'secondary'
+//     | 'tertiary'
+//     | 'positive'
+//     | 'negative'
+//     | 'info'
+//     | 'caution'
+//     | 'alert'
+//     | 'innovative'
+//     | 'placeholder'
+//     | 'inverse'
+//     | 'inherit'
 
-/*
- * Text component color variants
- */
-const textColorVariants: {
-    [key in TextColorVariants]: ClassValue
-} = {
-    primary: 'text-color-fg-primary-depth',
-    secondary: 'text-color-fg-primary-base',
-    tertiary: 'text-color-fg-primary-subdued',
-    positive: 'text-color-fg-positive-emphasis',
-    negative: 'text-color-fg-negative-base',
-    info: 'text-color-fg-info-base',
-    caution: 'text-color-fg-caution-emphasis',
-    alert: 'text-color-fg-alert-base',
-    innovative: 'text-color-fg-innovative-base',
-    inherit: '',
-    inverse: 'text-color-fg-primary-inverse',
-    placeholder: 'text-form-input-placeholder-default',
-}
+// /*
+//  * Text component color variants
+//  */
+// const textColorVariants: {
+//     [key in TextColorVariants]: ClassValue
+// } = {
+//     primary: 'text-color-fg-primary-depth',
+//     secondary: 'text-color-fg-primary-base',
+//     tertiary: 'text-color-fg-primary-subdued',
+//     positive: 'text-color-fg-positive-emphasis',
+//     negative: 'text-color-fg-negative-base',
+//     info: 'text-color-fg-info-base',
+//     caution: 'text-color-fg-caution-emphasis',
+//     alert: 'text-color-fg-alert-base',
+//     innovative: 'text-color-fg-innovative-base',
+//     inherit: '',
+//     inverse: 'text-color-fg-primary-inverse',
+//     placeholder: 'text-form-input-placeholder-default',
+// }
 
-interface TextProps {
-    // todo - Fix the variant type, can't resolve the type with media queries
-    variant: string
-    color?: TextColorVariants
-    children: React.ReactNode
-}
-export const Text = ({ children, color, variant }: TextProps) => {
-    return <p className={cn(textColorVariants[color || 'inherit'], variant)}>{children}</p>
-}
+// interface TextProps {
+//     // todo - Fix the variant type, can't resolve the type with media queries
+//     variant: string
+//     color?: TextColorVariants
+//     children: React.ReactNode
+// }
+// export const Text = ({ children, color, variant }: TextProps) => {
+//     return <p className={cn(textColorVariants[color || 'inherit'], variant)}>{children}</p>
+// }
