@@ -1,5 +1,5 @@
 'use client'
-import { Button, Modal } from '@squares/ui'
+import { Button, Modal, ModalHeader } from '@squares/ui'
 import { useState } from 'react'
 
 export default function Home() {
@@ -22,6 +22,7 @@ export default function Home() {
 
             {open && (
                 <Modal open={open} className="" onClose={() => setOpen(false)} size="lg">
+                    <ModalHeader heading="jkhjhjhk" />
                     <p>askjdhfjkahsdf</p>
                     <p>askjdhfjkahsdf</p>
                     <p>askjdhfjkahsdf</p>

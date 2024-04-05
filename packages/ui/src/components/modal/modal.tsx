@@ -6,13 +6,13 @@ import { cn } from '@utils/cn'
 import type { ReactNode } from 'react'
 
 export const DialogSize = {
-    sm: `w-[410px]  w-fit rounded-[12px] dark:shadow-lg `,
-    md: 'w-[500px]  rounded-[12px] dark:shadow-lg',
-    lg: 'w-[600px]  rounded-[16px] dark:shadow-xl',
-    xl: 'xl:w-[980px] 2xl:w-[1152px]  rounded-[24px] shadow-2xl dark:shadow-black',
+    sm: 'w-[410px]  w-fit rounded-[12px] dark:shadow-lg p-4',
+    md: 'w-[500px]  rounded-[12px] dark:shadow-lg p-4 md:p-6',
+    lg: 'w-[600px]  rounded-[16px] dark:shadow-xl p-6',
+    xl: 'xl:w-[980px] 2xl:w-[1152px]  rounded-[24px] shadow-2xl dark:shadow-black p-6',
 }
 
-const modalContentVariants = cva('p-6', {
+const modalContentVariants = cva('', {
     variants: {
         dialogSize: DialogSize,
     },
