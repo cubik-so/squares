@@ -9,9 +9,7 @@ interface IconOptions extends React.SVGProps<SVGSVGElement> {
 }
 
 export function CreateIcon(options: IconOptions) {
-    const { viewBox, paths, displayName, color } = options
-
-    console.log('color', color)
+    const { viewBox, paths, displayName, color, height, width, strokeWidth } = options
 
     const renderedPaths = paths.map((value, index) => (
         <path
@@ -25,8 +23,8 @@ export function CreateIcon(options: IconOptions) {
 
     const Comp = (props: any) => (
         <svg
-            width="24"
-            height="24"
+            width={width ?? '24'}
+            height={height ?? '24'}
             viewBox={viewBox}
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid meet"
@@ -35,6 +33,7 @@ export function CreateIcon(options: IconOptions) {
             fill="none"
             clipRule="evenodd"
             fillRule="evenodd"
+            strokeWidth={strokeWidth}
             {...props}
         >
             {renderedPaths}

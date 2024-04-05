@@ -7,7 +7,14 @@ export default function Home() {
             <Button size="lg" variant="outline" leftIconName="plus">
                 asdfsa
             </Button>
-            <Button size="lg" variant="primary" disabled>
+            <Button
+                size="lg"
+                variant="primary"
+                isLoading={true}
+                leftIconName="plus"
+                loadingText="kladjsf aksdh"
+                rightIconName="plus"
+            >
                 asdfsa
             </Button>
 

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Text } from '@components/text/text'
 import { cn } from '@utils/cn'
 import Icon from '@/icons'
+import LoadingIcon from './loading-icon'
 import type { VariantProps } from 'class-variance-authority'
 
 interface ButtonProps
@@ -15,7 +16,7 @@ interface ButtonProps
         >,
         VariantProps<typeof buttonVariants> {
     isLoading?: boolean
-    LoadingText?: string
+    loadingText?: string
     children?: React.ReactNode
     leftIconName?: string
     rightIconName?: string
@@ -46,6 +47,7 @@ const buttonVariants = cva('flex items-center justify-center', {
         },
     },
 })
+
 const iconColorVariants = cva('', {
     variants: {
         variant: {
@@ -81,15 +83,16 @@ const getIconSize = (size: string | null | undefined) => {
 export const Button = ({
     variant = 'primary',
     isLoading,
-    LoadingText,
+    loadingText,
     children,
     leftIconName,
+    rightIconName,
     size = 'md',
     ...props
 }: ButtonProps) => {
     console.log('leftIconName', leftIconName)
     return (
-        <button
+        <motion.button
             className={cn(
                 'btn-basic',
                 buttonVariants({ variant, size }),
@@ -97,33 +100,68 @@ export const Button = ({
             )}
             {...props}
         >
-            {/* <Plus color="#000" /> */}
-            {leftIconName && (
+            {/* Left Icon  */}
+            {leftIconName && !isLoading && (
                 <Icon
+                    color="#000"
+                    // color={
+                    //     props.disabled
+                    //         ? 'button-outline-text-disabled'
+                    //         : iconColorVariants({ variant })
+                    // }
+                    name={leftIconName}
+                    {...getIconSize(size)}
+                />
+            )}
+
+            {/* Loading */}
+            {isLoading && (
+                <motion.div
+                    layout
+                    layoutId="loading-spinner"
+                    className="flex items-center justify-center"
+                >
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{
+                            repeat: Infinity,
+                            ease: 'linear',
+                            duration: 1,
+                        }}
+                    >
+                        <LoadingIcon />
+                    </motion.div>
+                </motion.div>
+            )}
+
+            {/* Button Text */}
+            <Text className={buttonVariants({ size })} color="inherit">
+                <AnimatePresence initial={true} mode={'wait'}>
+                    <motion.div
+                        key={loadingText?.toString()}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="flex items-center justify-center"
+                    >
+                        {isLoading ? loadingText : children}
+                    </motion.div>
+                </AnimatePresence>
+            </Text>
+
+            {/* Right Icon */}
+            {rightIconName && !isLoading && (
+                <Icon
+                    name={rightIconName}
+                    {...getIconSize(size)}
                     color="#000"
                     // color={
                     //     props.disabled
                     //         ? 'var(--button-outline-text-disabled)'
                     //         : iconColorVariants({ variant })
                     // }
-                    name={leftIconName}
-                    // {...getIconSize(size)}
-                    //  className={'lr-1'}
                 />
             )}
-            <Text className={buttonVariants({ size })} color="inherit">
-                <AnimatePresence initial={true} mode={'wait'}>
-                    <motion.div
-                        key={LoadingText?.toString()}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="flex items-center justify-center"
-                    >
-                        {isLoading ? LoadingText : children}
-                    </motion.div>
-                </AnimatePresence>
-            </Text>
-        </button>
+        </motion.button>
     )
 }
