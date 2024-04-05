@@ -1,36 +1,54 @@
 import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import * as Dialog from '@radix-ui/react-dialog'
-// import { cn } from '@utils/cn'
+import { cva } from 'class-variance-authority'
+import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@utils/cn'
-import type { ClassValue } from 'clsx'
+import type { ReactNode } from 'react'
 
 export const DialogSize = {
-    sm: `w-[410px] top-[15%] w-fit rounded-[12px] dark:shadow-lg `,
-    md: 'w-[500px] top-[15%] rounded-[12px] dark:shadow-lg',
-    lg: 'w-[600px] top-[15%] rounded-[16px] dark:shadow-xl',
-    xl: 'xl:w-[980px] 2xl:w-[1152px] top-[10%] rounded-[24px] shadow-2xl dark:shadow-black',
+    sm: `w-[410px]  w-fit rounded-[12px] dark:shadow-lg `,
+    md: 'w-[500px]  rounded-[12px] dark:shadow-lg',
+    lg: 'w-[600px]  rounded-[16px] dark:shadow-xl',
+    xl: 'xl:w-[980px] 2xl:w-[1152px]  rounded-[24px] shadow-2xl dark:shadow-black',
 }
 
-export type ModalSizeType = keyof typeof DialogSize
+const modalContentVariants = cva('p-6', {
+    variants: {
+        dialogSize: DialogSize,
+    },
+    defaultVariants: {
+        dialogSize: 'sm',
+    },
+})
 
 interface Props {
-    children: React.ReactNode
     open: boolean
-    size: ModalSizeType
-    className: ClassValue
     onClose: () => void
+    dialogSize: 'sm' | 'md' | 'lg' | 'xl'
+    children: ReactNode | React.JSX.Element
+    className?: string
+    disableBackdropClick?: boolean
 }
-export const Modal = ({ size, open, onClose, className, children }: Props) => {
+
+export const Modal = ({
+    open,
+    onClose,
+    dialogSize = 'sm',
+    children,
+    className,
+    disableBackdropClick = false,
+}: Props) => {
     return (
         <Dialog.Root open={open}>
             <AnimatePresence>
-                {/*
-           Portal to render component
-        */}
-                <Dialog.Portal key={'dialog portal'} forceMount>
-                    {/* Modal Overlay background  */}
-                    <Dialog.Overlay asChild>
+                <Dialog.Portal>
+                    <Dialog.Overlay
+                        className="bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0"
+                        onClick={() => {
+                            if (disableBackdropClick) return
+                            onClose()
+                        }}
+                    >
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -45,45 +63,14 @@ export const Modal = ({ size, open, onClose, className, children }: Props) => {
                             onClick={onClose}
                         />
                     </Dialog.Overlay>
-                    <Dialog.Content asChild className="h-fit">
-                        <motion.div
-                            layout
-                            initial={{
-                                opacity: 0,
-                                scale: 0.95,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                scale: 1,
-                            }}
-                            exit={{
-                                opacity: 0,
-                                scale: 0.95,
-                                transition: {
-                                    opacity: {
-                                        duration: 0.3,
-                                    },
-                                },
-                            }}
-                            transition={{
-                                opacity: {
-                                    duration: 0.2,
-                                },
-                                scale: {
-                                    duration: 0.2,
-                                },
-                                type: 'spring',
-                                stiffness: 250,
-                                damping: 20,
-                            }}
-                            className={cn(
-                                `fixed mx-auto bottom-[70%] right-0 left-0 h-fit max-h-[90vh] bg-modal-body-surface focus:outline-none `,
-                                DialogSize[size || 'md'],
-                                className,
-                            )}
-                        >
-                            {children}
-                        </motion.div>
+                    <Dialog.Content
+                        className={cn(
+                            `fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] bg-modal-body-surface translate-x-[-50%] translate-y-[-50%] focus:outline-none`,
+                            modalContentVariants({ dialogSize }),
+                            className,
+                        )}
+                    >
+                        {children}
                     </Dialog.Content>
                 </Dialog.Portal>
             </AnimatePresence>
