@@ -11,7 +11,10 @@
         "dev:ui": "pnpm run dev --filter=@squares/ui",
         "generate:icons": "turbo run generate:icons --filter=@squares/ui && pnpm run format",
         "create:theme": "turbo run create:theme --filter=@squares/ui",
-        "prepare": "husky"
+        "prepare": "husky",
+        "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+        "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+        "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'chore: updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
     },
     "devDependencies": {
         "@squares/configs": "workspace:*",
@@ -34,6 +37,7 @@
         "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
         "dotenv": "^16.4.5",
         "dotenv-cli": "^7.4.1",
+        "generate-changelog": "^1.8.0",
         "husky": "^9.0.11"
     }
 }
