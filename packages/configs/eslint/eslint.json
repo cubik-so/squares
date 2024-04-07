@@ -1,7 +1,7 @@
 {
     "root": true,
     "reportUnusedDisableDirectives": true,
-    "ignorePatterns": ["**/build", "**/coverage", "**/dist", ".eslintrc.js"],
+    "ignorePatterns": ["**/build", "**/coverage", "**/dist", ".eslintrc.js", "sync-version.js"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "project": ["./apps/*/tsconfig.json", "./packages/*/tsconfig.json"]
