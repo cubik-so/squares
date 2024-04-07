@@ -1,5 +1,24 @@
 import React from 'react'
 
+/**
+ * A LoadingIcon component that renders a SVG loading indicator.
+ * This component displays a circular icon intended to depict a loading state in the UI.
+ *
+ * The SVG consists of two main parts:
+ * 1. A greyed-out circle that serves as a background.
+ * 2. A semi-circle that visually represents progress or loading activity.
+ *
+ * The icon uses `currentColor` for its stroke to inherit the color from its parent's text color,
+ * making it flexible for use in various places across an interface.
+ *
+ * Props:
+ * - None
+ *
+ * Example Usage:
+ * ```jsx
+ * <LoadingIcon />
+ * ```
+ */
 const LoadingIcon = () => {
     return (
         <svg

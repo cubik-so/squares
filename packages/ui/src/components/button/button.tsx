@@ -9,6 +9,28 @@ import Icon from '@/icons'
 import LoadingIcon from './loading-icon'
 import type { VariantProps } from 'class-variance-authority'
 
+/**
+ * Button component leveraging advanced CSS handling with `class-variance-authority` for styling
+ * and `framer-motion` for animation effects. This component serves as a flexible button
+ * with various styles and sizes, optional loading states, and icons.
+ *
+ * Props:
+ * - `variant`: Defines the style of the button based on pre-defined variant classes.
+ * - `isLoading`: If true, displays a loading spinner and optional loading text.
+ * - `loadingText`: Text to display next to the loading spinner if `isLoading` is true.
+ * - `children`: Content to be displayed in the button.
+ * - `leftIconName`: Name of the icon to be displayed on the left side of the button content.
+ * - `rightIconName`: Name of the icon to be displayed on the right side of the button content.
+ * - `size`: Size variant of the button which affects padding and potentially icon sizes.
+ * - All other props are spread onto the button element itself.
+ *
+ * Usage:
+ * ```jsx
+ * <Button variant="primary" size="lg" isLoading>
+ *   Click me
+ * </Button>
+ * ```
+ */
 interface ButtonProps
     extends React.DetailedHTMLProps<
             React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -90,78 +112,38 @@ export const Button = ({
     size = 'md',
     ...props
 }: ButtonProps) => {
-    console.log('leftIconName', leftIconName)
     return (
-        <motion.button
+        <button
             className={cn(
                 'btn-basic',
                 buttonVariants({ variant, size }),
                 `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
             {...props}
+            disabled={props.disabled !== undefined ? props.disabled : isLoading}
         >
-            {/* Left Icon  */}
+            {/* Conditionally render left icon if not loading */}
             {leftIconName && !isLoading && (
-                <Icon
-                    color="#000"
-                    // color={
-                    //     props.disabled
-                    //         ? 'button-outline-text-disabled'
-                    //         : iconColorVariants({ variant })
-                    // }
-                    name={leftIconName}
-                    {...getIconSize(size)}
-                />
+                <Icon color="#000" name={leftIconName} {...getIconSize(size)} />
             )}
 
-            {/* Loading */}
+            {/* Display loading spinner and optional text when loading */}
             {isLoading && (
-                <motion.div
-                    layout
-                    layoutId="loading-spinner"
-                    className="flex items-center justify-center"
-                >
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{
-                            repeat: Infinity,
-                            ease: 'linear',
-                            duration: 1,
-                        }}
-                    >
-                        <LoadingIcon />
-                    </motion.div>
+                <motion.div className="flex items-center justify-center">
+                    {/* Animation for the spinner */}
+                    <LoadingIcon />
                 </motion.div>
             )}
 
-            {/* Button Text */}
+            {/* Text or children displayed in the button */}
             <Text className={buttonVariants({ size })} color="inherit">
-                <AnimatePresence initial={true} mode={'wait'}>
-                    <motion.div
-                        key={loadingText?.toString()}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="flex items-center justify-center"
-                    >
-                        {isLoading ? loadingText : children}
-                    </motion.div>
-                </AnimatePresence>
+                {isLoading ? loadingText : children}
             </Text>
 
-            {/* Right Icon */}
+            {/* Conditionally render right icon if not loading */}
             {rightIconName && !isLoading && (
-                <Icon
-                    name={rightIconName}
-                    {...getIconSize(size)}
-                    color="#000"
-                    // color={
-                    //     props.disabled
-                    //         ? 'var(--button-outline-text-disabled)'
-                    //         : iconColorVariants({ variant })
-                    // }
-                />
+                <Icon name={rightIconName} {...getIconSize(size)} color="#000" />
             )}
-        </motion.button>
+        </button>
     )
 }
