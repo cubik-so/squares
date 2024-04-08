@@ -51,7 +51,7 @@
         "@squares/configs": "workspace:*",
         "@types/node": "^20.11.29",
         "@types/react": "^18.2.67",
-        "@types/react-dom": "^18.2.22",
+        "@types/react-dom": "^18.2.24",
         "@vitejs/plugin-react": "^4.2.1",
         "postcss": "^8.4.36",
         "react": "^18.2.0",
@@ -64,10 +64,12 @@
         "usehooks-ts": "^2.9.5"
     },
     "dependencies": {
+        "@radix-ui/react-checkbox": "^1.0.4",
         "@radix-ui/react-dialog": "^1.0.5",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
         "framer-motion": "^11.0.20",
+        "react-confetti": "^6.1.0",
         "ts-node": "^10.9.2",
         "tsup": "^8.0.2"
     }
