@@ -1,7 +1,9 @@
 'use client'
-import { Button, Checkbox } from '@squares/ui'
+import { Button, MyConfetti } from '@squares/ui'
+import { useWindowSize } from 'usehooks-ts'
 
 export default function Home() {
+    const { height, width } = useWindowSize()
     return (
         <main className=" flex min-h-screen flex-col items-center justify-center gap-8 p-24">
             <Button size="lg" variant="outline" leftIconName="plus">
@@ -17,11 +19,8 @@ export default function Home() {
             >
                 asdfsa
             </Button>
-            <Checkbox
-                onCheckedChange={(e) => {
-                    console.log(e)
-                }}
-            />
+
+            <MyConfetti height={height} width={width} />
         </main>
     )
 }

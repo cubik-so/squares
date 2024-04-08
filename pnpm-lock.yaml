@@ -99,6 +99,9 @@ importers:
             react-dom:
                 specifier: ^18
                 version: 18.2.0(react@18.2.0)
+            usehooks-ts:
+                specifier: ^2.9.5
+                version: 2.16.0(react@18.2.0)
         devDependencies:
             '@types/node':
                 specifier: ^20
@@ -5769,7 +5772,6 @@ packages:
             {
                 integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==,
             }
-        dev: true
 
     /lodash.isplainobject@4.0.6:
         resolution:
@@ -7759,7 +7761,6 @@ packages:
         dependencies:
             lodash.debounce: 4.0.8
             react: 18.2.0
-        dev: true
 
     /util-deprecate@1.0.2:
         resolution:
