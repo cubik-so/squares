@@ -22,7 +22,7 @@ export default function Home() {
 
             {open && (
                 <Modal open={open} className="" onClose={() => setOpen(false)} size="lg">
-                    <ModalHeader heading="jkhjhjhk" />
+                    <ModalHeader heading="jkhjhjhk" closeIcon={false} />
                     <p>askjdhfjkahsdf</p>
                     <p>askjdhfjkahsdf</p>
                     <p>askjdhfjkahsdf</p>

@@ -43,11 +43,20 @@ interface Props {
     heading?: string
     children?: JSX.Element
     size?: keyof typeof DialogSize
-    onClose: () => void
+    onClose?: () => void
     background?: boolean
     className?: string
+    closeIcon?: boolean
 }
-export const ModalHeader = ({ heading, size, className, background, onClose, children }: Props) => {
+export const ModalHeader = ({
+    heading,
+    size,
+    className,
+    background,
+    onClose,
+    children,
+    closeIcon = true,
+}: Props) => {
     return (
         <>
             <Dialog.Title
@@ -59,13 +68,20 @@ export const ModalHeader = ({ heading, size, className, background, onClose, chi
             >
                 <Text className={cn(ModalTitleVariants({ size }))}>{heading ? heading : ''}</Text>
                 {children}
-                <motion.button
-                    whileHover={{ scale: 1.2 }}
-                    className="pointer-events-auto"
-                    onClick={onClose}
-                >
-                    <Icon name="cross" width={20} color="modal-header-cancel-icon" height={20} />
-                </motion.button>
+                {closeIcon && (
+                    <motion.button
+                        whileHover={{ scale: 1.2 }}
+                        className="pointer-events-auto"
+                        onClick={onClose}
+                    >
+                        <Icon
+                            name="cross"
+                            width={20}
+                            color="modal-header-cancel-icon"
+                            height={20}
+                        />
+                    </motion.button>
+                )}
             </Dialog.Title>
         </>
     )
