@@ -7,7 +7,9 @@ import { Text } from '@components/text/text'
 import { cn } from '@utils/cn'
 import Icon from '@/icons'
 import LoadingIcon from './loading-icon'
+import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 import type { VariantProps } from 'class-variance-authority'
+import type { MotionProps } from 'framer-motion'
 
 /**
  * Button component leveraging advanced CSS handling with `class-variance-authority` for styling
@@ -32,9 +34,9 @@ import type { VariantProps } from 'class-variance-authority'
  * ```
  */
 interface ButtonProps
-    extends React.DetailedHTMLProps<
-            React.ButtonHTMLAttributes<HTMLButtonElement>,
-            HTMLButtonElement
+    extends Omit<
+            DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+            keyof MotionProps
         >,
         VariantProps<typeof buttonVariants> {
     isLoading?: boolean
@@ -112,38 +114,81 @@ export const Button = ({
     size = 'md',
     ...props
 }: ButtonProps) => {
+    const motionSpecificProps: MotionProps = {
+        layout: true,
+    }
     return (
-        <button
+        <motion.button
+            {...motionSpecificProps}
             className={cn(
                 'btn-basic',
                 buttonVariants({ variant, size }),
                 `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
             {...props}
-            disabled={props.disabled !== undefined ? props.disabled : isLoading}
         >
-            {/* Conditionally render left icon if not loading */}
+            {/* Left Icon  */}
             {leftIconName && !isLoading && (
-                <Icon color="#000" name={leftIconName} {...getIconSize(size)} />
+                <Icon
+                    color="#000"
+                    // color={
+                    //     props.disabled
+                    //         ? 'button-outline-text-disabled'
+                    //         : iconColorVariants({ variant })
+                    // }
+                    name={leftIconName}
+                    {...getIconSize(size)}
+                />
             )}
 
-            {/* Display loading spinner and optional text when loading */}
+            {/* Loading */}
             {isLoading && (
-                <motion.div className="flex items-center justify-center">
-                    {/* Animation for the spinner */}
-                    <LoadingIcon />
+                <motion.div
+                    layout
+                    layoutId="loading-spinner"
+                    className="flex items-center justify-center"
+                >
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{
+                            repeat: Infinity,
+                            ease: 'linear',
+                            duration: 1,
+                        }}
+                    >
+                        <LoadingIcon />
+                    </motion.div>
                 </motion.div>
             )}
 
-            {/* Text or children displayed in the button */}
+            {/* Button Text */}
             <Text className={buttonVariants({ size })} color="inherit">
-                {isLoading ? loadingText : children}
+                <AnimatePresence initial={true} mode={'wait'}>
+                    <motion.div
+                        key={loadingText?.toString()}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="flex items-center justify-center"
+                    >
+                        {isLoading ? loadingText : children}
+                    </motion.div>
+                </AnimatePresence>
             </Text>
 
-            {/* Conditionally render right icon if not loading */}
+            {/* Right Icon */}
             {rightIconName && !isLoading && (
-                <Icon name={rightIconName} {...getIconSize(size)} color="#000" />
+                <Icon
+                    name={rightIconName}
+                    {...getIconSize(size)}
+                    color="#000"
+                    // color={
+                    //     props.disabled
+                    //         ? 'var(--button-outline-text-disabled)'
+                    //         : iconColorVariants({ variant })
+                    // }
+                />
             )}
-        </button>
+        </motion.button>
     )
 }

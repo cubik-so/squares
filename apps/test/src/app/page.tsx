@@ -21,7 +21,7 @@ export default function Home() {
             </Button>
 
             {open && (
-                <Modal open={open} className="" onClose={() => setOpen(false)} size="lg">
+                <Modal open={open} className="" onClose={() => setOpen(false)} dialogSize="lg">
                     <ModalHeader heading="jkhjhjhk" closeIcon={false} />
                     <p>askjdhfjkahsdf</p>
                     <p>askjdhfjkahsdf</p>
