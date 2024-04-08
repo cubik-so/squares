@@ -125,7 +125,7 @@ export const Button = ({
                 buttonVariants({ variant, size }),
                 `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
-            {...props}
+            disabled={props.disabled !== undefined ? props.disabled : isLoading}
         >
             {/* Left Icon  */}
             {leftIconName && !isLoading && (
