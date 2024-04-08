@@ -1,5 +1,5 @@
 'use client'
-import { Button, Modal, ModalHeader } from '@squares/ui'
+import { Alert, Button, Modal, ModalHeader } from '@squares/ui'
 import { useState } from 'react'
 
 export default function Home() {
@@ -30,10 +30,47 @@ export default function Home() {
                     <p>askjdhfjkahsdf</p>
                 </Modal>
             )}
+            <Alert
+                description="This is a description"
+                iconName="alert-info-circle"
+                state={'info'}
+                variant="default"
+            />
+            <Alert
+                description="This is a description"
+                iconName="alert-info-circle"
+                state={'info'}
+                variant="textOnly"
+            />
+            <Alert
+                description="This is a description"
+                iconName="alert-info-circle"
+                state={'default'}
+                variant="leftOutline"
+            />
+            <Alert
+                description="This is a description"
+                iconName="alert-info-circle"
+                state={'innovative'}
+                variant="border"
+            />
 
-            {/* <Button variant={'success'} size={'2xl'} loading={true} loadingText="something">
-                somethingss
-            </Button> */}
+            <Alert title="hello world" iconName="alert-info-circle" state={'success'} />
+            <Alert
+                title="hello world"
+                description="This is a description"
+                iconName="alert-info-circle"
+                state={'error'}
+            >
+                <Button
+                    variant={'danger'}
+                    className="!h-fit !bg-transparent !p-0"
+                    rightIconName="arrow-right"
+                    size="sm"
+                >
+                    Check this
+                </Button>
+            </Alert>
         </main>
     )
 }
