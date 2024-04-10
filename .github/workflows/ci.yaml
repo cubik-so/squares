@@ -15,20 +15,22 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v2
               with:
-                  node-version: '14'
+                  node-version: '18'
+            - name: Install pnpm package manager
+              run: npm install -g pnpm
 
             - name: Install Dependencies
-              run: npm install
+              run: pnpm install
 
             - name: Generate Changelog
-              run: npm run generate-changelog
+              run: pnpm run generate:changelog
 
             - name: Create Release Commit and Tag
               run: |
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
                   git add CHANGELOG.md
-                  git commit -m "Update CHANGELOG.md"
+                  git commit -m "chore(changelog): update CHANGELOG.md"
                   git tag v$(node -p "require('./package.json').version")
                   git push origin HEAD:main --tags
 
