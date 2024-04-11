@@ -1,5 +1,5 @@
 'use client'
-import { Button, SubHead } from '@squares/ui'
+import { Button, TitleWithIcon } from '@squares/ui'
 
 export default function Home() {
     return (
@@ -17,10 +17,12 @@ export default function Home() {
             >
                 asdfsa
             </Button>
-            <SubHead heading="Grants Round 1" size="sm" description="jkasdhfjkhsaf kjasdfh" />
-            <SubHead heading="Grants Round 1" description="jkasdhfjkhsaf kjasdfh" />
-            <SubHead heading="Grants Round 1" size="lg" description="jkasdhfjkhsaf kjasdfh" />
-            <SubHead heading="Grants Round 1" size="xl" description="jkasdhfjkhsaf kjasdfh" />
+            <TitleWithIcon text="asdfasdf" icon="plus" size={'2xl'} iconColor="#000" />
+            <TitleWithIcon text="asdfasdf" icon="plus" size={'xl'} iconColor="#000" />
+            <TitleWithIcon text="asdfasdf" icon="plus" size={'lg'} iconColor="#000" />
+            <TitleWithIcon text="asdfasdf" icon="plus" size={'md'} iconColor="#000" />
+            <TitleWithIcon text="asdfasdf" icon="plus" size={'sm'} iconColor="#000" />
+            <TitleWithIcon text="asdfasdf" icon="plus" size={'xs'} iconColor="#000" />
         </main>
     )
 }
