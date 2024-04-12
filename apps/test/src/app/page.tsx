@@ -1,5 +1,5 @@
 'use client'
-import { Button, TitleWithIcon } from '@squares/ui'
+import { Avatar, Button } from '@squares/ui'
 
 export default function Home() {
     return (
@@ -17,12 +17,35 @@ export default function Home() {
             >
                 asdfsa
             </Button>
-            <TitleWithIcon text="asdfasdf" icon="plus" size={'2xl'} iconColor="#000" />
-            <TitleWithIcon text="asdfasdf" icon="plus" size={'xl'} iconColor="#000" />
-            <TitleWithIcon text="asdfasdf" icon="plus" size={'lg'} iconColor="#000" />
-            <TitleWithIcon text="asdfasdf" icon="plus" size={'md'} iconColor="#000" />
-            <TitleWithIcon text="asdfasdf" icon="plus" size={'sm'} iconColor="#000" />
-            <TitleWithIcon text="asdfasdf" icon="plus" size={'xs'} iconColor="#000" />
+            <Avatar
+                variant="circle"
+                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
+                alt="Image"
+                size="2xl"
+                iconName="infoCircle"
+            />
+            <Avatar
+                variant="circle"
+                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
+                alt="Image"
+                size="lg"
+                iconName="infoCircle"
+            />
+
+            <Avatar
+                variant="square"
+                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
+                alt="Image"
+                size="2xl"
+                iconName="infoCircle"
+            />
+            <Avatar
+                variant="square"
+                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
+                alt="Image"
+                size="lg"
+                iconName="infoCircle"
+            />
         </main>
     )
 }
