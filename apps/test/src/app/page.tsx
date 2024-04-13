@@ -1,5 +1,13 @@
 'use client'
-import { Checkbox, CubikTable, InputLabel, MyConfetti, ToggleSwitch } from '@squares/ui'
+import {
+    Button,
+    Checkbox,
+    CubikTable,
+    InputLabel,
+    MyConfetti,
+    ToggleSwitch,
+    Tooltip,
+} from '@squares/ui'
 import { useWindowSize } from 'usehooks-ts'
 
 const columns = [
@@ -31,6 +39,9 @@ export default function Home() {
     const { height, width } = useWindowSize()
     return (
         <main className=" flex min-h-screen flex-col items-center justify-center gap-8 p-24">
+            <Tooltip content="add to library">
+                <Button>asdf</Button>
+            </Tooltip>
             <CubikTable columns={columns} data={data} />
             <MyConfetti width={width} height={height} />
             <Checkbox
