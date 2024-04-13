@@ -7,6 +7,7 @@ import {
     MyConfetti,
     ToggleSwitch,
     Tooltip,
+    // Tooltip,
 } from '@squares/ui'
 import { useWindowSize } from 'usehooks-ts'
 
@@ -44,19 +45,7 @@ export default function Home() {
             </Tooltip>
             <CubikTable columns={columns} data={data} />
             <MyConfetti width={width} height={height} />
-            <Checkbox
-                size="sm"
-                onCheckedChange={(e) => {
-                    console.log('checked')
-                }}
-                defaultChecked
-            />
-            <Checkbox
-                size="md"
-                onCheckedChange={(e) => {
-                    console.log('checked')
-                }}
-            />
+
             <InputLabel
                 id="address"
                 isRequired
@@ -66,12 +55,7 @@ export default function Home() {
             >
                 Address
             </InputLabel>
-            <ToggleSwitch size="sm" />
-            <ToggleSwitch
-                size="md"
-                defaultChecked
-                onChange={(checked: boolean) => console.log('onChange', checked)}
-            />
+            {/* <ToggleSwitch size="sm" /> */}
         </main>
     )
 }

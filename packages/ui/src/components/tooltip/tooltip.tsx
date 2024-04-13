@@ -3,12 +3,12 @@ import * as RadixTooltip from '@radix-ui/react-tooltip'
 import { VariantProps, cva } from 'class-variance-authority'
 import { cn } from '@utils/cn'
 import { Text } from '../text/text'
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 
 interface TooltipProps {
     children: ReactNode
     content: string
-    align: 'start' | 'center' | 'end'
+    align?: 'start' | 'center' | 'end'
 }
 
 export const Tooltip = ({ children, content, align = 'center' }: TooltipProps) => {

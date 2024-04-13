@@ -9,29 +9,25 @@ interface ConfettiProps {
     width: number
 }
 
-export const MyConfetti = React.forwardRef<IConfettiOptions, ConfettiProps>(
-    ({ height, width, ...props }) => {
-        const confettiRef = useRef<HTMLCanvasElement>(null)
-        const [runConfetti, setRunConfetti] = useState(true)
+export const MyConfetti = ({ height, width, ...props }: ConfettiProps) => {
+    const confettiRef = useRef<HTMLCanvasElement>(null)
+    const [runConfetti, setRunConfetti] = useState(true)
 
-        useEffect(() => {
-            setTimeout(() => {
-                setRunConfetti(false)
-            }, 3000)
-        }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            setRunConfetti(false)
+        }, 3000)
+    }, [])
 
-        return (
-            <Confetti
-                ref={confettiRef}
-                height={height}
-                width={width}
-                recycle={runConfetti}
-                tweenDuration={3000}
-                colors={['#00EB52', '#DDDDDD', '#393939', '#EEBE00']}
-                {...props}
-            />
-        )
-    },
-)
-
-MyConfetti.displayName = 'MyConfetti'
+    return (
+        <Confetti
+            ref={confettiRef}
+            height={height}
+            width={width}
+            recycle={runConfetti}
+            tweenDuration={3000}
+            colors={['#00EB52', '#DDDDDD', '#393939', '#EEBE00']}
+            {...props}
+        />
+    )
+}

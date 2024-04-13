@@ -10,6 +10,7 @@ type TextProps = React.HTMLAttributes<HTMLLabelElement> & {
     isRequired?: boolean
     infoText?: string
     icon?: React.ReactNode
+    className?: string
 }
 
 export const InputLabel = ({
