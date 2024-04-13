@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import { cn } from '@utils/cn'
 import Icon from '@/icons'
@@ -12,7 +12,15 @@ type TextProps = React.HTMLAttributes<HTMLLabelElement> & {
     icon?: React.ReactNode
 }
 
-export const InputLabel = ({ className, children, ...props }: TextProps) => {
+export const InputLabel = ({
+    className,
+    children,
+    counterValue,
+    maxCounterValue,
+    isRequired,
+    infoText,
+    ...props
+}: TextProps) => {
     const isSmallerDevice = useMediaQuery('(max-width: 768px)')
     const tooltipIconSize = isSmallerDevice ? 14 : 18
 
@@ -25,10 +33,10 @@ export const InputLabel = ({ className, children, ...props }: TextProps) => {
                 >
                     <Text className="h4-light md:l1">{children}</Text>
                 </label>
-                {props.isRequired && (
+                {isRequired && (
                     <span className={cn('text-[var(--color-red-500)] transition-colors')}>*</span>
                 )}
-                {props.infoText && tooltipIconSize && (
+                {infoText && tooltipIconSize && (
                     <div className="my-auto pb-[2px]">
                         {/* @todo: make a tooltip component and add here later */}
                         <Icon
@@ -56,16 +64,12 @@ export const InputLabel = ({ className, children, ...props }: TextProps) => {
                 )}
                 {props.icon}
             </div>
-            {props.maxCounterValue && (
+            {maxCounterValue && (
                 <Text
                     className={'transition-colors l2'}
-                    color={
-                        Number(props?.counterValue) > Number(props.maxCounterValue)
-                            ? 'negative'
-                            : 'tertiary'
-                    }
+                    color={Number(counterValue) > Number(maxCounterValue) ? 'negative' : 'tertiary'}
                 >
-                    {props.counterValue}/{props.maxCounterValue}
+                    {counterValue}/{maxCounterValue}
                 </Text>
             )}
         </div>
