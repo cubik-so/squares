@@ -1,4 +1,5 @@
 import { cva } from 'class-variance-authority'
+import React from 'react'
 import Icon from '@/icons'
 import { Text } from '@components/text/text'
 import { cn } from '@utils/cn'

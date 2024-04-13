@@ -1,10 +1,11 @@
+import React from 'react'
 import { cva } from 'class-variance-authority'
 import { cn } from '@utils/cn'
 import { Text } from '../text/text'
 import { Avatar } from './avatar'
 import { AvatarGroup } from './avatar-group'
 import { TitleWithIcon } from './title-with-icon'
-import type { AvatarProps } from './avatar';
+import type { AvatarProps } from './avatar'
 
 interface AvatarLabelProps {
     avatarSrc: string | AvatarProps[]

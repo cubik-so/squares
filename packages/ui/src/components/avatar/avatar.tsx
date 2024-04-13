@@ -1,5 +1,6 @@
 import { cva } from 'class-variance-authority'
 import { motion } from 'framer-motion'
+import React from 'react'
 import Icon from '@/icons'
 import { cn } from '@utils/cn'
 import type { VariantProps } from 'class-variance-authority'
