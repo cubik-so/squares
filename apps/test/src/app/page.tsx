@@ -1,5 +1,5 @@
 'use client'
-import { Avatar, Button } from '@squares/ui'
+import { AvatarGroup, Button } from '@squares/ui'
 
 export default function Home() {
     return (
@@ -17,35 +17,458 @@ export default function Home() {
             >
                 asdfsa
             </Button>
-            <Avatar
-                variant="circle"
-                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
-                alt="Image"
-                size="2xl"
-                iconName="infoCircle"
-            />
-            <Avatar
-                variant="circle"
-                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
-                alt="Image"
-                size="lg"
-                iconName="infoCircle"
-            />
+            <div className="flex justify-start gap-10">
+                <div className="flex flex-col gap-3">
+                    <AvatarGroup
+                        size="sm"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        size="md"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        size="lg"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        size="xl"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        size="2xl"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                </div>
+                <div className="flex flex-col gap-3">
+                    <AvatarGroup
+                        size="xs"
+                        shape="square"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        size="sm"
+                        shape="square"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="md"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="lg"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="xl"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="2xl"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                </div>
 
-            <Avatar
-                variant="square"
-                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
-                alt="Image"
-                size="2xl"
-                iconName="infoCircle"
-            />
-            <Avatar
-                variant="square"
-                src="https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg"
-                alt="Image"
-                size="lg"
-                iconName="infoCircle"
-            />
+                <div className="flex flex-col gap-3">
+                    <AvatarGroup
+                        size="xs"
+                        shape="square"
+                        variant="squared-horizontal"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        size="sm"
+                        shape="square"
+                        variant="squared-horizontal"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        variant="squared-horizontal"
+                        size="md"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="lg"
+                        variant="squared-horizontal"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="xl"
+                        variant="squared-horizontal"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                    <AvatarGroup
+                        shape="square"
+                        size="2xl"
+                        variant="squared-horizontal"
+                        avatars={[
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                            {
+                                src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                                alt: 'sample image',
+                            },
+                        ]}
+                    />
+                </div>
+            </div>
         </main>
     )
 }
