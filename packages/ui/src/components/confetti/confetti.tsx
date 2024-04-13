@@ -9,7 +9,7 @@ interface ConfettiProps {
     width: number
 }
 
-export const MyConfetti = React.forwardRef<IConfettiOptions, ConfettiProps>(
+const MyConfetti = React.forwardRef<IConfettiOptions, ConfettiProps>(
     ({ height, width, ...props }) => {
         const confettiRef = useRef<HTMLCanvasElement>(null)
         const [runConfetti, setRunConfetti] = useState(true)
@@ -35,3 +35,5 @@ export const MyConfetti = React.forwardRef<IConfettiOptions, ConfettiProps>(
 )
 
 MyConfetti.displayName = 'MyConfetti'
+
+export { MyConfetti }

@@ -10,4 +10,7 @@ export default defineConfig({
     clean: true, // Clean the output directory before building
     outDir: 'lib', // Output directory
     dts: true, // Generate .d.ts file
+    target: 'esnext',
+    keepNames: true,
+    treeshake: true,
 })
