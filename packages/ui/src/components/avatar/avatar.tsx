@@ -108,7 +108,7 @@ export const Avatar = ({
     variant = 'circle',
     size,
     iconName,
-    groupVariant,
+    groupVariant = 'circular',
 }: AvatarProps) => {
     return (
         <motion.div className="relative ">
