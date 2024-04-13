@@ -1,9 +1,10 @@
+import React from 'react'
 import { cva } from 'class-variance-authority'
 import { cn } from '@utils/cn'
 import { Text } from '../text/text'
 import { Avatar } from './avatar'
-import type { AvatarProps } from './avatar';
-import type { VariantProps} from 'class-variance-authority';
+import type { AvatarProps } from './avatar'
+import type { VariantProps } from 'class-variance-authority'
 
 const avatarGroupVariants = cva('flex relative', {
     variants: {

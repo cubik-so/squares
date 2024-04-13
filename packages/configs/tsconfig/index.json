@@ -8,7 +8,7 @@
         "esModuleInterop": true,
         "declaration": true,
         "sourceMap": true,
-        "target": "ES5",
+        "target": "ES2022",
         "lib": ["DOM", "DOM.Iterable", "ES2022"],
         "forceConsistentCasingInFileNames": true,
         "isolatedModules": true,
@@ -16,7 +16,7 @@
         "strict": true,
         "skipLibCheck": true,
         "resolveJsonModule": true,
-        "module": "CommonJS",
+        "module": "ESNext",
         "moduleResolution": "node"
     },
     "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "sync-version.js"]
