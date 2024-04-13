@@ -1,6 +1,6 @@
 'use client'
-
-import { CubikTable } from '@squares/ui'
+import { Checkbox, CubikTable, InputLabel, MyConfetti, ToggleSwitch } from '@squares/ui'
+import { useWindowSize } from 'usehooks-ts'
 
 const columns = [
     {
@@ -28,9 +28,39 @@ const data = [
 ]
 
 export default function Home() {
+    const { height, width } = useWindowSize()
     return (
         <main className=" flex min-h-screen flex-col items-center justify-center gap-8 p-24">
             <CubikTable columns={columns} data={data} />
+            <MyConfetti width={width} height={height} />
+            <Checkbox
+                size="sm"
+                onCheckedChange={(e) => {
+                    console.log('checked')
+                }}
+                defaultChecked
+            />
+            <Checkbox
+                size="md"
+                onCheckedChange={(e) => {
+                    console.log('checked')
+                }}
+            />
+            <InputLabel
+                id="address"
+                isRequired
+                infoText="sadklfldfasjf"
+                counterValue={1}
+                maxCounterValue={40}
+            >
+                Address
+            </InputLabel>
+            <ToggleSwitch size="sm" />
+            <ToggleSwitch
+                size="md"
+                defaultChecked
+                onChange={(checked: boolean) => console.log('onChange', checked)}
+            />
         </main>
     )
 }
