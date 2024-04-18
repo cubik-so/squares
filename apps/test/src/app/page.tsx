@@ -1,6 +1,8 @@
 'use client'
 
 import {
+    SegmentContainer,
+    SegmentItem,
     Tab,
     TabList,
     TabPanel,
@@ -13,8 +15,10 @@ import {
     VerticalTabPanels,
     VerticalTabs,
 } from '@squares/ui'
+import { useState } from 'react'
 
 export default function Home() {
+    const [firstSegment, setFirstSegment] = useState(1)
     return (
         <main className=" flex min-h-screen flex-col items-center justify-center gap-8 p-24">
             <Tabs defaultValue={2} size="sm" className="">
@@ -76,6 +80,30 @@ export default function Home() {
                     </VerticalTabPanel>
                 </VerticalTabPanels>
             </VerticalTabs>
+
+            <SegmentContainer size="md">
+                <SegmentItem isActive={firstSegment === 1} onClick={() => setFirstSegment(1)}>
+                    Segment Item 1
+                </SegmentItem>
+                <SegmentItem isActive={firstSegment === 2} onClick={() => setFirstSegment(2)}>
+                    Segment Item 2
+                </SegmentItem>
+                <SegmentItem isActive={firstSegment === 3} onClick={() => setFirstSegment(3)}>
+                    Segment Item 3
+                </SegmentItem>
+                <SegmentItem isActive={firstSegment === 4} onClick={() => setFirstSegment(4)}>
+                    Segment Item 4
+                </SegmentItem>
+                <SegmentItem isActive={firstSegment === 5} onClick={() => setFirstSegment(5)}>
+                    Segment Item 5
+                </SegmentItem>
+            </SegmentContainer>
+
+            {firstSegment === 1 && (
+                <Text className="l2" color={'primary'}>
+                    three!
+                </Text>
+            )}
         </main>
     )
 }
