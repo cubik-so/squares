@@ -218,6 +218,9 @@ importers:
             '@radix-ui/react-dialog':
                 specifier: ^1.0.5
                 version: 1.0.5(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-tabs':
+                specifier: ^1.0.4
+                version: 1.0.4(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
             '@tanstack/react-table':
                 specifier: ^8.15.3
                 version: 8.16.0(react-dom@18.2.0)(react@18.2.0)
@@ -239,6 +242,9 @@ importers:
             tsup:
                 specifier: ^8.0.2
                 version: 8.0.2(postcss@8.4.38)(ts-node@10.9.2)(typescript@5.4.5)
+            uuid:
+                specifier: ^9.0.1
+                version: 9.0.1
         devDependencies:
             '@squares/configs':
                 specifier: workspace:*
@@ -252,6 +258,9 @@ importers:
             '@types/react-dom':
                 specifier: ^18.2.24
                 version: 18.2.25
+            '@types/uuid':
+                specifier: ^9.0.8
+                version: 9.0.8
             '@vitejs/plugin-react':
                 specifier: ^4.2.1
                 version: 4.2.1(vite@5.2.8)
@@ -1746,6 +1755,33 @@ packages:
             react-dom: 18.2.0(react@18.2.0)
         dev: false
 
+    /@radix-ui/react-collection@1.0.3(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0):
+        resolution:
+            {
+                integrity: sha512-3SzW+0PW7yBBoQlT8wNcGtaxaD0XSu0uLUFgrtHY08Acx05TaHaOmVLR73c0j/cqpDy53KBMO7s0dx2wmOIDIA==,
+            }
+        peerDependencies:
+            '@types/react': '*'
+            '@types/react-dom': '*'
+            react: ^16.8 || ^17.0 || ^18.0
+            react-dom: ^16.8 || ^17.0 || ^18.0
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+            '@types/react-dom':
+                optional: true
+        dependencies:
+            '@babel/runtime': 7.24.4
+            '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-context': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-slot': 1.0.2(@types/react@18.2.77)(react@18.2.0)
+            '@types/react': 18.2.77
+            '@types/react-dom': 18.2.25
+            react: 18.2.0
+            react-dom: 18.2.0(react@18.2.0)
+        dev: false
+
     /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.77)(react@18.2.0):
         resolution:
             {
@@ -1815,6 +1851,23 @@ packages:
             react: 18.2.0
             react-dom: 18.2.0(react@18.2.0)
             react-remove-scroll: 2.5.5(@types/react@18.2.77)(react@18.2.0)
+        dev: false
+
+    /@radix-ui/react-direction@1.0.1(@types/react@18.2.77)(react@18.2.0):
+        resolution:
+            {
+                integrity: sha512-RXcvnXgyvYvBEOhCBuddKecVkoMiI10Jcm5cTI7abJRAHYfFxeu+FBQs/DvdxSYucxR5mna0dNsL6QFlds5TMA==,
+            }
+        peerDependencies:
+            '@types/react': '*'
+            react: ^16.8 || ^17.0 || ^18.0
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+        dependencies:
+            '@babel/runtime': 7.24.4
+            '@types/react': 18.2.77
+            react: 18.2.0
         dev: false
 
     /@radix-ui/react-dismissable-layer@1.0.5(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0):
@@ -1979,6 +2032,38 @@ packages:
             react-dom: 18.2.0(react@18.2.0)
         dev: false
 
+    /@radix-ui/react-roving-focus@1.0.4(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0):
+        resolution:
+            {
+                integrity: sha512-2mUg5Mgcu001VkGy+FfzZyzbmuUWzgWkj3rvv4yu+mLw03+mTzbxZHvfcGyFp2b8EkQeMkpRQ5FiA2Vr2O6TeQ==,
+            }
+        peerDependencies:
+            '@types/react': '*'
+            '@types/react-dom': '*'
+            react: ^16.8 || ^17.0 || ^18.0
+            react-dom: ^16.8 || ^17.0 || ^18.0
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+            '@types/react-dom':
+                optional: true
+        dependencies:
+            '@babel/runtime': 7.24.4
+            '@radix-ui/primitive': 1.0.1
+            '@radix-ui/react-collection': 1.0.3(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-context': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-direction': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-id': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-use-callback-ref': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-use-controllable-state': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@types/react': 18.2.77
+            '@types/react-dom': 18.2.25
+            react: 18.2.0
+            react-dom: 18.2.0(react@18.2.0)
+        dev: false
+
     /@radix-ui/react-slot@1.0.2(@types/react@18.2.77)(react@18.2.0):
         resolution:
             {
@@ -1995,6 +2080,37 @@ packages:
             '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.77)(react@18.2.0)
             '@types/react': 18.2.77
             react: 18.2.0
+        dev: false
+
+    /@radix-ui/react-tabs@1.0.4(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0):
+        resolution:
+            {
+                integrity: sha512-egZfYY/+wRNCflXNHx+dePvnz9FbmssDTJBtgRfDY7e8SE5oIo3Py2eCB1ckAbh1Q7cQ/6yJZThJ++sgbxibog==,
+            }
+        peerDependencies:
+            '@types/react': '*'
+            '@types/react-dom': '*'
+            react: ^16.8 || ^17.0 || ^18.0
+            react-dom: ^16.8 || ^17.0 || ^18.0
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+            '@types/react-dom':
+                optional: true
+        dependencies:
+            '@babel/runtime': 7.24.4
+            '@radix-ui/primitive': 1.0.1
+            '@radix-ui/react-context': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-direction': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-id': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@radix-ui/react-presence': 1.0.1(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-roving-focus': 1.0.4(@types/react-dom@18.2.25)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+            '@radix-ui/react-use-controllable-state': 1.0.1(@types/react@18.2.77)(react@18.2.0)
+            '@types/react': 18.2.77
+            '@types/react-dom': 18.2.25
+            react: 18.2.0
+            react-dom: 18.2.0(react@18.2.0)
         dev: false
 
     /@radix-ui/react-use-callback-ref@1.0.1(@types/react@18.2.77)(react@18.2.0):
@@ -2616,6 +2732,13 @@ packages:
         resolution:
             {
                 integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==,
+            }
+        dev: true
+
+    /@types/uuid@9.0.8:
+        resolution:
+            {
+                integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==,
             }
         dev: true
 
@@ -7993,6 +8116,14 @@ packages:
                 integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==,
             }
         dev: true
+
+    /uuid@9.0.1:
+        resolution:
+            {
+                integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==,
+            }
+        hasBin: true
+        dev: false
 
     /v8-compile-cache-lib@3.0.1:
         resolution:
