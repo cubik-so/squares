@@ -15,6 +15,9 @@
         "create:theme": {
             "cache": false
         },
+        "publish": {
+            "dependsOn": ["^build"]
+        },
         "lint": {
             "dependsOn": ["^lint"]
         },

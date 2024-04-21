@@ -1,5 +1,6 @@
 {
     "extends": "@squares/configs/tsconfig/index.json",
+    "exclude": ["src/**/*.test.tsx", "src/**/*.test.ts", "src/**/*.stories.tsx"],
     "compilerOptions": {
         "jsx": "react-jsx",
         "baseUrl": "./src",

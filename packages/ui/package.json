@@ -6,7 +6,8 @@
     "module": "lib/index.mjs",
     "types": "lib/index.d.ts",
     "scripts": {
-        "build": "tsup ./src --dts",
+        "publish": "pnpm build && pnpm publish",
+        "build": "tsup ./src/index.ts --dts",
         "dev": "pnpm build:fast --watch",
         "clean": "rimraf dist .turbo",
         "type-check": "tsc --noEmit",

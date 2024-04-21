@@ -11,6 +11,7 @@
         "dev:test": "pnpm run dev   --filter=@squares/ui --filter=test",
         "dev:ui": "pnpm run dev --filter=@squares/ui",
         "generate:icons": "turbo run generate:icons --filter=@squares/ui && pnpm run format",
+        "publish": "turbo run publish --filter=@squares/ui",
         "create:theme": "turbo run create:theme --filter=@squares/ui",
         "prepare": "husky",
         "sync-versions": "node sync-versions.js",
