@@ -1,6 +1,7 @@
 export * from './alert/alert'
 export * from './button/button'
 export * from './modal'
+export * from './drawer/drawer'
 export * from './text/text'
 export * from './provider'
 export * from './checkbox/checkbox'
