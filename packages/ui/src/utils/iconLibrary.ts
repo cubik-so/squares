@@ -21,6 +21,7 @@ export type IconName =
     | 'HeartSupport'
     | 'Delete'
     | 'ArrowRight'
+    | 'ArrowDown'
     | 'Send1'
     | 'Send2'
     | 'ArrowTopRight'
@@ -470,6 +471,18 @@ export const iconLibrary: Icon[] = [
         paths: [
             {
                 d: 'M15.17 6a30.23 30.23 0 0 1 5.62 5.406c.14.174.21.384.21.594m-5.83 6a30.232 30.232 0 0 0 5.62-5.406A.949.949 0 0 0 21 12m0 0H3',
+                fill: false,
+                stroke: true,
+            },
+        ],
+    },
+    {
+        name: 'arrow-down',
+        displayName: 'ArrowDown',
+        viewBox: '0 0 24 24',
+        paths: [
+            {
+                d: 'M6 14.1696C7.55556 16.273 9.37278 18.1622 11.4057 19.7905C11.5801 19.9302 11.79 20 12 20M18 14.1696C16.4444 16.273 14.6272 18.1622 12.5943 19.7905C12.4199 19.9302 12.21 20 12 20M12 20L12 4',
                 fill: false,
                 stroke: true,
             },

@@ -44,6 +44,7 @@ interface ButtonProps
     children?: React.ReactNode
     leftIconName?: string
     rightIconName?: string
+    className?: string
 }
 
 const buttonVariants = cva('flex items-center justify-center', {
@@ -61,6 +62,7 @@ const buttonVariants = cva('flex items-center justify-center', {
             danger: 'bg-button-danger-surface-default text-button-danger-text-default hover:bg-button-danger-surface-hovered hover:!text-button-danger-text-hovered disabled:bg-button-danger-surface-disabled disabled:!text-button-danger-text-disabled',
             success:
                 'bg-button-success-surface-default text-button-success-text-default hover:bg-button-success-surface-hovered hover:!text-button-success-text-hovered disabled:bg-button-success-surface-disabled disabled:!text-button-success-text-disabled',
+            unStyled: '',
         },
         size: {
             '2xl': 'b1 md:l1 h-11 md:h-12',
@@ -111,6 +113,7 @@ export const Button = ({
     children,
     leftIconName,
     rightIconName,
+    className,
     size = 'md',
     ...props
 }: ButtonProps) => {
@@ -123,6 +126,7 @@ export const Button = ({
             className={cn(
                 'btn-basic',
                 buttonVariants({ variant, size }),
+                className,
                 `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
             disabled={props.disabled !== undefined ? props.disabled : isLoading}
