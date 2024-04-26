@@ -1,13 +1,13 @@
 {
-    "name": "@squares/ui",
-    "version": "0.0.1",
+    "name": "@squaress/ui",
+    "version": "0.0.2",
     "description": "",
     "main": "lib/index.js",
     "module": "lib/index.mjs",
     "types": "lib/index.d.ts",
     "scripts": {
-        "publish": "pnpm build && pnpm publish",
-        "build": "tsup ./src/index.ts --dts",
+        "publish": "pnpm build && pnpm publish --access public --no-git-checks",
+        "build": "tsup ./src --dts",
         "dev": "pnpm build:fast --watch",
         "clean": "rimraf dist .turbo",
         "type-check": "tsc --noEmit",
