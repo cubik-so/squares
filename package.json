@@ -1,6 +1,6 @@
 {
     "name": "squaress",
-    "private": true,
+    "public": true,
     "version": "0.0.4",
     "scripts": {
         "build": "NODE_ENV=production dotenv -- turbo run build",
