@@ -1,4 +1,5 @@
 import React from 'react'
+import { ThemeProvider } from '@/hooks/useTheme'
 
 /**
  * SquaresProvider is a layout component that sets up a consistent environment for managing portals used in the application.
@@ -23,11 +24,11 @@ interface Props {
 }
 export const SquaresProvider = ({ children }: Props) => {
     return (
-        <>
+        <ThemeProvider>
             <div className="min-h-screen">{children}</div>
             <div id={'drawer-portal'} className="relative "></div>
             <div id={'dialog-portal'} className="relative"></div>
             <div id={'popover-portal'} className="relative"></div>
-        </>
+        </ThemeProvider>
     )
 }

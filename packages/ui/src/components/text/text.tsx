@@ -36,7 +36,7 @@ const headingVariant = cva('antialiased', {
         },
     },
     defaultVariants: {
-        color: 'inherit',
+        color: 'primary',
     },
 })
 

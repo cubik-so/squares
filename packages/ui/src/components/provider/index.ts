@@ -1,1 +1,1 @@
-export * from './squares-provider'
+export * from './squaress-provider'
