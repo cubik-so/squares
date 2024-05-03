@@ -1,1 +1,1 @@
-module.exports = require('@squares/configs/eslint/eslint.json')
+module.exports = require('@squaress/configs/eslint/eslint.json')

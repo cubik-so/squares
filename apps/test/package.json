@@ -7,7 +7,7 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@squares/ui": "workspace:*",
+        "@squaress/ui": "workspace:*",
         "@tanstack/react-table": "^8.15.3",
         "next": "14.1.4",
         "react": "^18.2.0",

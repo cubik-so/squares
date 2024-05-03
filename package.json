@@ -1,5 +1,5 @@
 {
-    "name": "squares",
+    "name": "squaress",
     "private": true,
     "version": "0.0.3",
     "scripts": {
@@ -21,7 +21,7 @@
         "release:patch": "npm version patch -m 'chore(release): release patch %s' && npm run sync-versions && git add . && git commit -m 'chore: sync versions and updated package.json' && git push origin && git push origin --tags"
     },
     "devDependencies": {
-        "@squares/configs": "workspace:*",
+        "@squaress/configs": "workspace:*",
         "@types/node": "^20.11.30",
         "prettier": "^3.2.5",
         "turbo": "latest",

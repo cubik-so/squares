@@ -76,4 +76,4 @@
 
 ##### Other Changes
 
--   cubik-so/squares (4c09639b)
+-   cubik-so/squaress (4c09639b)

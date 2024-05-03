@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Button } from '@squares/ui'
-import { Modal } from '@squares/ui'
-import { ModalHeader } from '@squares/ui'
+import { Button } from '@squaress/ui'
+import { Modal } from '@squaress/ui'
+import { ModalHeader } from '@squaress/ui'
 
 const ModalPage = () => {
     const [modalOn, setModalOn] = useState<boolean>(false)

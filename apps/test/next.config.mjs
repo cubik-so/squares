@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    transpilePackages: ['@squares/ui'],
+    transpilePackages: ['@squaress/ui'],
     cssModules: true,
 }
 

@@ -1,4 +1,4 @@
 {
-    "extends": "@squares/configs/tsconfig/index.json",
+    "extends": "@squaress/configs/tsconfig/index.json",
     "include": [".eslintrc.js"]
 }

@@ -1,10 +1,10 @@
 'use client'
 
-import { SquaresProvider } from '@squares/ui'
+import { SquaresProvider } from '@squaress/ui'
 import type { Metadata } from 'next'
 import './globals.css'
 
-import '@squares/ui/styles.css'
+import '@squaress/ui/styles.css'
 
 export default function RootLayout({
     children,
