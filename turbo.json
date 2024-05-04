@@ -16,6 +16,7 @@
             "cache": false
         },
         "publish": {
+            "cache": false,
             "dependsOn": ["^build"]
         },
         "lint": {
