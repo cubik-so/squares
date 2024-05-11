@@ -67,10 +67,16 @@ export const VaulDrawerContent = ({ children, className }: DrawerContentProps) =
     )
 }
 
-interface VaulDrawerProps {
+export interface VaulDrawerProps {
     children: React.ReactNode
+    open?: boolean
+    onOpenChange: () => void
 }
 
-export const VaulDrawer = ({ children }: VaulDrawerProps) => {
-    return <Drawer.Root shouldScaleBackground>{children}</Drawer.Root>
+export const VaulDrawer = ({ children, open, onOpenChange }: VaulDrawerProps) => {
+    return (
+        <Drawer.Root shouldScaleBackground open={open} onOpenChange={onOpenChange}>
+            {children}
+        </Drawer.Root>
+    )
 }
