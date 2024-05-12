@@ -70,7 +70,7 @@ export const InputFieldContainer = ({
     isError?: boolean
     size: 'md' | 'sm'
     className?: string
-    props: HTMLInputElement
+    props?: HTMLInputElement
 }) => {
     const disabledClasses = isDisabled
         ? 'cursor-not-allowed border-form-input-border-disabled bg-form-input-surface-disabled'
