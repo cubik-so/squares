@@ -33,7 +33,7 @@ import type { MotionProps } from 'framer-motion'
  * </Button>
  * ```
  */
-interface ButtonProps
+export interface ButtonProps
     extends Omit<
             DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
             keyof MotionProps

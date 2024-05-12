@@ -6,7 +6,6 @@ import { useMediaQuery } from 'usehooks-ts'
 import { v4 as uuid_v4 } from 'uuid'
 import { cn } from '@utils/cn'
 import Icon from '@/icons'
-import { iconLibrary } from '@utils/iconLibrary'
 import {
     VaulDrawer,
     VaulDrawerContent,
@@ -91,7 +90,7 @@ interface MenuButtonProps {
 const MenuButton = ({ children, props }: MenuButtonProps) => {
     return (
         <DropdownMenu.Trigger
-            className="focus-visible:ring-4 focus-visible:ring-[var(--color-surface-cool-transparent)] focus:!text-[var(--button-primary-text-focused)] focus:rounded-lg focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none"
+            className="focus-visible:ring-4 focus-visible:ring-color-surface-cool-transparent focus:!text-button-primary-text-focused focus:rounded-lg focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none"
             {...props}
         >
             {children}
@@ -115,7 +114,7 @@ const MenuList = ({ children, align = 'end' }: MenuListProps) => {
                     container={document.getElementById('popover-portal')}
                 >
                     <DropdownMenu.Content
-                        className="py-2 min-w-[200px] md:min-w-[220px] shadow-xl border border-[var(--menu-list-item-border)] bg-[var(--menu-list-surface)] rounded-xl will-change-[opacity,transform] flex flex-col gap-1 md:gap-2"
+                        className="py-2 min-w-[200px] md:min-w-[220px] shadow-xl border border-menu-list-item-border bg-menu-list-surface rounded-xl will-change-[opacity,transform] flex flex-col gap-1 md:gap-2"
                         sideOffset={10}
                         align={align}
                         asChild
@@ -161,13 +160,13 @@ const MenuItemVariants = cva(
         variants: {
             variant: {
                 primary:
-                    'text-[var(--menu-list-item-fg-default)] color-[var(--menu-list-item-fg-default)] stroke-[var(--menu-list-item-icon)] hover:bg-[var(--menu-list-item-surface-hovered)] hover:rounded-lg hover:text-[var(--menu-list-item-fg-hovered)] hover:color-[var(--menu-list-item-fg-hovered)] hover:stroke-[var(--menu-list-item-hovered)]',
+                    'text-menu-list-item-fg-default color-menu-list-item-fg-default stroke-menu-list-item-icon hover:bg-menu-list-item-surface-hovered hover:rounded-lg hover:text-menu-list-item-fg-hovered hover:color-menu-list-item-fg-hovered hover:stroke-menu-list-item-hovered',
                 negative:
-                    'text-[var(--color-bg-negative-base)] color-[var(--color-bg-negative-base)]  stroke-[var(--color-bg-negative-base)] hover:bg-[var(--color-surface-negative-transparent)] hover:rounded-lg hover:text-[var(--color-bg-negative-base)] hover:color-[var(--color-bg-negative-base)]  hover:stroke-[var(--color-bg-negative-base)]',
+                    'text-color-bg-negative-base color-color-bg-negative-base  stroke-color-bg-negative-base hover:bg-color-surface-negative-transparent hover:rounded-lg hover:text-color-bg-negative-base hover:color-color-bg-negative-base  hover:stroke-color-bg-negative-base',
                 positive:
-                    'text-[var(--color-bg-positive-emphasis)] color-[var(--color-bg-positive-base)]  stroke-[var(--color-bg-positive-base)] hover:bg-[var(--color-surface-positive-transparent)] hover:rounded-lg hover:text-[var(--color-bg-positive-emphasis)] hover:color-[var(--color-bg-positive-base)]  hover:stroke-[var(--color-bg-positive-base)]',
+                    'text-color-bg-positive-emphasis color-color-bg-positive-base  stroke-color-bg-positive-base hover:bg-color-surface-positive-transparent hover:rounded-lg hover:text-color-bg-positive-emphasis hover:color-color-bg-positive-base  hover:stroke-color-bg-positive-base',
                 caution:
-                    'text-[var(--color-bg-caution-emphasis)] color-[var(--color-bg-caution-base)]  stroke-[var(--color-bg-caution-base)] hover:bg-[var(--color-surface-caution-transparent)] hover:rounded-lg hover:text-[var(--color-bg-caution-emphasis)] hover:color-[var(--color-bg-caution-base)]  hover:stroke-[var(--color-bg-caution-base)]',
+                    'text-color-bg-caution-emphasis color-color-bg-caution-base  stroke-color-bg-caution-base hover:bg-color-surface-caution-transparent hover:rounded-lg hover:text-color-bg-caution-emphasis hover:color-color-bg-caution-base  hover:stroke-color-bg-caution-base',
             },
         },
         defaultVariants: {
@@ -178,10 +177,10 @@ const MenuItemVariants = cva(
 const iconColorVariantHovered = cva('', {
     variants: {
         variant: {
-            primary: 'var(--menu-list-item-hovered)',
-            negative: 'var(--color-bg-negative-base)',
-            positive: 'var(--color-bg-positive-base)',
-            caution: 'var(--color-bg-caution-base)',
+            primary: 'menu-list-item-hovered',
+            negative: 'color-bg-negative-base',
+            positive: 'color-bg-positive-base',
+            caution: 'color-bg-caution-base',
         },
     },
     defaultVariants: {
@@ -191,10 +190,10 @@ const iconColorVariantHovered = cva('', {
 const iconColorVariantDefault = cva('', {
     variants: {
         variant: {
-            primary: 'var(--menu-list-item-icon)',
-            negative: 'var(--color-bg-negative-base)',
-            positive: 'var(--color-bg-positive-emphasis)',
-            caution: 'var(--color-bg-caution-emphasis)',
+            primary: 'menu-list-item-icon',
+            negative: 'color-bg-negative-base',
+            positive: 'color-bg-positive-emphasis',
+            caution: 'color-bg-caution-emphasis',
         },
     },
     defaultVariants: {
@@ -398,7 +397,7 @@ const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonProps) =>
     return (
         <DropdownMenu.SubTrigger
             className={cn(
-                'relative cursor-pointer hover:bg-[var(--menu-list-item-surface-hovered)] text-[var(--menu-list-item-fg-default)] hover:text-[var(--menu-list-item-fg-hovered)] hover:rounded-lg hover:stroke-[var(--menu-list-item-hovered)] stroke-[var(--menu-list-item-icon)] focus-visible:outline-none p-2 py-2 mx-2',
+                'relative cursor-pointer hover:bg-menu-list-item-surface-hovered text-menu-list-item-fg-default hover:text-menu-list-item-fg-hovered hover:rounded-lg hover:stroke-menu-list-item-hovered stroke-menu-list-item-icon focus-visible:outline-none p-2 py-2 mx-2',
                 className,
             )}
         >
@@ -433,7 +432,7 @@ const SubMenuList = ({ children }: SubMenuListProps) => {
             {isOpen && (
                 <DropdownMenu.Portal forceMount>
                     <DropdownMenu.SubContent
-                        className="py-2 min-w-[180px] md:min-w-[240px] shadow-xl border border-[var(--menu-list-item-border)] bg-[var(--menu-list-surface)] rounded-xl will-change-[opacity,transform] flex flex-col gap-2"
+                        className="py-2 min-w-[180px] md:min-w-[240px] shadow-xl border border-menu-list-item-border bg-menu-list-surface rounded-xl will-change-[opacity,transform] flex flex-col gap-2"
                         sideOffset={20}
                         asChild
                     >
@@ -476,7 +475,7 @@ const SubMenuList = ({ children }: SubMenuListProps) => {
 const MenuDivider = ({ className }: { className?: string }) => {
     return (
         <DropdownMenu.Separator
-            className={cn('border-t-[1px] border-[var(--color-border-primary-subdued)]', className)}
+            className={cn('border-t-[1px] border-color-border-primary-subdued', className)}
         />
     )
 }
