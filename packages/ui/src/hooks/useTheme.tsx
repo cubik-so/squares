@@ -9,7 +9,7 @@ type Theme = 'light' | 'dark'
 const ThemeContext = createContext<{ theme: Theme; toggleTheme: () => void } | undefined>(undefined)
 
 // Custom hook to manage the theme
-function useTheme() {
+function useTheme(): { theme: Theme; toggleTheme: () => void } {
     const context = useContext(ThemeContext)
     if (!context) {
         throw new Error('useTheme must be used within a ThemeProvider')

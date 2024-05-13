@@ -1,8 +1,9 @@
 // LinkComponents.tsx
 import { createContext, useContext } from 'react'
 import Link from 'next/link'
-import type { MouseEvent, ReactNode} from 'react';
-import type { LinkProps } from 'next/link';
+import { cn } from '@utils/cn'
+import type { MouseEvent, ReactNode } from 'react'
+import type { LinkProps } from 'next/link'
 
 // Create a Context with a default value of false
 const LinkBoxContext = createContext<boolean>(false)
@@ -24,9 +25,10 @@ const LinkBox = ({ children, ...props }: LinkBoxProps): JSX.Element => {
 interface LinkOverlayProps extends LinkProps {
     children: ReactNode
     href: string
+    className?: string
 }
 
-const LinkOverlay = ({ children, href, ...props }: LinkOverlayProps): JSX.Element => {
+const LinkOverlay = ({ children, href, className, ...props }: LinkOverlayProps): JSX.Element => {
     const isInLinkBox = useContext(LinkBoxContext)
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -38,7 +40,13 @@ const LinkOverlay = ({ children, href, ...props }: LinkOverlayProps): JSX.Elemen
     }
 
     return (
-        <Link href={href} onClick={handleClick} className="relative w-fit" passHref {...props}>
+        <Link
+            href={href}
+            onClick={handleClick}
+            className={cn('relative w-fit', className)}
+            passHref
+            {...props}
+        >
             {children}
         </Link>
     )
