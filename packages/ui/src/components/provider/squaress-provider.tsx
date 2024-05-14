@@ -24,13 +24,11 @@ interface Props {
 }
 export const SquaresProvider = ({ children }: Props) => {
     return (
-        <body>
-            <ThemeProvider>
-                <div className="min-h-screen">{children}</div>
-                <div id={'drawer-portal'} className="relative "></div>
-                <div id={'dialog-portal'} className="relative"></div>
-                <div id={'popover-portal'} className="relative"></div>
-            </ThemeProvider>
-        </body>
+        <ThemeProvider>
+            <div className="min-h-screen">{children}</div>
+            <div id={'drawer-portal'} className="relative "></div>
+            <div id={'dialog-portal'} className="relative"></div>
+            <div id={'popover-portal'} className="relative"></div>
+        </ThemeProvider>
     )
 }
