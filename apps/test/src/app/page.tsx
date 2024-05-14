@@ -1,12 +1,40 @@
 'use client'
 
-import { AvatarGroup, Button } from '@squaress/ui'
+import { Button, CubikTable } from '@squaress/ui'
+
+interface DataType {
+    id: number
+    name: string
+    age: number
+}
+
+const data: DataType[] = [
+    { id: 1, name: 'John Doe', age: 28 },
+    { id: 2, name: 'Jane Doe', age: 32 },
+    { id: 3, name: 'Jane Doe', age: 32 },
+    { id: 4, name: 'Jane Doe', age: 32 },
+]
+
+const columns = [
+    {
+        header: 'ID',
+        accessorKey: 'id',
+    },
+    {
+        header: 'Name',
+        accessorKey: 'name',
+    },
+    {
+        header: 'Age',
+        accessorKey: 'age',
+    },
+]
 
 export default function Home() {
     return (
         <main className=" bg-body-surface flex min-h-screen flex-col items-center justify-center gap-8 p-24">
             <Button>button</Button>
-            <div className="flex flex-col gap-3">
+            {/* <div className="flex flex-col gap-3">
                 <AvatarGroup
                     size="xs"
                     shape="square"
@@ -169,7 +197,8 @@ export default function Home() {
                         },
                     ]}
                 />
-            </div>
+            </div> */}
+            <CubikTable columns={columns} data={data} showHeader={true} />
         </main>
     )
 }
