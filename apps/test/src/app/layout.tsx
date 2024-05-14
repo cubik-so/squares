@@ -13,9 +13,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <SquaresProvider>
-                <body>{children}</body>
-            </SquaresProvider>
+            <SquaresProvider>{children}</SquaresProvider>
         </html>
     )
 }

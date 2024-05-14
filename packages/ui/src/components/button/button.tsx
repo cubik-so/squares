@@ -45,6 +45,7 @@ export interface ButtonProps
     leftIconName?: string
     rightIconName?: string
     className?: string
+    onClick?: () => void
 }
 
 const buttonVariants = cva('flex items-center justify-center', {
@@ -108,27 +109,30 @@ const getIconSize = (size: string | null | undefined) => {
 
 export const Button = ({
     variant = 'primary',
-    isLoading,
-    loadingText,
+    isLoading = false,
+    loadingText = '',
     children,
-    leftIconName,
-    rightIconName,
-    className,
+    leftIconName = '',
+    rightIconName = '',
+    className = '',
     size = 'md',
+    onClick,
     ...props
 }: ButtonProps) => {
     const motionSpecificProps: MotionProps = {
         layout: true,
     }
+
     return (
-        <motion.button
-            {...motionSpecificProps}
+        <button
+            // {...motionSpecificProps}
             className={cn(
                 'btn-basic',
                 buttonVariants({ variant, size }),
                 className,
                 `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
             )}
+            onClick={onClick}
             disabled={props.disabled !== undefined ? props.disabled : isLoading}
         >
             {/* Left Icon  */}
@@ -193,6 +197,6 @@ export const Button = ({
                     // }
                 />
             )}
-        </motion.button>
+        </button>
     )
 }
