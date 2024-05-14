@@ -25,38 +25,38 @@ const avatarVariants = cva('', {
             squared: '',
         },
     },
-    compoundVariants: [
-        {
-            groupVariant: 'squared-horizontal',
-            size: 'xs',
-            className: 'w-[10px] h-[10px] md:w-[12px] md:h-[12px] !rounded-[5px]',
-        },
-        {
-            groupVariant: 'squared-horizontal',
-            size: 'sm',
-            className: 'w-[14px] h-[14px] md:w-[16px] md:h-[16px] !rounded-[6px]',
-        },
-        {
-            groupVariant: 'squared-horizontal',
-            size: 'md',
-            className: 'w-[16px] h-[16px] md:w-[22px] md:h-[22px]',
-        },
-        {
-            groupVariant: 'squared-horizontal',
-            size: 'lg',
-            className: 'w-[11px] h-[11px] md:w-[26px] md:h-[26px] 2xl:w-[28px] 2xl:h-[28px]',
-        },
-        {
-            groupVariant: 'squared-horizontal',
-            size: 'xl',
-            className: 'w-[28px] h-[28px] md:w-[32px] 2xl:w-[36px] md:h-[32px] 2xl:h-[36px]',
-        },
-        {
-            groupVariant: 'squared-horizontal',
-            size: '2xl',
-            className: 'w-[32px] h-[32px] md:w-[36px] md:h-[36px] 2xl:w-[42px] 2xl:h-[42px]',
-        },
-    ],
+    // compoundVariants: [
+    //     {
+    //         groupVariant: 'squared-horizontal',
+    //         size: 'xs',
+    //         className: 'w-[10px] h-[10px] md:w-[12px] md:h-[12px] !rounded-[5px]',
+    //     },
+    //     {
+    //         groupVariant: 'squared-horizontal',
+    //         size: 'sm',
+    //         className: 'w-[14px] h-[14px] md:w-[16px] md:h-[16px] !rounded-[6px]',
+    //     },
+    //     {
+    //         groupVariant: 'squared-horizontal',
+    //         size: 'md',
+    //         className: 'w-[16px] h-[16px] md:w-[22px] md:h-[22px]',
+    //     },
+    //     {
+    //         groupVariant: 'squared-horizontal',
+    //         size: 'lg',
+    //         className: 'w-[11px] h-[11px] md:w-[26px] md:h-[26px] 2xl:w-[28px] 2xl:h-[28px]',
+    //     },
+    //     {
+    //         groupVariant: 'squared-horizontal',
+    //         size: 'xl',
+    //         className: 'w-[28px] h-[28px] md:w-[32px] 2xl:w-[36px] md:h-[32px] 2xl:h-[36px]',
+    //     },
+    //     {
+    //         groupVariant: 'squared-horizontal',
+    //         size: '2xl',
+    //         className: 'w-[32px] h-[32px] md:w-[36px] md:h-[36px] 2xl:w-[42px] 2xl:h-[42px]',
+    //     },
+    // ],
 })
 
 const iconVariants = cva('', {

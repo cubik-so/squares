@@ -1,26 +1,175 @@
 'use client'
 
-import {
-    Button,
-    Text,
-    VaulDrawer,
-    VaulDrawerContent,
-    VaulDrawerOverlay,
-    VaulDrawerPortal,
-    VaulDrawerTrigger,
-    // VaulDrawerTrigger,
-} from '@squaress/ui'
-import { useState } from 'react'
+import { AvatarGroup, Button } from '@squaress/ui'
 
 export default function Home() {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-    const toggleDrawer = () => setIsOpen(!isOpen)
     return (
         <main className=" bg-body-surface flex min-h-screen flex-col items-center justify-center gap-8 p-24">
-            {/* <VaulDrawerTrigger>
-                <button onClick={toggleDrawer}>Open Drawer</button>
-            </VaulDrawerTrigger> */}
-            <Button onClick={() => setIsOpen(true)}>sdfasf</Button>
+            <Button>button</Button>
+            <div className="flex flex-col gap-3">
+                <AvatarGroup
+                    size="xs"
+                    shape="square"
+                    variant="squared-horizontal"
+                    avatars={[
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                    ]}
+                />
+                <AvatarGroup
+                    size="sm"
+                    shape="square"
+                    variant="squared-horizontal"
+                    avatars={[
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                    ]}
+                />
+                <AvatarGroup
+                    shape="square"
+                    variant="squared-horizontal"
+                    size="md"
+                    avatars={[
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                    ]}
+                />
+                <AvatarGroup
+                    shape="square"
+                    size="lg"
+                    variant="squared-horizontal"
+                    avatars={[
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                    ]}
+                />
+                <AvatarGroup
+                    shape="square"
+                    size="xl"
+                    variant="squared-horizontal"
+                    avatars={[
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                    ]}
+                />
+                <AvatarGroup
+                    shape="square"
+                    size="2xl"
+                    variant="squared-horizontal"
+                    avatars={[
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                        {
+                            src: 'https://pbs.twimg.com/profile_images/1694008102709055488/ESkPDhR-_400x400.jpg',
+                            alt: 'sample image',
+                        },
+                    ]}
+                />
+            </div>
         </main>
     )
 }
