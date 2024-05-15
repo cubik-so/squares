@@ -1,6 +1,6 @@
 {
     "name": "@squaress/ui",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "description": "",
     "main": "lib/index.js",
     "module": "lib/index.mjs",
@@ -86,6 +86,6 @@
         "ts-node": "^10.9.2",
         "tsup": "^8.0.2",
         "uuid": "^9.0.1",
-        "vaul": "^0.9.0"
+        "vaul": "^0.8.7"
     }
 }

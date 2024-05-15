@@ -17,7 +17,11 @@ interface DrawerPortalProps {
 }
 
 export const VaulDrawerPortal = ({ children }: DrawerPortalProps) => {
-    return <Drawer.Portal>{children}</Drawer.Portal>
+    return (
+        <Drawer.Portal container={document.getElementById('drawer-portal')}>
+            {children}
+        </Drawer.Portal>
+    )
 }
 
 export const VaulDrawerOverlay = ({ className }: { className?: ClassValue }) => (
@@ -68,14 +72,28 @@ export const VaulDrawerContent = ({ children, className }: DrawerContentProps) =
 }
 
 export interface VaulDrawerProps {
-    children: React.ReactNode
+    activeSnapPoint?: number | string | null
+    setActiveSnapPoint?: (snapPoint: number | string | null) => void
+    children?: React.ReactNode
     open?: boolean
-    onOpenChange: () => void
+    closeThreshold?: number
+    onOpenChange?: (open: boolean) => void
+    shouldScaleBackground?: boolean
+    scrollLockTimeout?: number
+    fixed?: boolean
+    dismissible?: boolean
+    onDrag?: (event: React.PointerEvent<HTMLDivElement>, percentageDragged: number) => void
+    onRelease?: (event: React.PointerEvent<HTMLDivElement>, open: boolean) => void
+    modal?: boolean
+    direction?: 'top' | 'right' | 'bottom' | 'left'
+    nested?: boolean
+    onClose?: () => void
 }
 
-export const VaulDrawer = ({ children, open, onOpenChange }: VaulDrawerProps) => {
+export const VaulDrawer = ({ children, open, onOpenChange, ...props }: VaulDrawerProps) => {
+    console.log('first', open, onOpenChange)
     return (
-        <Drawer.Root shouldScaleBackground open={open} onOpenChange={onOpenChange}>
+        <Drawer.Root open={open} onOpenChange={onOpenChange} {...props}>
             {children}
         </Drawer.Root>
     )

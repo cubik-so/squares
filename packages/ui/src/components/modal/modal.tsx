@@ -70,7 +70,7 @@ export const Modal = ({
                         </Dialog.Overlay>
                         <Dialog.Content
                             className={cn(
-                                `fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] bg-modal-body-surface translate-x-[-50%] translate-y-[-50%] focus:outline-none`,
+                                `fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] bg-modal-body-surface translate-x-[-50%] translate-y-[-50%] focus:outline-none overflow-scroll`,
                                 modalContentVariants({ dialogSize }),
                                 className,
                             )}

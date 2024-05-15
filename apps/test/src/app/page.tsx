@@ -1,6 +1,14 @@
 'use client'
 
-import { Button, Modal } from '@squaress/ui'
+import {
+    Button,
+    // Modal,
+    // VaulDrawer,
+    // VaulDrawerContent,
+    // VaulDrawerOverlay,
+    // VaulDrawerPortal,
+    ResponsiveModal,
+} from '@squaress/ui'
 import { useState } from 'react'
 
 export default function Home() {
@@ -16,14 +24,111 @@ export default function Home() {
             >
                 button
             </Button>
-            <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                <div>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quam natus
-                    porro dolore molestias debitis voluptatem autem recusandae blanditiis
-                    voluptatibus, excepturi harum quidem itaque? Eos recusandae minima excepturi
-                    voluptates. Eveniet!
+            <ResponsiveModal open={isOpen} onClose={() => setIsOpen(false)}>
+                <div className="p-4">
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
+                    <h2 className="text-lg font-bold">Drawer Content</h2>
+                    <p>This is the content inside the drawer.</p>
+                    <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi velit
+                        provident quos, itaque tenetur, maxime molestias dolores officia quae,
+                        cumque id sint? Dolorum pariatur labore deleniti rem vero magnam odio.
+                    </div>
                 </div>
-            </Modal>
+            </ResponsiveModal>
+            {/* <VaulDrawer open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+             
+                <VaulDrawerPortal>
+                    <VaulDrawerOverlay />
+                    <VaulDrawerContent>
+                        <div className="p-4">
+                            <h2 className="text-lg font-bold">Drawer Content</h2>
+                            <p>This is the content inside the drawer.</p>
+                            <button onClick={() => setIsOpen(false)}>Close Drawer</button>
+                        </div>
+                    </VaulDrawerContent>
+                </VaulDrawerPortal>
+            </VaulDrawer> */}
         </main>
     )
 }
