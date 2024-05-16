@@ -19,44 +19,45 @@ const avatarVariants = cva('', {
             xl: 'w-[56px] h-[56px] md:w-[64px] 2xl:w-[72px] md:h-[64px] 2xl:h-[72px]',
             '2xl': 'w-[64px] h-[64px] md:w-[72px] md:h-[72px] 2xl:w-[84px] 2xl:h-[84px]',
         },
+
         groupVariant: {
             'squared-horizontal': '',
             circular: '',
             squared: '',
         },
     },
-    // compoundVariants: [
-    //     {
-    //         groupVariant: 'squared-horizontal',
-    //         size: 'xs',
-    //         className: 'w-[10px] h-[10px] md:w-[12px] md:h-[12px] !rounded-[5px]',
-    //     },
-    //     {
-    //         groupVariant: 'squared-horizontal',
-    //         size: 'sm',
-    //         className: 'w-[14px] h-[14px] md:w-[16px] md:h-[16px] !rounded-[6px]',
-    //     },
-    //     {
-    //         groupVariant: 'squared-horizontal',
-    //         size: 'md',
-    //         className: 'w-[16px] h-[16px] md:w-[22px] md:h-[22px]',
-    //     },
-    //     {
-    //         groupVariant: 'squared-horizontal',
-    //         size: 'lg',
-    //         className: 'w-[11px] h-[11px] md:w-[26px] md:h-[26px] 2xl:w-[28px] 2xl:h-[28px]',
-    //     },
-    //     {
-    //         groupVariant: 'squared-horizontal',
-    //         size: 'xl',
-    //         className: 'w-[28px] h-[28px] md:w-[32px] 2xl:w-[36px] md:h-[32px] 2xl:h-[36px]',
-    //     },
-    //     {
-    //         groupVariant: 'squared-horizontal',
-    //         size: '2xl',
-    //         className: 'w-[32px] h-[32px] md:w-[36px] md:h-[36px] 2xl:w-[42px] 2xl:h-[42px]',
-    //     },
-    // ],
+    compoundVariants: [
+        {
+            variant: 'square',
+            size: 'xs',
+            class: 'rounded-xs w-[20px] h-[20px] md:w-[24px] md:h-[24px]',
+        },
+        {
+            variant: 'square',
+            size: 'sm',
+            class: 'rounded-xs md:rounded-sm w-[28px] h-[28px] md:w-[30px] md:h-[30px]',
+        },
+        {
+            variant: 'square',
+            size: 'md',
+            class: 'rounded-sm md:rounded-md w-[30px] h-[30px] md:w-[44px] md:h-[44px]',
+        },
+        {
+            variant: 'square',
+            size: 'lg',
+            class: 'rounded-md md:rounded-lg w-[44px] h-[44px] md:w-[56px] md:h-[56px]',
+        },
+        {
+            variant: 'square',
+            size: 'xl',
+            class: 'rounded-md md:rounded-lg w-[56px] h-[56px] md:w-[72px] md:h-[72px]',
+        },
+        {
+            variant: 'square',
+            size: '2xl',
+            class: 'rounded-md md:rounded-lg w-[64px] h-[64px] md:w-[84px] md:h-[84px]',
+        },
+    ],
 })
 
 const iconVariants = cva('', {
@@ -107,7 +108,7 @@ export const Avatar = ({
     src,
     alt,
     variant = 'circle',
-    size,
+    size = 'md',
     iconName,
     groupVariant = 'circular',
 }: AvatarProps) => {
