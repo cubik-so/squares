@@ -2,7 +2,7 @@ import React from 'react'
 import { cva } from 'class-variance-authority'
 import { handleMediaQuery } from '@/hooks/handleMediaQuery'
 import { cn } from '@utils/cn'
-import type { VariantProps } from 'class-variance-authority';
+import type { VariantProps } from 'class-variance-authority'
 
 const logoVariants = cva('', {
     variants: {

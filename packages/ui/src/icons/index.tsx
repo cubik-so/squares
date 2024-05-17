@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 import { iconLibrary } from '../utils/iconLibrary'
 import { CreateIcon } from '../utils/create-icon'
+import '../styles/global.css'
 
 interface Props extends React.SVGProps<SVGSVGElement> {
     name: string
