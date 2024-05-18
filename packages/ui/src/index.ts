@@ -1,4 +1,4 @@
-import './styles/global.css'
+import './styles/index.css'
 
 export * from './components'
 export * from './icons'

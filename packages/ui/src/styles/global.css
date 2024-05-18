@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './primitives.css';
+@import './dark-colors.css';
+@import './light-colors.css';
+@import './component-colors.css';
+@import './overwrite.css';
+@import './global.css';
+@import './text.css';
+
 .btn-basic {
     @apply rounded-lg transform active:scale-95 transition-all whitespace-nowrap pointer-events-auto w-[fit-content] gap-[6px] disabled:cursor-not-allowed focus-visible:ring-4 focus-visible:ring-color-surface-cool-transparent focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none;
 }
