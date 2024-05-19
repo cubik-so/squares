@@ -8,7 +8,6 @@
     },
     "dependencies": {
         "@next/bundle-analyzer": "^14.2.3",
-        "@squaress/ui": "workspace:*",
         "@tanstack/react-table": "^8.15.3",
         "next": "14.2.3",
         "react": "^18.2.0",

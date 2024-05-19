@@ -8,7 +8,7 @@
     "scripts": {
         "publish": "pnpm build && pnpm publish --no-git-checks",
         "build": "tsup",
-        "dev": "pnpm build:fast --watch",
+        "dev": "tsup --watch",
         "clean": "rimraf dist .turbo",
         "type-check": "tsc --noEmit",
         "create:theme": "tsx src/scripts/create-theme.ts",
@@ -29,6 +29,21 @@
                 "types": "./lib/index.d.ts",
                 "default": "./lib/index.js"
             }
+        },
+        "./avatar": {
+            "types": "./lib/components/avatar/index.d.ts",
+            "import": "./lib/components/avatar/index.mjs",
+            "require": "../lib/components/avatar/index.js"
+        },
+        "./button": {
+            "types": "./lib/components/button/index.d.ts",
+            "import": "./lib/components/button/index.mjs",
+            "require": "../lib/components/button/index.js"
+        },
+        "./provider": {
+            "types": "./lib/components/provider/index.d.ts",
+            "import": "./lib/components/provider/index.mjs",
+            "require": "../lib/components/provider/index.js"
         },
         "./styles.css": "./lib/styles/index.css",
         "./theme": {

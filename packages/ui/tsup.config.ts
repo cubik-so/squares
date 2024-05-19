@@ -7,7 +7,13 @@ export default defineConfig({
     outDir: 'lib', // Output directory
     dts: true, // Generate .d.ts file
     external: ['react', 'react-dom'],
-    entry: ['src/index.ts', 'src/config', 'src/styles'],
+    entry: [
+        'src/components/avatar',
+        'src/components/provider',
+        'src/components/button',
+        'src/config',
+        'src/styles',
+    ],
     treeshake: true,
     sourcemap: 'inline',
     splitting: false,
