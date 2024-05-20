@@ -33,6 +33,7 @@ export default defineConfig({
         'src/components/radio-group',
         'src/components/responsive-modal',
         'src/components/segment',
+        'src/components/select',
         'src/components/spinner',
         'src/components/subhead',
         'src/components/tabs',
