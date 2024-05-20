@@ -48,8 +48,11 @@ importers:
     apps/docs:
         dependencies:
             '@squaress/ui':
-                specifier: workspace:^
+                specifier: workspace:*
                 version: link:../../packages/ui
+            '@tanstack/react-table':
+                specifier: ^8.11.6
+                version: 8.15.3(react-dom@18.2.0)(react@18.2.0)
             next:
                 specifier: 14.2.3
                 version: 14.2.3(@babel/core@7.24.5)(react-dom@18.2.0)(react@18.2.0)
@@ -315,6 +318,9 @@ importers:
             '@tanstack/react-table':
                 specifier: ^8.11.6
                 version: 8.15.3(react-dom@18.2.0)(react@18.2.0)
+            autoprefixer:
+                specifier: ^10.4.19
+                version: 10.4.19(postcss@8.4.36)
             class-variance-authority:
                 specifier: ^0.7.0
                 version: 0.7.0
@@ -8280,7 +8286,6 @@ packages:
             picocolors: 1.0.0
             postcss: 8.4.36
             postcss-value-parser: 4.2.0
-        dev: true
 
     /available-typed-arrays@1.0.7:
         resolution:
@@ -11698,7 +11703,6 @@ packages:
             {
                 integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==,
             }
-        dev: true
 
     /framer-motion@11.0.20(react-dom@18.2.0)(react@18.2.0):
         resolution:
@@ -14094,7 +14098,6 @@ packages:
                 integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==,
             }
         engines: { node: '>=0.10.0' }
-        dev: true
 
     /npm-run-path@4.0.1:
         resolution:
@@ -14911,7 +14914,6 @@ packages:
             {
                 integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==,
             }
-        dev: true
 
     /postcss@8.4.31:
         resolution:
@@ -17909,7 +17911,7 @@ packages:
         dependencies:
             '@types/node': 20.11.29
             esbuild: 0.19.12
-            postcss: 8.4.36
+            postcss: 8.4.38
             rollup: 4.13.0
         optionalDependencies:
             fsevents: 2.3.3

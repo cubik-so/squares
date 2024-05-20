@@ -1,8 +1,11 @@
-import { cva } from 'class-variance-authority'
-import { motion } from 'framer-motion'
 import React from 'react'
-import Icon from '@/icons'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { cva } from 'class-variance-authority'
 import { cn } from '@utils/cn'
+import { handleMediaQuery } from '@/hooks/handleMediaQuery'
+import Icon from '@/icons'
+import type { IconName } from '@utils/iconLibrary'
 import type { VariantProps } from 'class-variance-authority'
 
 const avatarVariants = cva('', {
@@ -13,17 +16,11 @@ const avatarVariants = cva('', {
         },
         size: {
             xs: 'w-[20px] h-[20px] md:w-[24px] md:h-[24px]', // [var(--size-sm)]
-            sm: 'w-[28px] h-[28px] md:w-[32px] md:h-[32px]',
-            md: 'w-[32px] h-[32px] md:w-[44px] md:h-[44px]',
-            lg: 'w-[44px] h-[44px] md:w-[52px] md:h-[52px] 2xl:w-[56px] 2xl:h-[56px]',
-            xl: 'w-[56px] h-[56px] md:w-[64px] 2xl:w-[72px] md:h-[64px] 2xl:h-[72px]',
-            '2xl': 'w-[64px] h-[64px] md:w-[72px] md:h-[72px] 2xl:w-[84px] 2xl:h-[84px]',
-        },
-
-        groupVariant: {
-            'squared-horizontal': '',
-            circular: '',
-            squared: '',
+            sm: 'w-[28px] h-[28px] md:w-[32px] md:h-[32px] 2xl:w-[32px] 2xl:h-[32px] ',
+            md: 'w-[32px] h-[32px] md:w-[44px] md:h-[44px] 2xl:w-[44px] 2xl:h-[44px] ',
+            lg: 'w-[44px] h-[44px] md:w-[52px] md:h-[52px] 2xl:w-[56px] 2xl:h-[56px] ',
+            xl: 'w-[56px] h-[56px] md:w-[64px] 2xl:w-[72px] md:h-[64px] 2xl:h-[72px] ',
+            '2xl': 'w-[64px] h-[64px] md:w-[72px] md:h-[72px] 2xl:w-[84px] 2xl:h-[84px] ',
         },
     },
     compoundVariants: [
@@ -58,86 +55,139 @@ const avatarVariants = cva('', {
             class: 'rounded-md md:rounded-lg w-[64px] h-[64px] md:w-[84px] md:h-[84px]',
         },
     ],
-})
-
-const iconVariants = cva('', {
-    variants: {
-        variant: {
-            square: '-bottom-1 -right-1',
-            circle: 'bottom-0 right-0',
-        },
-        size: {
-            xs: 'w-[10px] h-[10px]',
-            sm: 'w-[10px] h-[10px]',
-            md: 'w-[12px] h-[12px]',
-            lg: 'w-[14px] h-[14px]',
-            xl: 'w-[16px] h-[16px]',
-            '2xl': 'w-[18px] h-[18px]',
-        },
+    defaultVariants: {
+        variant: 'circle',
+        size: 'md',
     },
 })
-const getIconSize = (size: string | null | undefined) => {
-    switch (size) {
-        case '2xl':
-            return { height: 24, width: 24, strokeWidth: 2 }
-        case 'xl':
-            return { height: 20, width: 20, strokeWidth: 2 }
-        case 'lg':
-            return { height: 18, width: 18, strokeWidth: 2 }
-        case 'md':
-            return { height: 18, width: 18, strokeWidth: 2 }
 
-        case 'sm':
-            return { height: 12, width: 12, strokeWidth: 1.8 }
-        case 'xs':
-            return { height: 8, width: 8, strokeWidth: 1.8 }
-        default:
-            return { height: 16, width: 16, strokeWidth: 2 } // Default size
-    }
-}
+const iconVariants = cva(
+    'absolute shadow-md block z-1 rounded-full p-1  bg-[var(--avatar-status)] border border-[var(--avatar-status)]',
+    {
+        variants: {
+            variant: {
+                square: '-bottom-1 -right-1',
+                circle: 'bottom-0 right-0',
+            },
+            size: {
+                xs: 'w-[6px] h-[6px]',
+                sm: 'w-[8px] h-[8px]',
+                md: 'w-[10rem] h-[10rem]',
+                lg: 'w-[16rem] h-[16rem]',
+                xl: 'w-[64px] h-[64px]',
+                '2xl': 'w-[80px] h-[80px]',
+            },
+        },
+        defaultVariants: {
+            size: 'sm',
+            variant: 'circle',
+        },
+    },
+)
+const childrenPositionVariant = cva('', {
+    variants: {
+        variant: {
+            square: '',
+            circle: '',
+        },
+        size: {
+            xs: '',
+            sm: 'translate-x-1',
+            md: '',
+            lg: '',
+            xl: '',
+            '2xl': '',
+        },
+    },
+    defaultVariants: {
+        size: 'sm',
+        variant: 'circle',
+    },
+})
 
-export interface AvatarProps extends VariantProps<typeof avatarVariants> {
+interface AvatarProps extends VariantProps<typeof avatarVariants> {
     src: string
     alt: string
     className?: string
-    variant?: 'circle' | 'square'
-    iconName?: string
+    iconName?: IconName
+    iconClick?: () => void
+    layoutId?: string
+    style?: React.CSSProperties
+    children?: React.ReactNode
 }
 
-export const Avatar = ({
+const Avatar = ({
     src,
     alt,
-    variant = 'circle',
-    size = 'md',
+    variant,
+    size,
+    className,
     iconName,
-    groupVariant = 'circular',
+    iconClick,
+    layoutId,
+    style,
+    children,
 }: AvatarProps) => {
     return (
-        <motion.div className="relative ">
-            <img
+        <motion.div
+            className={cn(
+                'relative inline-block',
+                handleMediaQuery([
+                    {
+                        className: avatarVariants({
+                            size: size,
+                            variant,
+                            className,
+                        }),
+                        type: 'default',
+                    },
+                    {
+                        className: avatarVariants({
+                            size: 'sm',
+                            variant,
+                            className,
+                        }),
+                        type: 'sm',
+                    },
+                ]),
+                className,
+            )}
+            style={style}
+            layoutId={layoutId}
+        >
+            <Image
                 src={src}
                 alt={alt}
+                fill={true}
+                sizes="(max-width: 768px) 100vw, 33vw"
                 style={{
                     objectFit: 'cover',
                     background: 'transparent',
                     borderRadius: variant === 'circle' ? '100%' : '8px',
                 }}
-                className={cn(avatarVariants({ size, groupVariant }))}
+                priority
             />
             {iconName && (
-                <div
-                    className={cn(
-                        iconVariants({ variant, size }),
-                        'absolute z-1 rounded-full bg-avatar-status border border-avatar-status flex items-center justify-center',
-                    )}
-                >
-                    <Icon
-                        name={'plus'}
-                        className={cn(iconVariants({ size }))}
-                        {...getIconSize(size)}
-                    />
-                </div>
+                <Icon
+                    name={iconName}
+                    className={cn(iconVariants({ variant, size }), 'w-6 h-6')}
+                    color="var(--avatar-status-icon)"
+                    onClick={iconClick}
+                    width={10}
+                    height={10}
+                />
             )}
+            <div
+                className={cn(
+                    'absolute shadow-md block z-1 rounded-full right-0 bottom-0 transform translate-x-2 bg-[var(--avatar-status)]',
+                    childrenPositionVariant({ variant, size }),
+                )}
+            >
+                {children}
+            </div>
         </motion.div>
     )
 }
+
+export { Avatar }
+export type { AvatarProps }

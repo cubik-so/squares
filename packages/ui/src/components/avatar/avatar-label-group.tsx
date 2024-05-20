@@ -7,7 +7,7 @@ import { AvatarGroup } from './avatar-group'
 import { TitleWithIcon } from './title-with-icon'
 import type { AvatarProps } from './avatar'
 
-interface AvatarLabelProps {
+export interface AvatarLabelProps {
     avatarSrc: string | AvatarProps[]
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
     shape?: 'square' | 'circle'

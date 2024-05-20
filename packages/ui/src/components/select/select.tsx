@@ -11,7 +11,7 @@ import { CustomComponents } from './custom-components'
 
 import type { MultiValue, SingleValue } from 'react-select'
 
-export type SelectOptionsType = {
+type SelectOptionsType = {
     label: string
     value: string
     icon?: string

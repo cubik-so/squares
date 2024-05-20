@@ -9,7 +9,8 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@squaress/ui": "workspace:^",
+        "@squaress/ui": "workspace:*",
+        "@tanstack/react-table": "^8.11.6",
         "next": "14.2.3",
         "react": "^18",
         "react-dom": "^18",

@@ -1,5 +1,6 @@
 import React from 'react'
 import { cva } from 'class-variance-authority'
+
 import { cn } from '@utils/cn'
 import { Text } from '../text/text'
 import { Avatar } from './avatar'
@@ -37,7 +38,7 @@ export interface AvatarGroupProps extends VariantProps<typeof avatarGroupVariant
 
 export const AvatarGroup = ({
     avatars,
-    shape = 'circle',
+    shape,
     size,
     variant = 'circular',
     maxCount = 3,
@@ -64,7 +65,6 @@ export const AvatarGroup = ({
                             variant={shape}
                             size={size}
                             className="rounded-[4px]"
-                            groupVariant={variant}
                         />
                     ))}
                 {variant === 'squared-horizontal' && overflowCount && (

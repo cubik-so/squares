@@ -1,6 +1,6 @@
 {
     "name": "@squaress/ui",
-    "version": "0.0.23",
+    "version": "0.0.24",
     "description": "",
     "main": "lib/index.js",
     "module": "lib/index.mjs",
@@ -30,20 +30,185 @@
                 "default": "./lib/index.js"
             }
         },
+        "./alert": {
+            "types": "./lib/components/alert/index.d.ts",
+            "import": "./lib/components/alert/index.mjs",
+            "require": "./lib/components/alert/index.js"
+        },
         "./avatar": {
             "types": "./lib/components/avatar/index.d.ts",
             "import": "./lib/components/avatar/index.mjs",
-            "require": "../lib/components/avatar/index.js"
+            "require": "./lib/components/avatar/index.js"
+        },
+        "./background": {
+            "types": "./lib/components/background/index.d.ts",
+            "import": "./lib/components/background/index.mjs",
+            "require": "./lib/components/background/index.js"
         },
         "./button": {
             "types": "./lib/components/button/index.d.ts",
             "import": "./lib/components/button/index.mjs",
-            "require": "../lib/components/button/index.js"
+            "require": "./lib/components/button/index.js"
+        },
+        "./card": {
+            "types": "./lib/components/card/index.d.ts",
+            "import": "./lib/components/card/index.mjs",
+            "require": "./lib/components/card/index.js"
+        },
+        "./carousel": {
+            "types": "./lib/components/carousel/index.d.ts",
+            "import": "./lib/components/carousel/index.mjs",
+            "require": "./lib/components/carousel/index.js"
+        },
+        "./checkbox": {
+            "types": "./lib/components/checkbox/index.d.ts",
+            "import": "./lib/components/checkbox/index.mjs",
+            "require": "./lib/components/checkbox/index.js"
+        },
+        "./confetti": {
+            "types": "./lib/components/confetti/index.d.ts",
+            "import": "./lib/components/confetti/index.mjs",
+            "require": "./lib/components/confetti/index.js"
+        },
+        "./cubik-table": {
+            "types": "./lib/components/cubik-table/index.d.ts",
+            "import": "./lib/components/cubik-table/index.mjs",
+            "require": "./lib/components/cubik-table/index.js"
+        },
+        "./divider": {
+            "types": "./lib/components/divider/index.d.ts",
+            "import": "./lib/components/divider/index.mjs",
+            "require": "./lib/components/divider/index.js"
+        },
+        "./drawer": {
+            "types": "./lib/components/drawer/index.d.ts",
+            "import": "./lib/components/drawer/index.mjs",
+            "require": "./lib/components/drawer/index.js"
+        },
+        "./empty-state": {
+            "types": "./lib/components/empty-state/index.d.ts",
+            "import": "./lib/components/empty-state/index.mjs",
+            "require": "./lib/components/empty-state/index.js"
+        },
+        "./form-stepper": {
+            "types": "./lib/components/form-stepper/index.d.ts",
+            "import": "./lib/components/form-stepper/index.mjs",
+            "require": "./lib/components/form-stepper/index.js"
+        },
+        "./helper-text": {
+            "types": "./lib/components/helper-text/index.d.ts",
+            "import": "./lib/components/helper-text/index.mjs",
+            "require": "./lib/components/helper-text/index.js"
+        },
+        "./input-container": {
+            "types": "./lib/components/input-container/index.d.ts",
+            "import": "./lib/components/input-container/index.mjs",
+            "require": "./lib/components/input-container/index.js"
+        },
+        "./input-field": {
+            "types": "./lib/components/input-field/index.d.ts",
+            "import": "./lib/components/input-field/index.mjs",
+            "require": "./lib/components/input-field/index.js"
+        },
+        "./input-label": {
+            "types": "./lib/components/input-label/index.d.ts",
+            "import": "./lib/components/input-label/index.mjs",
+            "require": "./lib/components/input-label/index.js"
+        },
+        "./links": {
+            "types": "./lib/components/links/index.d.ts",
+            "import": "./lib/components/links/index.mjs",
+            "require": "./lib/components/links/index.js"
+        },
+        "./logo": {
+            "types": "./lib/components/logo/index.d.ts",
+            "import": "./lib/components/logo/index.mjs",
+            "require": "./lib/components/logo/index.js"
+        },
+        "./menu-list": {
+            "types": "./lib/components/menu-list/index.d.ts",
+            "import": "./lib/components/menu-list/index.mjs",
+            "require": "./lib/components/menu-list/index.js"
+        },
+        "./modal": {
+            "types": "./lib/components/modal/index.d.ts",
+            "import": "./lib/components/modal/index.mjs",
+            "require": "./lib/components/modal/index.js"
+        },
+        "./ping-icon": {
+            "types": "./lib/components/ping-icon/index.d.ts",
+            "import": "./lib/components/ping-icon/index.mjs",
+            "require": "./lib/components/ping-icon/index.js"
         },
         "./provider": {
             "types": "./lib/components/provider/index.d.ts",
             "import": "./lib/components/provider/index.mjs",
-            "require": "../lib/components/provider/index.js"
+            "require": "./lib/components/provider/index.js"
+        },
+        "./radio-group": {
+            "types": "./lib/components/radio-group/index.d.ts",
+            "import": "./lib/components/radio-group/index.mjs",
+            "require": "./lib/components/radio-group/index.js"
+        },
+        "./responsive-modal": {
+            "types": "./lib/components/responsive-modal/index.d.ts",
+            "import": "./lib/components/responsive-modal/index.mjs",
+            "require": "./lib/components/responsive-modal/index.js"
+        },
+        "./segment": {
+            "types": "./lib/components/segment/index.d.ts",
+            "import": "./lib/components/segment/index.mjs",
+            "require": "./lib/components/segment/index.js"
+        },
+        "./select": {
+            "types": "./lib/components/select/index.d.ts",
+            "import": "./lib/components/select/index.mjs",
+            "require": "./lib/components/select/index.js"
+        },
+        "./skeleton": {
+            "types": "./lib/components/skeleton/index.d.ts",
+            "import": "./lib/components/skeleton/index.mjs",
+            "require": "./lib/components/skeleton/index.js"
+        },
+        "./spinner": {
+            "types": "./lib/components/spinner/index.d.ts",
+            "import": "./lib/components/spinner/index.mjs",
+            "require": "./lib/components/spinner/index.js"
+        },
+        "./subhead": {
+            "types": "./lib/components/subhead/index.d.ts",
+            "import": "./lib/components/subhead/index.mjs",
+            "require": "./lib/components/subhead/index.js"
+        },
+        "./tabs": {
+            "types": "./lib/components/tabs/index.d.ts",
+            "import": "./lib/components/tabs/index.mjs",
+            "require": "./lib/components/tabs/index.js"
+        },
+        "./tag": {
+            "types": "./lib/components/tag/index.d.ts",
+            "import": "./lib/components/tag/index.mjs",
+            "require": "./lib/components/tag/index.js"
+        },
+        "./text": {
+            "types": "./lib/components/text/index.d.ts",
+            "import": "./lib/components/text/index.mjs",
+            "require": "./lib/components/text/index.js"
+        },
+        "./toast": {
+            "types": "./lib/components/toast/index.d.ts",
+            "import": "./lib/components/toast/index.mjs",
+            "require": "./lib/components/toast/index.js"
+        },
+        "./toogle-switch": {
+            "types": "./lib/components/toogle-switch/index.d.ts",
+            "import": "./lib/components/toogle-switch/index.mjs",
+            "require": "./lib/components/toogle-switch/index.js"
+        },
+        "./tooltip": {
+            "types": "./lib/components/tooltip/index.d.ts",
+            "import": "./lib/components/tooltip/index.mjs",
+            "require": "./lib/components/tooltip/index.js"
         },
         "./styles.css": "./lib/styles/index.css",
         "./theme": {
@@ -90,6 +255,7 @@
         "@radix-ui/react-tabs": "^1.0.4",
         "@radix-ui/react-tooltip": "^1.0.7",
         "@tanstack/react-table": "^8.11.6",
+        "autoprefixer": "^10.4.19",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
         "embla-carousel-react": "8.0.0-rc17",
