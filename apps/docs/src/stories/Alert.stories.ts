@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Alert } from '@squaress/ui/alert'
-import IconName from '@squaress/ui/icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Alert> = {
@@ -27,12 +26,12 @@ const meta: Meta<typeof Alert> = {
         description: {
             control: 'text',
         },
-        iconName: {
-            control: {
-                type: 'select',
-                options: Object.keys(IconName), // Assuming IconName is an enum or object with icon names
-            },
-        },
+        // iconName: {
+        //     control: {
+        //         type: 'select',
+        //         options: Object.keys(IconName), // Assuming IconName is an enum or object with icon names
+        //     },
+        // },
         children: {
             control: 'text',
         },

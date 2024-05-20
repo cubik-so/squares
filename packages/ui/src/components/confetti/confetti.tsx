@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useEffect, useRef, useState } from 'react'
 import Confetti from 'react-confetti'
 import type { IConfettiOptions } from 'react-confetti/dist/types/Confetti'

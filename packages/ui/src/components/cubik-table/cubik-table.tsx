@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import {
     flexRender,
@@ -75,7 +74,7 @@ export const CubikTable = <T,>({ columns, data, showHeader = true }: CubikTableP
                                 row.index === table.getRowModel().rows.length - 1
                                     ? ''
                                     : 'border-b border-b-table-row-border'
-                            } 
+                            }
               `}
                             key={row.id}
                         >

@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useMemo } from 'react'
-
+import { createContext, useContext, useMemo } from 'react'
 import { cva } from 'class-variance-authority'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from 'usehooks-ts'
@@ -7,9 +6,10 @@ import { v4 as uuid_v4 } from 'uuid'
 import { cn } from '@utils/cn'
 import Icon from '@/icons'
 import { Text } from '../text/text'
+import type { ReactNode } from 'react'
 
 interface SegmentContainerProps {
-    children: React.ReactNode
+    children: ReactNode
     size: 'sm' | 'md' | 'lg'
 }
 interface SegmentItemProps {

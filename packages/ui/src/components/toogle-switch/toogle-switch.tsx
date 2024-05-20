@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState } from 'react'
 import { cva } from 'class-variance-authority'
 import * as Switch from '@radix-ui/react-switch'

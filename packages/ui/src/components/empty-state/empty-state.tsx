@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from 'usehooks-ts'
 import { cn } from '@utils/cn'
