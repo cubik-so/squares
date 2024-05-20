@@ -30,7 +30,8 @@ export function CreateIcon(options: IconOptions) {
             preserveAspectRatio="xMidYMid meet"
             strokeLinecap="round"
             strokeLinejoin="round"
-            fill="none"
+            fill={options.fill ? color : 'none'}
+            stroke={options.stroke ? color : 'none'}
             clipRule="evenodd"
             fillRule="evenodd"
             strokeWidth={strokeWidth}
