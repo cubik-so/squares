@@ -45,6 +45,7 @@ export default defineConfig({
         'src/components/tooltip',
         'src/config',
         'src/styles',
+        'src/icons/index.tsx',
     ],
     treeshake: true,
     sourcemap: 'inline',
