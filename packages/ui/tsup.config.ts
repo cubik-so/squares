@@ -35,6 +35,7 @@ export default defineConfig({
         'src/components/responsive-modal',
         'src/components/segment',
         'src/components/select',
+        'src/components/skeleton',
         'src/components/spinner',
         'src/components/subhead',
         'src/components/tabs',
