@@ -47,6 +47,7 @@ export default defineConfig({
         'src/config',
         'src/styles',
         'src/icons/index.tsx',
+        'src/hooks/useTheme.tsx',
     ],
     treeshake: true,
     sourcemap: 'inline',

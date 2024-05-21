@@ -1,6 +1,6 @@
 {
     "name": "@squaress/ui",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "description": "",
     "main": "lib/index.js",
     "module": "lib/index.mjs",
@@ -204,6 +204,11 @@
             "import": "./lib/config/theme.mjs",
             "require": "./lib/config/theme.js",
             "types": "./lib/config/theme.d.ts"
+        },
+        "./useTheme": {
+            "import": "./lib/hooks/useTheme.mjs",
+            "require": "./lib/hooks/useTheme.js",
+            "types": "./lib/hooks/useTheme.d.ts"
         },
         "./icons": {
             "source": "./src/icons/index.tsx",
