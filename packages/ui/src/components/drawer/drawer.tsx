@@ -60,7 +60,7 @@ export const VaulDrawerContent = ({ children, className }: DrawerContentProps) =
         <Drawer.Content
             className={cn(
                 'fixed bg-color-surface-primary shadow-2xl dark:shadow-black pt-2 focus:outline-none h-[100%]',
-                'h-max bottom-0 left-0 right-0 w-full max-w-[100%] rounded-t-[12px] max-h-[93%]',
+                'bottom-0 left-0 right-0 w-full max-w-[100%] rounded-t-[12px] max-h-[93%]',
                 className,
             )}
             // style={{ overflowY: 'auto' }} // Adding this style to enable vertical scrolling
