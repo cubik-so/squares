@@ -3,7 +3,6 @@ import { useMediaQuery } from 'usehooks-ts'
 import { cn } from '@utils/cn'
 import Icon from '@/icons'
 import { Text } from '../text/text'
-import type { IconName } from '@/utils/iconLibrary'
 
 export const EmptyState = ({
     title,
@@ -21,7 +20,7 @@ export const EmptyState = ({
     border?: boolean
     iconColor?: string
     bgColor?: string
-    icon: IconName
+    icon: string
     className?: string
 }) => {
     const isMobileDevice = useMediaQuery('(max-width: 640px)')
