@@ -7,13 +7,14 @@ import type { ReactNode } from 'react'
 
 interface TooltipProps {
     children: ReactNode
-    content: string
+    content: ReactNode | string
     align?: 'start' | 'center' | 'end'
+    duration?: number
 }
 
-export const Tooltip = ({ children, content, align = 'center' }: TooltipProps) => {
+export const Tooltip = ({ children, content, align = 'center', duration }: TooltipProps) => {
     return (
-        <RadixTooltip.Provider delayDuration={0}>
+        <RadixTooltip.Provider delayDuration={duration || 0}>
             <RadixTooltip.Root>
                 <RadixTooltip.Trigger> {children} </RadixTooltip.Trigger>
                 <RadixTooltip.Portal>
