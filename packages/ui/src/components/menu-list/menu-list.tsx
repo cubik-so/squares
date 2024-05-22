@@ -6,14 +6,14 @@ import { useMediaQuery } from 'usehooks-ts'
 import { v4 as uuid_v4 } from 'uuid'
 
 import Icon from '@/icons'
-import { cn } from '../../../lib/utils'
+import { cn } from '../../utils'
 import { Text } from '../text/text'
 import { VaulDrawer, VaulDrawerContent, VaulDrawerOverlay, VaulDrawerPortal } from '../drawer'
 
 import type { VariantProps } from 'class-variance-authority'
 import type { DropdownMenuTriggerProps } from '@radix-ui/react-dropdown-menu'
 import type { ReactEventHandler } from 'react'
-import type { VaulDrawerProps } from '../../../lib/components/drawer'
+import type { VaulDrawerProps } from '../drawer'
 
 interface MenuProps {
     children: React.ReactNode
