@@ -1,299 +1,299 @@
 {
-  "name": "@squaress/ui",
-  "version": "0.0.35",
-  "description": "",
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "publish": "pnpm publish --no-git-checks",
-    "build": "pnpm run clean && tsup --dts",
-    "dev": "tsup --watch",
-    "clean": "rimraf dist .turbo",
-    "type-check": "tsc --noEmit",
-    "create:theme": "tsx src/scripts/create-theme.ts",
-    "generate:icons": "tsx ./src/scripts/generate-icon.ts",
-    "build:fast": "tsup ./src --dts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "exports": {
-    "./utils": {
-      "types": "./lib/utils/index.d.ts",
-      "import": "./lib/utils/index.mjs",
-      "require": "./lib/utils/index.js"
+    "name": "@squaress/ui",
+    "version": "0.0.36",
+    "description": "",
+    "main": "lib/index.js",
+    "module": "lib/index.mjs",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "publish": "pnpm publish --no-git-checks",
+        "build": "pnpm run clean && tsup --dts",
+        "dev": "tsup --watch",
+        "clean": "rimraf dist .turbo",
+        "type-check": "tsc --noEmit",
+        "create:theme": "tsx src/scripts/create-theme.ts",
+        "generate:icons": "tsx ./src/scripts/generate-icon.ts",
+        "build:fast": "tsup ./src --dts"
     },
-    "./alert": {
-      "types": "./lib/components/alert/index.d.ts",
-      "import": "./lib/components/alert/index.mjs",
-      "require": "./lib/components/alert/index.js"
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "exports": {
+        "./utils": {
+            "types": "./lib/utils/index.d.ts",
+            "import": "./lib/utils/index.mjs",
+            "require": "./lib/utils/index.js"
+        },
+        "./alert": {
+            "types": "./lib/components/alert/index.d.ts",
+            "import": "./lib/components/alert/index.mjs",
+            "require": "./lib/components/alert/index.js"
+        },
+        "./avatar": {
+            "types": "./lib/components/avatar/index.d.ts",
+            "import": "./lib/components/avatar/index.mjs",
+            "require": "./lib/components/avatar/index.js"
+        },
+        "./background": {
+            "types": "./lib/components/background/index.d.ts",
+            "import": "./lib/components/background/index.mjs",
+            "require": "./lib/components/background/index.js"
+        },
+        "./button": {
+            "types": "./lib/components/button/index.d.ts",
+            "import": "./lib/components/button/index.mjs",
+            "require": "./lib/components/button/index.js"
+        },
+        "./card": {
+            "types": "./lib/components/card/index.d.ts",
+            "import": "./lib/components/card/index.mjs",
+            "require": "./lib/components/card/index.js"
+        },
+        "./carousel": {
+            "types": "./lib/components/carousel/index.d.ts",
+            "import": "./lib/components/carousel/index.mjs",
+            "require": "./lib/components/carousel/index.js"
+        },
+        "./checkbox": {
+            "types": "./lib/components/checkbox/index.d.ts",
+            "import": "./lib/components/checkbox/index.mjs",
+            "require": "./lib/components/checkbox/index.js"
+        },
+        "./confetti": {
+            "types": "./lib/components/confetti/index.d.ts",
+            "import": "./lib/components/confetti/index.mjs",
+            "require": "./lib/components/confetti/index.js"
+        },
+        "./copy-to-clipboard": {
+            "types": "./lib/components/copy-to-clipboard/index.d.ts",
+            "import": "./lib/components/copy-to-clipboard/index.mjs",
+            "require": "./lib/components/copy-to-clipboard/index.js"
+        },
+        "./cubik-table": {
+            "types": "./lib/components/cubik-table/index.d.ts",
+            "import": "./lib/components/cubik-table/index.mjs",
+            "require": "./lib/components/cubik-table/index.js"
+        },
+        "./divider": {
+            "types": "./lib/components/divider/index.d.ts",
+            "import": "./lib/components/divider/index.mjs",
+            "require": "./lib/components/divider/index.js"
+        },
+        "./drawer": {
+            "types": "./lib/components/drawer/index.d.ts",
+            "import": "./lib/components/drawer/index.mjs",
+            "require": "./lib/components/drawer/index.js"
+        },
+        "./empty-state": {
+            "types": "./lib/components/empty-state/index.d.ts",
+            "import": "./lib/components/empty-state/index.mjs",
+            "require": "./lib/components/empty-state/index.js"
+        },
+        "./form-stepper": {
+            "types": "./lib/components/form-stepper/index.d.ts",
+            "import": "./lib/components/form-stepper/index.mjs",
+            "require": "./lib/components/form-stepper/index.js"
+        },
+        "./helper-text": {
+            "types": "./lib/components/helper-text/index.d.ts",
+            "import": "./lib/components/helper-text/index.mjs",
+            "require": "./lib/components/helper-text/index.js"
+        },
+        "./hover-card": {
+            "types": "./lib/components/hover-card/index.d.ts",
+            "import": "./lib/components/hover-card/index.mjs",
+            "require": "./lib/components/hover-card/index.js"
+        },
+        "./input-container": {
+            "types": "./lib/components/input-container/index.d.ts",
+            "import": "./lib/components/input-container/index.mjs",
+            "require": "./lib/components/input-container/index.js"
+        },
+        "./input-field": {
+            "types": "./lib/components/input-field/index.d.ts",
+            "import": "./lib/components/input-field/index.mjs",
+            "require": "./lib/components/input-field/index.js"
+        },
+        "./input-label": {
+            "types": "./lib/components/input-label/index.d.ts",
+            "import": "./lib/components/input-label/index.mjs",
+            "require": "./lib/components/input-label/index.js"
+        },
+        "./links": {
+            "types": "./lib/components/links/index.d.ts",
+            "import": "./lib/components/links/index.mjs",
+            "require": "./lib/components/links/index.js"
+        },
+        "./logo": {
+            "types": "./lib/components/logo/index.d.ts",
+            "import": "./lib/components/logo/index.mjs",
+            "require": "./lib/components/logo/index.js"
+        },
+        "./menu-list": {
+            "types": "./lib/components/menu-list/index.d.ts",
+            "import": "./lib/components/menu-list/index.mjs",
+            "require": "./lib/components/menu-list/index.js"
+        },
+        "./modal": {
+            "types": "./lib/components/modal/index.d.ts",
+            "import": "./lib/components/modal/index.mjs",
+            "require": "./lib/components/modal/index.js"
+        },
+        "./pagination": {
+            "types": "./lib/components/pagination/index.d.ts",
+            "import": "./lib/components/pagination/index.mjs",
+            "require": "./lib/components/pagination/index.js"
+        },
+        "./ping-icon": {
+            "types": "./lib/components/ping-icon/index.d.ts",
+            "import": "./lib/components/ping-icon/index.mjs",
+            "require": "./lib/components/ping-icon/index.js"
+        },
+        "./popover": {
+            "types": "./lib/components/popover/index.d.ts",
+            "import": "./lib/components/popover/index.mjs",
+            "require": "./lib/components/popover/index.js"
+        },
+        "./provider": {
+            "types": "./lib/components/provider/index.d.ts",
+            "import": "./lib/components/provider/index.mjs",
+            "require": "./lib/components/provider/index.js"
+        },
+        "./radio-group": {
+            "types": "./lib/components/radio-group/index.d.ts",
+            "import": "./lib/components/radio-group/index.mjs",
+            "require": "./lib/components/radio-group/index.js"
+        },
+        "./responsive-modal": {
+            "types": "./lib/components/responsive-modal/index.d.ts",
+            "import": "./lib/components/responsive-modal/index.mjs",
+            "require": "./lib/components/responsive-modal/index.js"
+        },
+        "./segment": {
+            "types": "./lib/components/segment/index.d.ts",
+            "import": "./lib/components/segment/index.mjs",
+            "require": "./lib/components/segment/index.js"
+        },
+        "./select": {
+            "types": "./lib/components/select/index.d.ts",
+            "import": "./lib/components/select/index.mjs",
+            "require": "./lib/components/select/index.js"
+        },
+        "./skeleton": {
+            "types": "./lib/components/skeleton/index.d.ts",
+            "import": "./lib/components/skeleton/index.mjs",
+            "require": "./lib/components/skeleton/index.js"
+        },
+        "./spinner": {
+            "types": "./lib/components/spinner/index.d.ts",
+            "import": "./lib/components/spinner/index.mjs",
+            "require": "./lib/components/spinner/index.js"
+        },
+        "./subhead": {
+            "types": "./lib/components/subhead/index.d.ts",
+            "import": "./lib/components/subhead/index.mjs",
+            "require": "./lib/components/subhead/index.js"
+        },
+        "./tabs": {
+            "types": "./lib/components/tabs/index.d.ts",
+            "import": "./lib/components/tabs/index.mjs",
+            "require": "./lib/components/tabs/index.js"
+        },
+        "./tag": {
+            "types": "./lib/components/tag/index.d.ts",
+            "import": "./lib/components/tag/index.mjs",
+            "require": "./lib/components/tag/index.js"
+        },
+        "./text": {
+            "types": "./lib/components/text/index.d.ts",
+            "import": "./lib/components/text/index.mjs",
+            "require": "./lib/components/text/index.js"
+        },
+        "./text-area": {
+            "types": "./lib/components/text-area/index.d.ts",
+            "import": "./lib/components/text-area/index.mjs",
+            "require": "./lib/components/text-area/index.js"
+        },
+        "./toast": {
+            "types": "./lib/components/toast/index.d.ts",
+            "import": "./lib/components/toast/index.mjs",
+            "require": "./lib/components/toast/index.js"
+        },
+        "./toogle-switch": {
+            "types": "./lib/components/toogle-switch/index.d.ts",
+            "import": "./lib/components/toogle-switch/index.mjs",
+            "require": "./lib/components/toogle-switch/index.js"
+        },
+        "./tooltip": {
+            "types": "./lib/components/tooltip/index.d.ts",
+            "import": "./lib/components/tooltip/index.mjs",
+            "require": "./lib/components/tooltip/index.js"
+        },
+        "./styles.css": "./lib/styles/index.css",
+        "./theme": {
+            "import": "./lib/config/theme.mjs",
+            "require": "./lib/config/theme.js",
+            "types": "./lib/config/theme.d.ts"
+        },
+        "./useTheme": {
+            "import": "./lib/hooks/useTheme.mjs",
+            "require": "./lib/hooks/useTheme.js",
+            "types": "./lib/hooks/useTheme.d.ts"
+        },
+        "./icons": {
+            "source": "./src/icons/index.tsx",
+            "import": {
+                "types": "./lib/icons/index.d.ts",
+                "default": "./lib/icons/index.mjs"
+            },
+            "require": {
+                "types": "./lib/icons/index.d.ts",
+                "default": "./lib/icons/index.js"
+            }
+        }
     },
-    "./avatar": {
-      "types": "./lib/components/avatar/index.d.ts",
-      "import": "./lib/components/avatar/index.mjs",
-      "require": "./lib/components/avatar/index.js"
+    "devDependencies": {
+        "@squaress/configs": "workspace:*",
+        "@types/node": "^20.11.29",
+        "@types/react": "^18.2.67",
+        "@types/react-dom": "^18.2.24",
+        "@types/uuid": "^9.0.8",
+        "@vitejs/plugin-react": "^4.2.1",
+        "postcss": "^8.4.36",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwind-merge": "^2.2.2",
+        "tailwindcss": "^3.4.1",
+        "tailwindcss-animate": "^1.0.7",
+        "tsx": "^4.7.1",
+        "typescript": "^5.2.2",
+        "usehooks-ts": "^2.16.0"
     },
-    "./background": {
-      "types": "./lib/components/background/index.d.ts",
-      "import": "./lib/components/background/index.mjs",
-      "require": "./lib/components/background/index.js"
-    },
-    "./button": {
-      "types": "./lib/components/button/index.d.ts",
-      "import": "./lib/components/button/index.mjs",
-      "require": "./lib/components/button/index.js"
-    },
-    "./card": {
-      "types": "./lib/components/card/index.d.ts",
-      "import": "./lib/components/card/index.mjs",
-      "require": "./lib/components/card/index.js"
-    },
-    "./carousel": {
-      "types": "./lib/components/carousel/index.d.ts",
-      "import": "./lib/components/carousel/index.mjs",
-      "require": "./lib/components/carousel/index.js"
-    },
-    "./checkbox": {
-      "types": "./lib/components/checkbox/index.d.ts",
-      "import": "./lib/components/checkbox/index.mjs",
-      "require": "./lib/components/checkbox/index.js"
-    },
-    "./confetti": {
-      "types": "./lib/components/confetti/index.d.ts",
-      "import": "./lib/components/confetti/index.mjs",
-      "require": "./lib/components/confetti/index.js"
-    },
-    "./copy-to-clipboard": {
-      "types": "./lib/components/copy-to-clipboard/index.d.ts",
-      "import": "./lib/components/copy-to-clipboard/index.mjs",
-      "require": "./lib/components/copy-to-clipboard/index.js"
-    },
-    "./cubik-table": {
-      "types": "./lib/components/cubik-table/index.d.ts",
-      "import": "./lib/components/cubik-table/index.mjs",
-      "require": "./lib/components/cubik-table/index.js"
-    },
-    "./divider": {
-      "types": "./lib/components/divider/index.d.ts",
-      "import": "./lib/components/divider/index.mjs",
-      "require": "./lib/components/divider/index.js"
-    },
-    "./drawer": {
-      "types": "./lib/components/drawer/index.d.ts",
-      "import": "./lib/components/drawer/index.mjs",
-      "require": "./lib/components/drawer/index.js"
-    },
-    "./empty-state": {
-      "types": "./lib/components/empty-state/index.d.ts",
-      "import": "./lib/components/empty-state/index.mjs",
-      "require": "./lib/components/empty-state/index.js"
-    },
-    "./form-stepper": {
-      "types": "./lib/components/form-stepper/index.d.ts",
-      "import": "./lib/components/form-stepper/index.mjs",
-      "require": "./lib/components/form-stepper/index.js"
-    },
-    "./helper-text": {
-      "types": "./lib/components/helper-text/index.d.ts",
-      "import": "./lib/components/helper-text/index.mjs",
-      "require": "./lib/components/helper-text/index.js"
-    },
-    "./hover-card": {
-      "types": "./lib/components/hover-card/index.d.ts",
-      "import": "./lib/components/hover-card/index.mjs",
-      "require": "./lib/components/hover-card/index.js"
-    },
-    "./input-container": {
-      "types": "./lib/components/input-container/index.d.ts",
-      "import": "./lib/components/input-container/index.mjs",
-      "require": "./lib/components/input-container/index.js"
-    },
-    "./input-field": {
-      "types": "./lib/components/input-field/index.d.ts",
-      "import": "./lib/components/input-field/index.mjs",
-      "require": "./lib/components/input-field/index.js"
-    },
-    "./input-label": {
-      "types": "./lib/components/input-label/index.d.ts",
-      "import": "./lib/components/input-label/index.mjs",
-      "require": "./lib/components/input-label/index.js"
-    },
-    "./links": {
-      "types": "./lib/components/links/index.d.ts",
-      "import": "./lib/components/links/index.mjs",
-      "require": "./lib/components/links/index.js"
-    },
-    "./logo": {
-      "types": "./lib/components/logo/index.d.ts",
-      "import": "./lib/components/logo/index.mjs",
-      "require": "./lib/components/logo/index.js"
-    },
-    "./menu-list": {
-      "types": "./lib/components/menu-list/index.d.ts",
-      "import": "./lib/components/menu-list/index.mjs",
-      "require": "./lib/components/menu-list/index.js"
-    },
-    "./modal": {
-      "types": "./lib/components/modal/index.d.ts",
-      "import": "./lib/components/modal/index.mjs",
-      "require": "./lib/components/modal/index.js"
-    },
-    "./pagination": {
-      "types": "./lib/components/pagination/index.d.ts",
-      "import": "./lib/components/pagination/index.mjs",
-      "require": "./lib/components/pagination/index.js"
-    },
-    "./ping-icon": {
-      "types": "./lib/components/ping-icon/index.d.ts",
-      "import": "./lib/components/ping-icon/index.mjs",
-      "require": "./lib/components/ping-icon/index.js"
-    },
-    "./popover": {
-      "types": "./lib/components/popover/index.d.ts",
-      "import": "./lib/components/popover/index.mjs",
-      "require": "./lib/components/popover/index.js"
-    },
-    "./provider": {
-      "types": "./lib/components/provider/index.d.ts",
-      "import": "./lib/components/provider/index.mjs",
-      "require": "./lib/components/provider/index.js"
-    },
-    "./radio-group": {
-      "types": "./lib/components/radio-group/index.d.ts",
-      "import": "./lib/components/radio-group/index.mjs",
-      "require": "./lib/components/radio-group/index.js"
-    },
-    "./responsive-modal": {
-      "types": "./lib/components/responsive-modal/index.d.ts",
-      "import": "./lib/components/responsive-modal/index.mjs",
-      "require": "./lib/components/responsive-modal/index.js"
-    },
-    "./segment": {
-      "types": "./lib/components/segment/index.d.ts",
-      "import": "./lib/components/segment/index.mjs",
-      "require": "./lib/components/segment/index.js"
-    },
-    "./select": {
-      "types": "./lib/components/select/index.d.ts",
-      "import": "./lib/components/select/index.mjs",
-      "require": "./lib/components/select/index.js"
-    },
-    "./skeleton": {
-      "types": "./lib/components/skeleton/index.d.ts",
-      "import": "./lib/components/skeleton/index.mjs",
-      "require": "./lib/components/skeleton/index.js"
-    },
-    "./spinner": {
-      "types": "./lib/components/spinner/index.d.ts",
-      "import": "./lib/components/spinner/index.mjs",
-      "require": "./lib/components/spinner/index.js"
-    },
-    "./subhead": {
-      "types": "./lib/components/subhead/index.d.ts",
-      "import": "./lib/components/subhead/index.mjs",
-      "require": "./lib/components/subhead/index.js"
-    },
-    "./tabs": {
-      "types": "./lib/components/tabs/index.d.ts",
-      "import": "./lib/components/tabs/index.mjs",
-      "require": "./lib/components/tabs/index.js"
-    },
-    "./tag": {
-      "types": "./lib/components/tag/index.d.ts",
-      "import": "./lib/components/tag/index.mjs",
-      "require": "./lib/components/tag/index.js"
-    },
-    "./text": {
-      "types": "./lib/components/text/index.d.ts",
-      "import": "./lib/components/text/index.mjs",
-      "require": "./lib/components/text/index.js"
-    },
-    "./text-area": {
-      "types": "./lib/components/text-area/index.d.ts",
-      "import": "./lib/components/text-area/index.mjs",
-      "require": "./lib/components/text-area/index.js"
-    },
-    "./toast": {
-      "types": "./lib/components/toast/index.d.ts",
-      "import": "./lib/components/toast/index.mjs",
-      "require": "./lib/components/toast/index.js"
-    },
-    "./toogle-switch": {
-      "types": "./lib/components/toogle-switch/index.d.ts",
-      "import": "./lib/components/toogle-switch/index.mjs",
-      "require": "./lib/components/toogle-switch/index.js"
-    },
-    "./tooltip": {
-      "types": "./lib/components/tooltip/index.d.ts",
-      "import": "./lib/components/tooltip/index.mjs",
-      "require": "./lib/components/tooltip/index.js"
-    },
-    "./styles.css": "./lib/styles/index.css",
-    "./theme": {
-      "import": "./lib/config/theme.mjs",
-      "require": "./lib/config/theme.js",
-      "types": "./lib/config/theme.d.ts"
-    },
-    "./useTheme": {
-      "import": "./lib/hooks/useTheme.mjs",
-      "require": "./lib/hooks/useTheme.js",
-      "types": "./lib/hooks/useTheme.d.ts"
-    },
-    "./icons": {
-      "source": "./src/icons/index.tsx",
-      "import": {
-        "types": "./lib/icons/index.d.ts",
-        "default": "./lib/icons/index.mjs"
-      },
-      "require": {
-        "types": "./lib/icons/index.d.ts",
-        "default": "./lib/icons/index.js"
-      }
+    "dependencies": {
+        "@radix-ui/react-checkbox": "^1.0.4",
+        "@radix-ui/react-dialog": "^1.0.5",
+        "@radix-ui/react-dropdown-menu": "^2.0.6",
+        "@radix-ui/react-hover-card": "^1.0.7",
+        "@radix-ui/react-popover": "^1.0.7",
+        "@radix-ui/react-radio-group": "^1.1.3",
+        "@radix-ui/react-separator": "^1.0.3",
+        "@radix-ui/react-switch": "^1.0.3",
+        "@radix-ui/react-tabs": "^1.0.4",
+        "@radix-ui/react-tooltip": "^1.0.7",
+        "@tanstack/react-table": "^8.11.6",
+        "autoprefixer": "^10.4.19",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "embla-carousel-react": "8.0.0-rc17",
+        "framer-motion": "^11.0.20",
+        "next": "14.2.3",
+        "react-confetti": "^6.1.0",
+        "react-select": "^5.8.0",
+        "rimraf": "^5.0.7",
+        "sonner": "^1.4.41",
+        "ts-node": "^10.9.2",
+        "tsup": "^8.0.2",
+        "uuid": "^9.0.1",
+        "vaul": "^0.8.7"
     }
-  },
-  "devDependencies": {
-    "@squaress/configs": "workspace:*",
-    "@types/node": "^20.11.29",
-    "@types/react": "^18.2.67",
-    "@types/react-dom": "^18.2.24",
-    "@types/uuid": "^9.0.8",
-    "@vitejs/plugin-react": "^4.2.1",
-    "postcss": "^8.4.36",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.2.2",
-    "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7",
-    "tsx": "^4.7.1",
-    "typescript": "^5.2.2",
-    "usehooks-ts": "^2.16.0"
-  },
-  "dependencies": {
-    "@radix-ui/react-checkbox": "^1.0.4",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-hover-card": "^1.0.7",
-    "@radix-ui/react-popover": "^1.0.7",
-    "@radix-ui/react-radio-group": "^1.1.3",
-    "@radix-ui/react-separator": "^1.0.3",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "@tanstack/react-table": "^8.11.6",
-    "autoprefixer": "^10.4.19",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "embla-carousel-react": "8.0.0-rc17",
-    "framer-motion": "^11.0.20",
-    "next": "14.2.3",
-    "react-confetti": "^6.1.0",
-    "react-select": "^5.8.0",
-    "rimraf": "^5.0.7",
-    "sonner": "^1.4.41",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.0.2",
-    "uuid": "^9.0.1",
-    "vaul": "^0.8.7"
-  }
 }

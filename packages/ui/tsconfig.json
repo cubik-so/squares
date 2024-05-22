@@ -4,6 +4,7 @@
     "compilerOptions": {
         "jsx": "react-jsx",
         "baseUrl": "./src",
+        "typeRoots": ["./src/index.ts"],
         "paths": {
             "@components/*": ["components/*"],
             "@config/*": ["config/*"],
