@@ -105,7 +105,7 @@ const childrenPositionVariant = cva('', {
     },
 })
 
-interface AvatarProps extends VariantProps<typeof avatarVariants> {
+export interface AvatarProps extends VariantProps<typeof avatarVariants> {
     src: string
     alt: string
     className?: string
@@ -116,7 +116,7 @@ interface AvatarProps extends VariantProps<typeof avatarVariants> {
     children?: React.ReactNode
 }
 
-const Avatar = ({
+export const Avatar = ({
     src,
     alt,
     variant,
@@ -164,6 +164,7 @@ const Avatar = ({
                     objectFit: 'cover',
                     background: 'transparent',
                     borderRadius: variant === 'circle' ? '100%' : '8px',
+                    width: 'auto',
                 }}
                 priority
             />
@@ -188,6 +189,3 @@ const Avatar = ({
         </motion.div>
     )
 }
-
-export { Avatar }
-export type { AvatarProps }
