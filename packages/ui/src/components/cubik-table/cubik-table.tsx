@@ -40,7 +40,7 @@ export const CubikTable = <T,>({ columns, data, showHeader = true }: CubikTableP
                                 {headerGroup.headers.map((header) => (
                                     <th
                                         className={cn(
-                                            'px-2 md:px-3 py-4 md:py-5',
+                                            'px-5 md:px-3 py-4 md:py-5',
                                             header.index === 0 && 'ps-4 md:ps-6',
                                         )}
                                         key={header.id}
@@ -68,7 +68,7 @@ export const CubikTable = <T,>({ columns, data, showHeader = true }: CubikTableP
                 <tbody>
                     {table.getRowModel().rows.map((row) => (
                         <tr
-                            className={`px-3 md:px-6 transition ease-in-out duration-300 ${
+                            className={`px-5 md:px-6 transition ease-in-out duration-300 ${
                                 row.getIsSelected() ? 'bg-color-bg-cool-base' : 'transparent'
                             } ${
                                 row.index === table.getRowModel().rows.length - 1

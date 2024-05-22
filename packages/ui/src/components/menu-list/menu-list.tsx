@@ -30,6 +30,7 @@ const MenuContext = createContext<{
         console.log('first')
     },
 })
+
 const DrawerMenuContext = createContext<{
     id: string
     isOpen: boolean | undefined
@@ -412,7 +413,7 @@ export const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonPr
                     <Text className="l1 md:l2">{children}</Text>
                 </div>
 
-                <Icon name="chevronRight" height={20} width={20} color="inherit" strokeWidth={2} />
+                <Icon name="chevron-right" height={20} width={20} color="inherit" strokeWidth={2} />
             </div>
         </DropdownMenu.SubTrigger>
     )
@@ -456,27 +457,10 @@ export const SubMenuList = ({ children }: SubMenuListProps) => {
     )
 }
 
-// const SubMenuList = ({ children }: SubMenuListProps) => {
-//   return (
-//     <DropdownMenu.Portal>
-//       <DropdownMenu.SubContent
-//         className="min-w-[220px] border border-[var(--menu-list-item-border)] bg-[var(--menu-list-surface)] rounded-xl will-change-[opacity,transform] p-2 mx-2"
-//         sideOffset={20}
-//       >
-//         {children}
-//       </DropdownMenu.SubContent>
-//     </DropdownMenu.Portal>
-//   );
-// };
-
 export const MenuDivider = ({ className }: { className?: string }) => {
     return (
         <DropdownMenu.Separator
             className={cn('border-t-[1px] border-[var(--color-border-primary-subdued)]', className)}
         />
     )
-}
-
-interface SubMenuListProps {
-    children: React.ReactNode
 }
