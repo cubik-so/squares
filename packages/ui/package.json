@@ -19,6 +19,11 @@
     "author": "",
     "license": "ISC",
     "exports": {
+        "./utils": {
+            "types": "./lib/components/utils/index.d.ts",
+            "import": "./lib/components/utils/index.mjs",
+            "require": "./lib/components/utils/index.js"
+        },
         "./alert": {
             "types": "./lib/components/alert/index.d.ts",
             "import": "./lib/components/alert/index.mjs",

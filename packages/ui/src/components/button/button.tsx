@@ -43,7 +43,6 @@ export interface ButtonProps
     leftIconName?: string
     rightIconName?: string
     className?: string
-    onClick?: () => void
 }
 
 const buttonVariants = cva('flex items-center justify-center', {
