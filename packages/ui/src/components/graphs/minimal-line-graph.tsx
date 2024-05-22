@@ -2,7 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import { useMediaQuery } from 'usehooks-ts'
 
-import { cn } from '../../../lib/utils'
+import { cn } from '@/utils/cn'
 
 const Chart = dynamic(() => import('react-apexcharts'), {
     ssr: false,
