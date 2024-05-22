@@ -259,6 +259,9 @@ importers:
             react-select:
                 specifier: ^5.8.0
                 version: 5.8.0(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)
+            rimraf:
+                specifier: ^5.0.7
+                version: 5.0.7
             sonner:
                 specifier: ^1.4.41
                 version: 1.4.41(react-dom@18.2.0)(react@18.2.0)
@@ -15415,6 +15418,17 @@ packages:
         hasBin: true
         dependencies:
             glob: 7.2.3
+
+    /rimraf@5.0.7:
+        resolution:
+            {
+                integrity: sha512-nV6YcJo5wbLW77m+8KjH8aB/7/rxQy9SZ0HY5shnwULfS+9nmTtVXAJET5NdZmCzA4fPI/Hm1wo/Po/4mopOdg==,
+            }
+        engines: { node: '>=14.18' }
+        hasBin: true
+        dependencies:
+            glob: 10.3.10
+        dev: false
 
     /ripemd160@2.0.2:
         resolution:

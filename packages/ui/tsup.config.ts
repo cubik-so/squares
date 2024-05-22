@@ -5,7 +5,6 @@ export default defineConfig({
     minify: false, // Whether to minify output
     clean: true, // Clean the output directory before building
     outDir: 'lib', // Output directory
-    dts: true, // Generate .d.ts file
     external: ['react', 'react-dom'],
     entry: [
         'src/components/alert',
@@ -53,10 +52,8 @@ export default defineConfig({
         'src/styles',
         'src/icons/index.tsx',
         'src/hooks/useTheme.tsx',
-        'src/utils/index.tsx',
+        'src/utils/index.ts',
     ],
     treeshake: true,
-    sourcemap: 'inline',
     splitting: false,
-    injectStyle: false,
 })

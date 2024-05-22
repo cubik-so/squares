@@ -4,7 +4,6 @@ import React from 'react'
 import { CubikTable } from '@squaress/ui/cubik-table'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ColumnDef } from '@tanstack/react-table'
-
 // Sample data
 type Person = {
     firstName: string
