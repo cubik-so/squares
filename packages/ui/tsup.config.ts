@@ -21,6 +21,7 @@ export default defineConfig({
         'src/components/divider',
         'src/components/empty-state',
         'src/components/form-stepper',
+        'src/components/graphs',
         'src/components/helper-text',
         'src/components/hover-card',
         'src/components/input-container',

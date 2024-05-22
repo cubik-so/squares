@@ -1,6 +1,6 @@
 {
     "name": "@squaress/ui",
-    "version": "0.0.36",
+    "version": "0.0.37",
     "description": "",
     "main": "lib/index.js",
     "module": "lib/index.mjs",
@@ -93,6 +93,11 @@
             "types": "./lib/components/form-stepper/index.d.ts",
             "import": "./lib/components/form-stepper/index.mjs",
             "require": "./lib/components/form-stepper/index.js"
+        },
+        "./graphs": {
+            "types": "./lib/components/graphs/index.d.ts",
+            "import": "./lib/components/graphs/index.mjs",
+            "require": "./lib/components/graphs/index.js"
         },
         "./helper-text": {
             "types": "./lib/components/helper-text/index.d.ts",
@@ -287,6 +292,7 @@
         "embla-carousel-react": "8.0.0-rc17",
         "framer-motion": "^11.0.20",
         "next": "14.2.3",
+        "react-apexcharts": "^1.4.1",
         "react-confetti": "^6.1.0",
         "react-select": "^5.8.0",
         "rimraf": "^5.0.7",
