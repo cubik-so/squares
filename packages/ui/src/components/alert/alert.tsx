@@ -142,12 +142,12 @@ const AlertVariants = cva(
 const iconStateVariants = cva('', {
     variants: {
         state: {
-            default: 'color-fg-primary-base',
-            success: 'alert-success-icon-fill',
-            info: 'alert-info-icon-fill',
-            warning: 'alert-warning-icon-fill',
-            error: 'alert-error-icon-fill',
-            innovative: 'alert-loading-icon-fill',
+            default: 'var(--color-fg-primary-base)',
+            success: 'var(--alert-success-icon-fill)',
+            info: 'var(--alert-info-icon-fill)',
+            warning: 'var(--alert-warning-icon-fill)',
+            error: 'var(--alert-error-icon-fill)',
+            innovative: 'var(--alert-loading-icon-fill)',
         },
     },
     defaultVariants: {

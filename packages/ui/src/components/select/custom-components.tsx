@@ -209,7 +209,7 @@ export const CustomComponents: Partial<
                         <components.DropdownIndicator {...props}>
                             <div className="transform translate-x-[-4px] transition-all p-1 rounded-md hover:bg-color-surface-primary-transparent active:scale-95">
                                 <Icon
-                                    name="chevronDown"
+                                    name="chevron-down"
                                     width={
                                         Number(props.getStyles('dropdownIndicator', props).size) ||
                                         20

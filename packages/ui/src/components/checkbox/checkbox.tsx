@@ -45,7 +45,7 @@ export const Checkbox = React.forwardRef<
                 strokeWidth={3}
                 width={16}
                 height={16}
-                color="color-fg-primary-depth"
+                color="var(--color-fg-primary-depth)"
             />
         </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>

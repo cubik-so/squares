@@ -63,7 +63,6 @@ const TagIcon: React.FC<TagIconProps> = ({ iconName, color }) => {
         <Icon
             name={iconName}
             strokeWidth={1.5}
-            // stroke="#000"
             color={cn(tagIconVariants({ color }))}
             height={16}
             width={16}

@@ -218,11 +218,11 @@ export const CarouselPrevious = React.forwardRef<
         >
             {' '}
             <Icon
-                name={'chevronLeft'}
+                name={'chevron-left'}
                 width={18}
                 height={18}
                 strokeWidth={2}
-                color="color-fg-primary-base"
+                color="var(--color-fg-primary-base)"
             />
         </button>
     )
@@ -253,11 +253,11 @@ export const CarouselNext = React.forwardRef<
             {...props}
         >
             <Icon
-                name={'chevronRight'}
+                name={'chevron-right'}
                 width={18}
                 height={18}
                 strokeWidth={2}
-                color="color-fg-primary-base"
+                color="var(--color-fg-primary-base)"
             />
         </button>
     )

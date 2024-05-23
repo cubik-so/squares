@@ -75,13 +75,13 @@ const buttonVariants = cva('flex items-center justify-center', {
 const iconColorVariants = cva('', {
     variants: {
         variant: {
-            primary: 'button-primary-text-default',
-            secondary: 'button-secondary-text-default',
-            outline: 'button-outline-text-default',
-            link: 'button-link-text-default',
-            tertiary: 'button-link-text-default',
-            danger: 'button-danger-text-default',
-            success: 'button-success-text-default',
+            primary: 'var(--button-primary-text-default)',
+            secondary: 'var(--button-secondary-text-default)',
+            outline: 'var(--button-outline-text-default)',
+            link: 'var(--button-link-text-default)',
+            tertiary: 'var(--button-link-text-default)',
+            danger: 'var(--button-danger-text-default)',
+            success: 'var(--button-success-text-default)',
             unStyled: 'inherit',
         },
     },
@@ -135,12 +135,11 @@ export const Button = ({
             {/* Left Icon  */}
             {leftIconName && !isLoading && (
                 <Icon
-                    color="#000"
-                    // color={
-                    //     props.disabled
-                    //         ? 'button-outline-text-disabled'
-                    //         : iconColorVariants({ variant })
-                    // }
+                    color={
+                        props.disabled
+                            ? 'var(--button-outline-text-disabled)'
+                            : iconColorVariants({ variant })
+                    }
                     name={leftIconName}
                     {...getIconSize(size)}
                 />
@@ -186,12 +185,12 @@ export const Button = ({
                 <Icon
                     name={rightIconName}
                     {...getIconSize(size)}
-                    color="#000"
-                    // color={
-                    //     props.disabled
-                    //         ? 'var(--button-outline-text-disabled)'
-                    //         : iconColorVariants({ variant })
-                    // }
+                    // color="#000"
+                    color={
+                        props.disabled
+                            ? 'var(--button-outline-text-disabled)'
+                            : iconColorVariants({ variant })
+                    }
                 />
             )}
         </button>

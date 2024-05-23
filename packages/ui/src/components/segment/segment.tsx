@@ -127,7 +127,9 @@ export const SegmentItem = ({
                 {icon && (
                     <Icon
                         color={
-                            isActive ? 'segment-control-fg-active' : 'segment-control-fg-inactive'
+                            isActive
+                                ? 'var(--segment-control-fg-active)'
+                                : 'var(--segment-control-fg-inactive)'
                         }
                         strokeWidth={2}
                         width={iconSize}
@@ -160,7 +162,9 @@ export const SegmentItem = ({
                 {icon && (
                     <Icon
                         color={
-                            isActive ? 'segment-control-fg-active' : 'segment-control-fg-inactive'
+                            isActive
+                                ? 'var(--segment-control-fg-active)'
+                                : 'var(--segment-control-fg-inactive)'
                         }
                         strokeWidth={2}
                         width={iconSize}

@@ -77,7 +77,7 @@ export const ModalHeader = ({
                         <Icon
                             name="cross"
                             width={20}
-                            color="modal-header-cancel-icon"
+                            color="var(--modal-header-cancel-icon)"
                             height={20}
                         />
                     </motion.button>

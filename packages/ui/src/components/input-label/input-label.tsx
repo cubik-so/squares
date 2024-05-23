@@ -44,7 +44,7 @@ export const InputLabel = ({
                             name="info-circle-filled"
                             height={tooltipIconSize}
                             width={tooltipIconSize}
-                            color="#c1c1c1"
+                            color="var(--color-fg-cool-muted)"
                             strokeWidth={1.2}
                         />
                         {/* <Tooltip>
