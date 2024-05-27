@@ -168,7 +168,7 @@ export const Avatar = ({
                 priority
             /> */}
             <Image
-                src="https://via.placeholder.com/150"
+                src={src}
                 alt={alt}
                 layout="responsive" // This will make the image responsive while maintaining aspect ratio
                 width={1} // You use a 1:1 aspect ratio or adjust as necessary
