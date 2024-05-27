@@ -155,7 +155,7 @@ export const Avatar = ({
             style={style}
             layoutId={layoutId}
         >
-            <Image
+            {/* <Image
                 src={src}
                 alt={alt}
                 fill={true}
@@ -166,7 +166,23 @@ export const Avatar = ({
                     borderRadius: variant === 'circle' ? '100%' : '8px',
                 }}
                 priority
+            /> */}
+            <Image
+                src="https://via.placeholder.com/150"
+                alt={alt}
+                layout="responsive" // This will make the image responsive while maintaining aspect ratio
+                width={1} // You use a 1:1 aspect ratio or adjust as necessary
+                height={1} // Adjust the height relative to width as per the aspect ratio of the image
+                style={{
+                    height: '100%',
+                    width: 'auto',
+                    objectFit: 'contain', // Ensures the image is scaled to fit and maintain its aspect ratio
+                    background: 'transparent',
+                    borderRadius: variant === 'circle' ? '50%' : '8px',
+                }}
+                priority
             />
+
             {iconName && (
                 <Icon
                     name={iconName}
