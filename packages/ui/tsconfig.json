@@ -1,6 +1,12 @@
 {
     "extends": "@squaress/configs/tsconfig/index.json",
-    "exclude": ["src/**/*.test.tsx", "src/**/*.test.ts", "src/**/*.stories.tsx"],
+    "exclude": [
+        "node_modules",
+        "lib",
+        "src/**/*.test.tsx",
+        "src/**/*.test.ts",
+        "src/**/*.stories.tsx"
+    ],
     "compilerOptions": {
         "jsx": "react-jsx",
         "baseUrl": "./src",

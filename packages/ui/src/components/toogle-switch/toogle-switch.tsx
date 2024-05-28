@@ -6,7 +6,7 @@ import type { VariantProps } from 'class-variance-authority'
 import type { ReactNode } from 'react'
 
 const toggleVariants = cva(
-    'flex items-start p-[0.125rem] pl-0 bg-[var(--form-switch-surface-default-off)] border border-[var(--form-switch-border-default-off)] rounded-full relative data-[state=checked]:bg-[var(--form-switch-surface-default-on)] outline-none cursor-default data-[state=checked]:border-[(--form-switch-border-default-on)]',
+    'flex items-start p-[0.125rem] pl-0 !bg-[var(--form-switch-surface-default-off)] border border-[var(--form-switch-border-default-off)] rounded-full relative data-[state=checked]:bg-[var(--form-switch-surface-default-on)] outline-none cursor-default data-[state=checked]:border-[(--form-switch-border-default-on)]',
     {
         variants: {
             size: {

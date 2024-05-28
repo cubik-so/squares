@@ -170,13 +170,13 @@ export const Avatar = ({
             <Image
                 src={src}
                 alt={alt}
-                layout="responsive" // This will make the image responsive while maintaining aspect ratio
-                width={1} // You use a 1:1 aspect ratio or adjust as necessary
-                height={1} // Adjust the height relative to width as per the aspect ratio of the image
+                layout="responsive"
+                width={1}
+                height={1}
                 style={{
                     height: '100%',
                     width: 'auto',
-                    objectFit: 'contain', // Ensures the image is scaled to fit and maintain its aspect ratio
+                    objectFit: 'contain',
                     background: 'transparent',
                     borderRadius: variant === 'circle' ? '50%' : '8px',
                 }}
