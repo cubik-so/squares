@@ -174,7 +174,7 @@ export const Avatar = ({
                 width={1}
                 height={1}
                 style={{
-                    height: '100%',
+                    height: '100% !important',
                     width: 'auto',
                     objectFit: 'contain',
                     background: 'transparent',
