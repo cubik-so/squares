@@ -6,7 +6,7 @@ import '../styles/global.css'
 
 interface Props extends React.SVGProps<SVGSVGElement> {
     name: string
-    color?: IconName
+    color?: string
     className?: string
 }
 
@@ -35,4 +35,6 @@ const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = ({
     return <IconElement />
 }
 
-export const Icon = forwardRef(IconComponent)
+const Icon = forwardRef(IconComponent)
+
+export default Icon
