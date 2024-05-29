@@ -1,18 +1,21 @@
 import React, { forwardRef } from 'react'
 import { iconLibrary } from '../utils/iconLibrary'
 import { CreateIcon } from '../utils/create-icon'
+import type { IconName } from '../utils/iconLibrary'
 import '../styles/global.css'
 
 interface Props extends React.SVGProps<SVGSVGElement> {
     name: string
-    color?: string
+    color?: IconName
     className?: string
 }
 
-const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
-    { name, color, className, ...props },
-    ref,
-) => {
+const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = ({
+    name,
+    color,
+    className,
+    ...props
+}) => {
     const icon = iconLibrary.find((i) => i.name === name)
     if (!icon) {
         return null
@@ -29,9 +32,7 @@ const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
         ...props,
     })
 
-    return <IconElement ref={ref} />
+    return <IconElement />
 }
 
-const Icon = forwardRef(IconComponent)
-
-export default Icon
+export const Icon = forwardRef(IconComponent)
