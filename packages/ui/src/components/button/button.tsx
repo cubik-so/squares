@@ -127,7 +127,7 @@ export const Button = ({
                 'btn-basic',
                 buttonVariants({ variant, size }),
                 className,
-                `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px]'}`,
+                `${!children ? 'px-[10px] md:px-[12px]' : 'px-[14px] md:px-[16px] gap-[6px]'}`,
             )}
             onClick={onClick}
             disabled={props.disabled !== undefined ? props.disabled : isLoading}

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn-basic {
-    @apply rounded-lg transform active:scale-95 transition-all whitespace-nowrap pointer-events-auto w-[fit-content] gap-[6px] disabled:cursor-not-allowed focus-visible:ring-4 focus-visible:ring-color-surface-cool-transparent focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none;
+    @apply rounded-lg transform active:scale-95 transition-all whitespace-nowrap pointer-events-auto w-[fit-content] disabled:cursor-not-allowed focus-visible:ring-4 focus-visible:ring-color-surface-cool-transparent focus-visible:ring-offset-transparent focus-visible:ring-offset-1 focus-visible:outline-none focus:border-none focus-visible:border-none;
 }
 /* Hide scrollbar for Chrome, Safari, and Opera */
 .no-scrollbar::-webkit-scrollbar {
