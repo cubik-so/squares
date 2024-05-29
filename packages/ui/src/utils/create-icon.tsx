@@ -9,7 +9,7 @@ interface IconOptions extends React.SVGProps<SVGSVGElement> {
 }
 
 export function CreateIcon(options: IconOptions) {
-    const { viewBox, paths, displayName, color, height, width, strokeWidth } = options
+    const { viewBox, paths, displayName, color, height, width, strokeWidth, className } = options
 
     const renderedPaths = paths.map((value, index) => (
         <path
@@ -18,6 +18,7 @@ export function CreateIcon(options: IconOptions) {
             fill={value.fill ? color : 'none'}
             stroke={value.stroke ? color : 'none'}
             opacity={value.opacity || 1}
+            className={className}
         />
     ))
 
@@ -35,6 +36,7 @@ export function CreateIcon(options: IconOptions) {
             clipRule="evenodd"
             fillRule="evenodd"
             strokeWidth={strokeWidth}
+            className={className}
             {...props}
         >
             {renderedPaths}

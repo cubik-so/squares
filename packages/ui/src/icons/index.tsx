@@ -6,15 +6,15 @@ import '../styles/global.css'
 interface Props extends React.SVGProps<SVGSVGElement> {
     name: string
     color?: string
+    className?: string
 }
 
 const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
-    { name, color, ...props },
+    { name, color, className, ...props },
     ref,
 ) => {
     const icon = iconLibrary.find((i) => i.name === name)
     if (!icon) {
-        // Ensure a ReactElement is returned, even for null cases
         return null
     }
 
@@ -23,13 +23,13 @@ const IconComponent: React.ForwardRefRenderFunction<SVGSVGElement, Props> = (
         displayName: icon.displayName,
         paths: icon.paths,
         viewBox: icon.viewBox,
+        // Pass color and className as props
         color,
+        className,
         ...props,
     })
 
-    // If you need to pass a ref to the CreateIcon result, you must handle it inside CreateIcon.
-    // This example assumes CreateIcon does not use the ref.
-    return <IconElement />
+    return <IconElement ref={ref} />
 }
 
 const Icon = forwardRef(IconComponent)

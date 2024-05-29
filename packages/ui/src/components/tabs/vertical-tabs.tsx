@@ -16,7 +16,7 @@ type TabListProps = {
     className?: string
 }
 
-type TabProps = {
+export type TabProps = {
     children: ReactNode
     value: string
     className?: string
@@ -34,7 +34,7 @@ type TabPanelProps = {
     className?: string
 }
 
-const VerticalTabs = ({ children, defaultValue, className }: TabsProps) => (
+export const VerticalTabs = ({ children, defaultValue, className }: TabsProps) => (
     <RadixTabs.Root
         defaultValue={defaultValue}
         orientation="vertical"
@@ -44,34 +44,36 @@ const VerticalTabs = ({ children, defaultValue, className }: TabsProps) => (
     </RadixTabs.Root>
 )
 
-const VerticalTabList: React.FC<TabListProps> = ({ children, className }) => (
+export const VerticalTabList: React.FC<TabListProps> = ({ children, className }) => (
     <RadixTabs.List className={cn('shrink-0 flex flex-col gap-2 px-6 w-[265px]', className)}>
         {children}
     </RadixTabs.List>
 )
 
-const VerticalTab = ({ children, value, className, leftIconName }: TabProps) => {
+export const VerticalTab = ({ children, value, className, leftIconName }: TabProps) => {
     return (
         <RadixTabs.Trigger
             value={value}
             className={cn(
-                'flex items-center justify-start leading-none select-none rounded-lg p-2 bg-menu-list-item-surface-default text-menu-list-item-fg-default data-[state=active]:bg-menu-list-item-surface-hovered data-[state=active]:text-menu-list-item-fg-hovered stroke-menu-list-item-icon data-[state=active]:stroke-menu-list-item-fg-hovered data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-pointer',
+                'flex items-center justify-start leading-none select-none rounded-lg p-2 bg-menu-list-item-surface-default text-menu-list-item-fg-default data-[state=active]:bg-menu-list-item-surface-hovered data-[state=active]:text-menu-list-item-fg-hovered stroke-menu-list-item-icon data-[state=active]:stroke-menu-list-item-fg-hovered data-[state=active]:shadow-current data-[state=active]:focus:relative outline-none cursor-pointer ',
                 className,
             )}
         >
             <div className="flex gap-[10px] items-center ">
-                {leftIconName && <Icon name={leftIconName} height={20} width={20} />}
+                {leftIconName && (
+                    <Icon name={leftIconName} height={20} width={20} className="stroke-inherit" />
+                )}
                 {children}
             </div>
         </RadixTabs.Trigger>
     )
 }
 
-const VerticalTabPanels = ({ children, className }: TabPanelsProps) => (
+export const VerticalTabPanels = ({ children, className }: TabPanelsProps) => (
     <div className={cn('w-full h-full', className)}>{children}</div>
 )
 
-const VerticalTabPanel = ({ children, value, className }: TabPanelProps) => (
+export const VerticalTabPanel = ({ children, value, className }: TabPanelProps) => (
     <RadixTabs.Content
         value={value}
         className={cn(
@@ -82,7 +84,3 @@ const VerticalTabPanel = ({ children, value, className }: TabPanelProps) => (
         {children}
     </RadixTabs.Content>
 )
-
-VerticalTab.displayName = 'VerticalTab'
-
-export { VerticalTabs, VerticalTab, VerticalTabList, VerticalTabPanels, VerticalTabPanel }
