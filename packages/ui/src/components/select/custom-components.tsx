@@ -316,7 +316,7 @@ export const CustomComponents: Partial<
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
-                    className="w-fit bg-tag-subtle-surface-default)] mr-2 my-1 rounded-md px-2 py-1 flex gap-1"
+                    className="w-fit bg-tag-subtle-surface-default mr-2 my-1 rounded-md px-2 py-1 flex gap-1"
                 >
                     <components.MultiValueContainer {...props} />
                 </motion.div>

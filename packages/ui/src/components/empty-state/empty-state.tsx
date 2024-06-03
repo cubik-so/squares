@@ -32,7 +32,7 @@ export const EmptyState = ({
         if (isTabletDevice) {
             return 32
         }
-        return 48
+        return 36
     }
 
     return (

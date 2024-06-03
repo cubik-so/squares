@@ -47,7 +47,7 @@ export const VaulDrawerContent = ({ children, className }: DrawerContentProps) =
             )}
             style={{ maxHeight: '93%', display: 'flex', flexDirection: 'column' }}
         >
-            <div className="mx-auto w-12 h-[3px] flex-shrink-0 rounded-full bg-color-surface-cool-transparent mb-2" />
+            <div className="mx-auto w-12 h-[3px] flex-shrink-0 rounded-full bg-color-surface-primary mb-2" />
             <div style={{ flexGrow: 1, overflowY: 'auto' }}>{children}</div>
         </Drawer.Content>
     )
