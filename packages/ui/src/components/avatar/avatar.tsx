@@ -174,13 +174,14 @@ export const Avatar = ({
             <Image
                 src={src}
                 alt={alt}
-                layout="fill"
-                objectFit="contain"
+                fill={true}
+                sizes="(max-width: 768px) 100vw, 33vw"
                 style={{
-                    width: '100%',
                     height: '100%',
+                    width: 'auto',
+                    objectFit: 'cover',
                     background: 'transparent',
-                    borderRadius: variant === 'circle' ? '50%' : '8px',
+                    borderRadius: variant === 'circle' ? '100%' : '8px',
                 }}
                 priority
             />
