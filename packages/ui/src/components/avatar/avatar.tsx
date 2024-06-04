@@ -15,12 +15,12 @@ const avatarVariants = cva('', {
             circle: 'rounded-full',
         },
         size: {
-            xs: 'w-[20px] h-[20px] md:w-[24px] md:h-[24px]', // [var(--size-sm)]
-            sm: 'w-[28px] h-[28px] md:w-[32px] md:h-[32px] 2xl:w-[32px] 2xl:h-[32px] ',
-            md: 'w-[32px] h-[32px] md:w-[44px] md:h-[44px] 2xl:w-[44px] 2xl:h-[44px] ',
-            lg: 'w-[44px] h-[44px] md:w-[52px] md:h-[52px] 2xl:w-[56px] 2xl:h-[56px] ',
-            xl: 'w-[56px] h-[56px] md:w-[64px] 2xl:w-[72px] md:h-[64px] 2xl:h-[72px] ',
-            '2xl': 'w-[64px] h-[64px] md:w-[72px] md:h-[72px] 2xl:w-[84px] 2xl:h-[84px] ',
+            xs: 'w-[20px] h-[20px] md:w-[24px] md:h-[24px]',
+            sm: 'w-[28px] h-[28px] md:w-[32px] md:h-[32px] 2xl:w-[32px] 2xl:h-[32px]',
+            md: 'w-[32px] h-[32px] md:w-[44px] md:h-[44px] 2xl:w-[44px] 2xl:h-[44px]',
+            lg: 'w-[44px] h-[44px] md:w-[52px] md:h-[52px] 2xl:w-[56px] 2xl:h-[56px]',
+            xl: 'w-[56px] h-[56px] md:w-[64px] 2xl:w-[72px] md:h-[64px] 2xl:h-[72px]',
+            '2xl': 'w-[64px] h-[64px] md:w-[72px] md:h-[72px] 2xl:w-[84px] 2xl:h-[84px]',
         },
     },
     compoundVariants: [
@@ -62,7 +62,7 @@ const avatarVariants = cva('', {
 })
 
 const iconVariants = cva(
-    'absolute shadow-md block z-1 rounded-full p-1  bg-[var(--avatar-status)] border border-[var(--avatar-status)]',
+    'absolute shadow-md block z-1 rounded-full p-1 bg-[var(--avatar-status)] border border-[var(--avatar-status)]',
     {
         variants: {
             variant: {
@@ -72,10 +72,10 @@ const iconVariants = cva(
             size: {
                 xs: 'w-[6px] h-[6px]',
                 sm: 'w-[8px] h-[8px]',
-                md: 'w-[10rem] h-[10rem]',
-                lg: 'w-[16rem] h-[16rem]',
-                xl: 'w-[64px] h-[64px]',
-                '2xl': 'w-[80px] h-[80px]',
+                md: 'w-[10px] h-[10px]',
+                lg: 'w-[16px] h-[16px]',
+                xl: 'w-[20px] h-[20px]',
+                '2xl': 'w-[24px] h-[24px]',
             },
         },
         defaultVariants: {
@@ -84,6 +84,7 @@ const iconVariants = cva(
         },
     },
 )
+
 const childrenPositionVariant = cva('', {
     variants: {
         variant: {
@@ -158,18 +159,6 @@ export const Avatar = ({
             {/* <Image
                 src={src}
                 alt={alt}
-                fill={true}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{
-                    objectFit: 'cover',
-                    background: 'transparent',
-                    borderRadius: variant === 'circle' ? '100%' : '8px',
-                }}
-                priority
-            /> */}
-            <Image
-                src={src}
-                alt={alt}
                 layout="responsive"
                 width={1}
                 height={1}
@@ -177,6 +166,19 @@ export const Avatar = ({
                     height: '100% !important',
                     width: 'auto',
                     objectFit: 'contain',
+                    background: 'transparent',
+                    borderRadius: variant === 'circle' ? '50%' : '8px',
+                }}
+                priority
+            /> */}
+            <Image
+                src={src}
+                alt={alt}
+                layout="fill"
+                objectFit="contain"
+                style={{
+                    width: '100%',
+                    height: '100%',
                     background: 'transparent',
                     borderRadius: variant === 'circle' ? '50%' : '8px',
                 }}
