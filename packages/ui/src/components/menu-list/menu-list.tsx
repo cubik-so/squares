@@ -1,3 +1,4 @@
+'use client'
 import React, { createContext, useContext, useMemo, useState } from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { cva } from 'class-variance-authority'
@@ -392,19 +393,30 @@ interface SubMenuButtonProps {
 }
 
 export const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonProps) => {
+      const [hoveredItem, setHoveredItem] = useState<null | string>()
+    const id = useMemo(() => uuid_v4(), [])
     return (
         <DropdownMenu.SubTrigger
+
             className={cn(
                 'relative cursor-pointer hover:bg-[var(--menu-list-item-surface-hovered)] text-[var(--menu-list-item-fg-default)] hover:text-[var(--menu-list-item-fg-hovered)] hover:rounded-lg hover:stroke-[var(--menu-list-item-hovered)] stroke-[var(--menu-list-item-icon)] focus-visible:outline-none p-2 py-2 mx-2',
+            
                 className,
             )}
+             onMouseEnter={() => setHoveredItem(id)}
+            onMouseLeave={() => setHoveredItem(null)}
         >
             <div className="flex justify-between items-center ">
                 <div className="flex gap-[10px] items-center ">
                     {leftIcon && (
                         <Icon
                             name={leftIcon}
-                            color="inherit"
+                            // color="inherit"
+                              color={cn(
+                                hoveredItem === id
+                                    ? iconColorVariantHovered({ variant:'primary' })
+                                    : iconColorVariantDefault({ variant: 'primary' }),
+                            )}
                             height={20}
                             width={20}
                             strokeWidth={2}
