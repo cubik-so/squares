@@ -51,7 +51,7 @@ const buttonVariants = cva('flex items-center justify-center', {
             primary:
                 'bg-button-primary-surface-default text-button-primary-text-default hover:bg-button-primary-surface-hovered hover:!text-button-primary-text-hovered disabled:bg-button-primary-surface-disabled disabled:!text-button-primary-text-disabled',
             secondary:
-                'bg-button-secondary-surface-default text-button-secondary-text-default hover:bg-button-secondary-surface-hovered hover:!text-button-secondary-text-hovered disabled:bg-button-secondary-surface-disabled disabled:!text-button-secondary-text-disabled',
+                'bg-button-secondary-surface-default text-button-secondary-text-default hover:bg-button-secondary-surface-hovered hover:!text-button-secondary-text-hovered disabled:!text-button-secondary-text-disabled',
             outline:
                 'bg-button-outline-surface-default text-button-outline-text-default border border-button-outline-border-default hover:bg-button-outline-surface-hovered hover:!text-button-outline-text-hovered disabled:bg-button-outline-surface-disabled disabled:!text-button-outline-text-disabled',
             link: 'bg-button-link-surface-default text-button-link-text-default underline underline-offset-4 decoration-button-link-text-default hover:bg-button-link-surface-hovered hover:!text-button-link-text-hovered hover:decoration-button-link-text-hovered disabled:bg-button-link-surface-disabled disabled:!text-button-link-text-disabled',

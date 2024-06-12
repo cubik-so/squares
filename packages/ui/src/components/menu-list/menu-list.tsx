@@ -393,17 +393,16 @@ interface SubMenuButtonProps {
 }
 
 export const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonProps) => {
-      const [hoveredItem, setHoveredItem] = useState<null | string>()
+    const [hoveredItem, setHoveredItem] = useState<null | string>()
     const id = useMemo(() => uuid_v4(), [])
     return (
         <DropdownMenu.SubTrigger
-
             className={cn(
                 'relative cursor-pointer hover:bg-[var(--menu-list-item-surface-hovered)] text-[var(--menu-list-item-fg-default)] hover:text-[var(--menu-list-item-fg-hovered)] hover:rounded-lg hover:stroke-[var(--menu-list-item-hovered)] stroke-[var(--menu-list-item-icon)] focus-visible:outline-none p-2 py-2 mx-2',
-            
+
                 className,
             )}
-             onMouseEnter={() => setHoveredItem(id)}
+            onMouseEnter={() => setHoveredItem(id)}
             onMouseLeave={() => setHoveredItem(null)}
         >
             <div className="flex justify-between items-center ">
@@ -412,9 +411,9 @@ export const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonPr
                         <Icon
                             name={leftIcon}
                             // color="inherit"
-                              color={cn(
+                            color={cn(
                                 hoveredItem === id
-                                    ? iconColorVariantHovered({ variant:'primary' })
+                                    ? iconColorVariantHovered({ variant: 'primary' })
                                     : iconColorVariantDefault({ variant: 'primary' }),
                             )}
                             height={20}
@@ -425,7 +424,17 @@ export const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonPr
                     <Text className="l1 md:l2">{children}</Text>
                 </div>
 
-                <Icon name="chevron-right" height={20} width={20} color="inherit" strokeWidth={2} />
+                <Icon
+                    name="chevron-right"
+                    height={20}
+                    width={20}
+                    color={cn(
+                        hoveredItem === id
+                            ? iconColorVariantHovered({ variant: 'primary' })
+                            : iconColorVariantDefault({ variant: 'primary' }),
+                    )}
+                    strokeWidth={2}
+                />
             </div>
         </DropdownMenu.SubTrigger>
     )
