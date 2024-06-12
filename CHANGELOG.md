@@ -1,5 +1,11 @@
 #### 0.0.6 (2024-06-12)
 
+##### Other Changes
+
+* cubik-so/squares (f780a78b)
+
+#### 0.0.6 (2024-06-12)
+
 ##### Bug Fixes
 
 *  button ui (c82cde75)
