@@ -156,7 +156,7 @@ export const Avatar = ({
             style={style}
             layoutId={layoutId}
         >
-            {/* <Image
+            <Image
                 src={src}
                 alt={alt}
                 layout="responsive"
@@ -170,8 +170,8 @@ export const Avatar = ({
                     borderRadius: variant === 'circle' ? '50%' : '8px',
                 }}
                 priority
-            /> */}
-            <Image
+            />
+            {/* <Image
                 src={src}
                 alt={alt}
                 fill={true}
@@ -184,7 +184,7 @@ export const Avatar = ({
                     borderRadius: variant === 'circle' ? '100%' : '8px',
                 }}
                 priority
-            />
+            /> */}
 
             {iconName && (
                 <Icon
