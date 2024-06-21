@@ -43,6 +43,7 @@ export default defineConfig({
         'src/components/spinner',
         'src/components/subhead',
         'src/components/tabs',
+        'src/components/tab-nav',
         'src/components/tag',
         'src/components/text',
         'src/components/text-area',

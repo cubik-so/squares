@@ -204,6 +204,11 @@
             "import": "./lib/components/tabs/index.mjs",
             "require": "./lib/components/tabs/index.js"
         },
+        "./tab-nav": {
+            "types": "./lib/components/tab-nav/index.d.ts",
+            "import": "./lib/components/tab-nav/index.mjs",
+            "require": "./lib/components/tab-nav/index.js"
+        },
         "./tag": {
             "types": "./lib/components/tag/index.d.ts",
             "import": "./lib/components/tag/index.mjs",
@@ -285,6 +290,7 @@
         "@radix-ui/react-switch": "^1.0.3",
         "@radix-ui/react-tabs": "^1.0.4",
         "@radix-ui/react-tooltip": "^1.0.7",
+        "@radix-ui/themes": "^3.0.5",
         "@tanstack/react-table": "^8.11.6",
         "autoprefixer": "^10.4.19",
         "class-variance-authority": "^0.7.0",
