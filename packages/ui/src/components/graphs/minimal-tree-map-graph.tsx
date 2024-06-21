@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 import { cn } from '@/utils/cn'
 
-const Chart = dynamic(() => import('react-apexcharts'), {
+const Chart = dynamic(() => import('react-apexcharts').then((mod) => mod.default), {
     ssr: false,
 })
 
