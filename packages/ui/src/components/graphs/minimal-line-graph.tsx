@@ -4,7 +4,10 @@ import { useMediaQuery } from 'usehooks-ts'
 
 import { cn } from '@/utils/cn'
 
-const Chart = dynamic(() => import('react-apexcharts'), {
+// const Chart = dynamic(() => import('react-apexcharts'), {
+//     ssr: false,
+// })
+const Chart = dynamic(() => import('react-apexcharts').then((mod) => mod.default), {
     ssr: false,
 })
 
