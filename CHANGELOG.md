@@ -1,5 +1,11 @@
 #### 0.0.6 (2024-06-21)
 
+##### Other Changes
+
+* cubik-so/squares (21465e67)
+
+#### 0.0.6 (2024-06-21)
+
 ##### New Features
 
 *  tab nav component (466428b0)
