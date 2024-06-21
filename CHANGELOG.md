@@ -1,3 +1,9 @@
+#### 0.0.6 (2024-06-21)
+
+##### New Features
+
+*  tab nav component (466428b0)
+
 #### 0.0.6 (2024-06-12)
 
 ##### Other Changes
