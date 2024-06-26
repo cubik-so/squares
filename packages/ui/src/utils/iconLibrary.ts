@@ -190,6 +190,7 @@ export type IconName =
     | 'ShoppingCartContrast'
     | 'MoneyDollarBagDuoSolid'
     | 'Poll'
+    | 'Tactics'
     | 'Vector'
     | 'UserLove'
     | 'WalletReloadDuoSolid'
@@ -2830,13 +2831,24 @@ export const iconLibrary: Icon[] = [
         ],
     },
     {
+        name: 'tactics',
+        displayName: 'Tactics',
+        viewBox: '0 0 24 24',
+        paths: [
+            {
+                d: 'M4 6.00001L6 8.00001M6 8.00001L8 10M6 8.00001L8 6.00001M6 8.00001L4 10M16 16L18 18M18 18L20 20M18 18L20 16M18 18L16 20M14 7L16 4L19 6.00001M16.25 5.50001C18 10 13.5 12.5 12 13.5M9 17.5C9 18.8807 7.88071 20 6.5 20C5.11929 20 4 18.8807 4 17.5C4 16.1193 5.11929 15 6.5 15C7.88071 15 9 16.1193 9 17.5Z',
+                fill: false,
+                stroke: true,
+            },
+        ],
+    },
+    {
         name: 'poll',
         displayName: 'Poll',
         viewBox: '0 0 32 32',
         paths: [
             {
                 d: 'M13 7.65918H21M6 7.65918H6.01M13 17.6592H21M9 7.65918C9 9.31603 7.65685 10.6592 6 10.6592C4.34315 10.6592 3 9.31603 3 7.65918C3 6.00233 4.34315 4.65918 6 4.65918C7.65685 4.65918 9 6.00233 9 7.65918ZM9 17.6592C9 19.316 7.65685 20.6592 6 20.6592C4.34315 20.6592 3 19.316 3 17.6592C3 16.0023 4.34315 14.6592 6 14.6592C7.65685 14.6592 9 16.0023 9 17.6592Z',
-                opacity: 0.28,
                 fill: false,
                 stroke: true,
             },
