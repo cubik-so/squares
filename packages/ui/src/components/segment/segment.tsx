@@ -11,6 +11,7 @@ import type { ReactNode } from 'react'
 interface SegmentContainerProps {
     children: ReactNode
     size: 'sm' | 'md' | 'lg'
+    className: string
 }
 interface SegmentItemProps {
     children?: React.ReactNode
@@ -63,14 +64,15 @@ const segmentItemVariant = cva('', {
     },
 })
 
-export const SegmentContainer = ({ children, size }: SegmentContainerProps) => {
+export const SegmentContainer = ({ children, size, className }: SegmentContainerProps) => {
     const id = useMemo(() => uuid_v4(), [])
     return (
         <SizeContext.Provider value={{ size, id }}>
             <div
                 className={cn(
                     segmentContainerVariant({ size }),
-                    'bg-segment-control-surface-inactive w-[content] p-1 gap-1 flex justify-center items-center',
+                    'bg-segment-control-surface-inactive w-full p-1 gap-1 flex justify-center items-center',
+                    className,
                 )}
             >
                 {children}
