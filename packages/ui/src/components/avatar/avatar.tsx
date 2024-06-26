@@ -15,7 +15,7 @@ const avatarVariants = cva('', {
             circle: 'rounded-full',
         },
         size: {
-            xs: 'w-[20px] h-[20px] md:w-[24px] md:h-[24px]',
+            xs: 'w-[20px] h-[20px] ',
             sm: 'w-[28px] h-[28px] md:w-[32px] md:h-[32px] 2xl:w-[32px] 2xl:h-[32px]',
             md: 'w-[32px] h-[32px] md:w-[44px] md:h-[44px] 2xl:w-[44px] 2xl:h-[44px]',
             lg: 'w-[44px] h-[44px] md:w-[52px] md:h-[52px] 2xl:w-[56px] 2xl:h-[56px]',
