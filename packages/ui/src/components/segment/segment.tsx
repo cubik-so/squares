@@ -11,7 +11,7 @@ import type { ReactNode } from 'react'
 interface SegmentContainerProps {
     children: ReactNode
     size: 'sm' | 'md' | 'lg'
-    className: string
+    className?: string
 }
 interface SegmentItemProps {
     children?: React.ReactNode
