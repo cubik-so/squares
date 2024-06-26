@@ -2,6 +2,12 @@
 
 ##### Other Changes
 
+* cubik-so/squares (87d743b5)
+
+#### 0.0.6 (2024-06-24)
+
+##### Other Changes
+
 * cubik-so/squares (273f43a6)
 
 #### 0.0.6 (2024-06-21)
