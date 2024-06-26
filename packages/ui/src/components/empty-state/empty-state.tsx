@@ -52,7 +52,7 @@ export const EmptyState = ({
                     className={cn(
                         'flex w-fit items-center justify-center rounded-full p-2 md:p-4 2xl:p-6',
                         bgColor
-                            ? `bg-[${bgColor}]`
+                            ? `!bg-[${bgColor}]`
                             : 'bg-[var(--color-surface-negative-transparent)]',
                     )}
                 >

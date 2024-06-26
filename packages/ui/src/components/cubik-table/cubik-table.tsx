@@ -81,9 +81,10 @@ export const CubikTable = <T,>({ columns, data, showHeader = true }: CubikTableP
                             {row.getVisibleCells().map((cell, index) => (
                                 <td
                                     className={cn(
-                                        'px-2 md:px-3 py-3 md:py-5',
+                                        'px-2 md:px-3 md:mx-3 py-3 md:py-5',
                                         index === 0 && 'ps-4 md:ps-6',
                                     )}
+                                    style={{ marginLeft: '1.5rem', marginRight: '1.5rem' }}
                                     key={cell.id}
                                 >
                                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
