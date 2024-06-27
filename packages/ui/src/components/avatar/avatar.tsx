@@ -168,6 +168,7 @@ export const Avatar = ({
                     objectFit: 'contain',
                     background: 'transparent',
                     borderRadius: variant === 'circle' ? '50%' : '8px',
+                    aspectRatio: '1/1',
                 }}
                 priority
             />
