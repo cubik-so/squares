@@ -10,13 +10,10 @@ import type { VariantProps } from 'class-variance-authority'
 export const helperTextVariants = cva('transition-colors', {
     variants: {
         variant: {
-            default: 'text-color-fg-primary-base',
-            success: 'text-color-fg-positive-base',
-            error: 'text-color-fg-negative-base',
+            default: 'text-[var(--color-fg-primary-base)]',
+            success: 'text-[var(--color-fg-positive-base)]',
+            error: 'text-[var(--color-fg-negative-base)]',
         },
-    },
-    defaultVariants: {
-        variant: 'default',
     },
 })
 
@@ -24,7 +21,7 @@ type TextProps = React.HTMLAttributes<HTMLElement> &
     VariantProps<typeof helperTextVariants> & { show?: boolean }
 
 export const HelperText = forwardRef<HTMLElement | null, TextProps>(
-    ({ className, children, variant, show }) => {
+    ({ className, children, variant = 'default', show }) => {
         const id = uuidV4()
 
         return (
