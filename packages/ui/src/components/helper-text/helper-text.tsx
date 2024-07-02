@@ -7,12 +7,12 @@ import { cn } from '@utils/cn'
 import { Text } from '../text/text'
 import type { VariantProps } from 'class-variance-authority'
 
-export const helperTextVariants = cva('transition-colors', {
+export const helperTextVariants = cva('', {
     variants: {
         variant: {
-            default: 'text-[var(--color-fg-primary-base)]',
-            success: 'text-[var(--color-fg-positive-base)]',
-            error: 'text-[var(--color-fg-negative-base)]',
+            default: '!text-[var(--color-fg-primary-base)]',
+            success: '!text-[var(--color-fg-positive-base)]',
+            error: '!text-[var(--color-fg-negative-base)]',
         },
     },
 })
@@ -23,7 +23,7 @@ type TextProps = React.HTMLAttributes<HTMLElement> &
 export const HelperText = forwardRef<HTMLElement | null, TextProps>(
     ({ className, children, variant = 'default', show }) => {
         const id = uuidV4()
-
+        console.log('variant', variant)
         return (
             <AnimatePresence>
                 {show && (
@@ -39,15 +39,7 @@ export const HelperText = forwardRef<HTMLElement | null, TextProps>(
                             damping: 30,
                         }}
                     >
-                        <Text
-                            className={cn(
-                                helperTextVariants({
-                                    variant,
-                                }),
-                                className,
-                                'l2',
-                            )}
-                        >
+                        <Text className={cn(helperTextVariants({ variant }), className, 'l2')}>
                             {children}
                         </Text>
                     </motion.div>
