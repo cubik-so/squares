@@ -1,7 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
 import { cn } from '@/utils/cn'
-import { useTheme } from '@/hooks/useTheme'
 import type { ClassValue } from 'clsx'
 
 const transition = {
@@ -23,8 +22,6 @@ const getSize = (size: Props['size']) => {
 }
 
 export const Spinner = ({ className, size = 'md' }: Props) => {
-    const { theme } = useTheme()
-
     return (
         <div
             className={cn(
@@ -59,16 +56,10 @@ export const Spinner = ({ className, size = 'md' }: Props) => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-                    <circle
-                        cx="9"
-                        cy="9"
-                        r="7"
-                        stroke={theme === 'light' ? '#00000020' : '#ffffff20'}
-                        strokeWidth="2.5"
-                    />
+                    <circle cx="9" cy="9" r="7" stroke={'#ffffff20'} strokeWidth="2.5" />
                     <path
                         d="M16 9C16 5.13401 12.866 2 9 2"
-                        stroke={theme === 'light' ? '#000000' : '#ffffff'}
+                        stroke={'#ffffff'}
                         strokeWidth="2.5"
                         strokeLinecap="round"
                     />
