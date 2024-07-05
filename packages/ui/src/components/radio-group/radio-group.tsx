@@ -24,7 +24,6 @@ export const CustomRadioButton = ({
     className,
     value,
 }: CustomRadioButtonProps) => {
-    console.log('value', value)
     return (
         <RadioGroup.Root
             name={name}

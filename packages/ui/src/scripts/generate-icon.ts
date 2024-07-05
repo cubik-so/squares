@@ -19,7 +19,6 @@ const addIconExport = () => {
 const main = () => {
     createIconFolder()
     iconLibrary.forEach((icon) => {
-        console.log(typeof icon.paths)
         const pathsString = icon.paths.map((path) => JSON.stringify(path)).join(',\n')
 
         const component = `

@@ -30,7 +30,6 @@ export const ColumnGraph: React.FC<ColumnGraphProps> = ({
     xAxisType,
     categories,
 }) => {
-    console.log('categories', categories)
     //const fontColor = theme === 'dark' ? 'white' : 'black';
     const textColorPrimary = theme === 'dark' ? 'white' : 'black'
     const textColorSecondary = theme === 'dark' ? '#999999' : '#666666'

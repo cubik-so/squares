@@ -30,7 +30,6 @@ const Template: StoryObj<VaulDrawerProps> = {
         const [isOpen, setIsOpen] = useState(args.open)
 
         const handleOpenChange = (open: boolean) => {
-            console.log(open)
             setIsOpen(open)
             args.onOpenChange && args.onOpenChange(open)
         }

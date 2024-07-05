@@ -321,7 +321,6 @@ export const DrawerMenuItem = ({
     }
 
     const onClickHandler = () => {
-        console.log('on click triggered')
         onClick && onClick()
         setIsOpen && setIsOpen(false)
     }

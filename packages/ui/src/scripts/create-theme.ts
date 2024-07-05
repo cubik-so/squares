@@ -11,7 +11,7 @@ const parseCss = (filePath: string): Record<string, string> => {
         if (!cssContent) {
             throw new Error('No CSS content found')
         }
-        console.log(cssContent, 'cssContent')
+
         const matches = Array.from(cssContent.matchAll(/--[\w-]+:\s*var\(--[\w-]+\);/g))
 
         const colors: Record<string, string> = {}
@@ -37,7 +37,6 @@ const parsePrimitiveCss = (filePath: string): Record<string, string> => {
         if (!cssContent) {
             throw new Error('No CSS content found')
         }
-        // console.log(cssContent, 'cssContent')
 
         const matches = Array.from(cssContent.matchAll(/--[\w-]+:\s*#[a-fA-F\d]+;/g))
 

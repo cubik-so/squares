@@ -23,7 +23,7 @@ type TextProps = React.HTMLAttributes<HTMLElement> &
 export const HelperText = forwardRef<HTMLElement | null, TextProps>(
     ({ className, children, variant = 'default', show }) => {
         const id = uuidV4()
-        console.log('variant', variant)
+
         return (
             <AnimatePresence>
                 {show && (
