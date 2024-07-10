@@ -420,7 +420,9 @@ export const SubMenuButton = ({ children, leftIcon, className }: SubMenuButtonPr
                             strokeWidth={2}
                         />
                     )}
-                    <Text className="l1 md:l2">{children}</Text>
+                    <Text className="l1 md:l2" color={'inherit'}>
+                        {children}
+                    </Text>
                 </div>
 
                 <Icon
