@@ -15,7 +15,7 @@ import type {
 } from '@tanstack/react-table'
 
 interface CubikTableProps<T> {
-    columns: ColumnDef<any, any>[]
+    columns: ColumnDef<T, any>[]
     data: T[]
     showHeader?: boolean
 }
