@@ -1,3 +1,9 @@
+#### 0.0.6 (2024-07-15)
+
+##### Other Changes
+
+* cubik-so/squares (c66a6e60)
+
 #### 0.0.6 (2024-07-11)
 
 ##### Other Changes
