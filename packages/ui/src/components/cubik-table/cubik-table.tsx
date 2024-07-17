@@ -7,10 +7,15 @@ import {
 } from '@tanstack/react-table'
 import { Text } from '@components/text/text'
 import { cn } from '@utils/cn'
-import type { ColumnDef, ExpandedState } from '@tanstack/react-table'
+import type {
+    ColumnDef,
+    ColumnHelper,
+    ExpandedState,
+    createColumnHelper,
+} from '@tanstack/react-table'
 
 interface CubikTableProps<T> {
-    columns: ColumnDef<T>[]
+    columns: ColumnDef<any, any>[]
     data: T[]
     showHeader?: boolean
 }
