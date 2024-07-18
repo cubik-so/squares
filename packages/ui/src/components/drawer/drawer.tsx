@@ -49,13 +49,18 @@ export const VaulDrawerContent = ({ children, className }: DrawerContentProps) =
         <Drawer.Content
             className={cn(
                 'fixed bg-color-surface-primary shadow-2xl dark:shadow-black pt-2 focus:outline-none',
-                'bottom-0 left-0 right-0 w-full max-w-[100%] rounded-t-[12px]',
-                direction === 'right' && 'w-[640px] !h-[100vh]',
+                direction === 'bottom' &&
+                    'bottom-0 left-0 right-0 w-full max-w-[100%] rounded-t-[12px]',
+                direction === 'right' && 'top-0 bottom-0 right-0 w-[640px] rounded-l-[12px]',
                 className,
             )}
-            style={{ maxHeight: '93%', display: 'flex', flexDirection: 'column' }}
+            style={{
+                maxHeight: direction === 'bottom' ? '93%' : '100%',
+                display: 'flex',
+                flexDirection: 'column',
+            }}
         >
-            <div className="mx-auto w-12 h-[3px] flex-shrink-0 rounded-full bg-color-surface-primary mb-2" />
+            <div className="bg-color-surface-primary mx-auto mb-2 h-[3px] w-12 shrink-0 rounded-full" />
             <div style={{ flexGrow: 1, overflowY: 'auto' }}>{children}</div>
         </Drawer.Content>
     )
